@@ -1,0 +1,122 @@
+div {
+  margin : 5px;
+  /*border : 1px solid black;*/
+}
+
+a {
+  color : black;
+  text-decoration: none;
+}
+
+/*************************** 전체 틀*************************************/
+div.body {
+  width : 1200px;
+  margin : 0px auto;
+}
+
+  /********************상단부분******************************************/
+div.header {
+  height : 150px;
+  margin-bottom: 10px auto;
+  border-bottom: 1px solid gray;
+
+}
+
+div.menu_img {
+  width : 800px;
+  height : 140px;
+  margin : 0px auto;
+  margin-bottom : 10px;
+  float : left;
+  text-align : center;
+}
+
+div.menu_img img{
+  margin-top: 20px;
+  height : 100%;
+  float : left;
+  margin-left: 10px;
+
+}
+
+div.menu_bar {
+  width : 360px;
+  margin : 0px auto;
+  margin-top: 63px;
+  float : right;
+
+  display : table-cell;
+  vertical-align: middle;
+}
+
+table {
+  /*border-collapse: collapse;*/
+  vertical-align: middle;
+}
+
+tr.menu td {
+    width : 100px;
+    height : 30px;
+    text-align: center;
+}
+
+tr.menu td#menu_login{
+  border-bottom: 6px solid black;
+}
+tr.menu td#menu_login:hover{
+  color : red;
+  border-bottom: 6px solid red;
+}
+
+tr.menu td#menu_join{
+  border-bottom: 6px solid black;
+}
+tr.menu td#menu_join:hover{
+  color : red;
+  border-bottom: 6px solid red;
+}
+
+tr.menu td#menu_mypage{
+  border-bottom: 6px solid black;
+}
+tr.menu td#menu_mypage:hover{
+  color : red;
+  border-bottom: 6px solid red;
+}
+
+tr.menu td#menu_flea{
+  border-top: 6px solid black;
+}
+tr.menu td#menu_flea:hover{
+  color : red;
+  border-top: 6px solid red;
+}
+
+tr.menu td#menu_lap{
+  border-top: 6px solid black;
+}
+tr.menu td#menu_lap:hover{
+  color : red;
+  border-top: 6px solid red;
+}
+
+tr.menu td#menu_guide{
+  border-top: 6px solid black;
+}
+tr.menu td#menu_guide:hover{
+  color : red;
+  border-top: 6px solid red;
+}
+
+tr.menu td#menu_shop{
+  border-top: 6px solid black;
+}
+tr.menu td#menu_shop:hover {
+  color : red;
+  border-top: 6px solid red;
+}
+
+
+div.contents {
+  margin-top: 20px;
+}

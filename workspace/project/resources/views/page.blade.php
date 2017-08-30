@@ -1,0 +1,1 @@
+<a href="{{url('/board/list')}}">게시판</a>

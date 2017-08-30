@@ -1,0 +1,254 @@
+/*메인 css*/
+html{
+  width : 100%;
+  height : 100%;
+}
+
+body{
+  width : 100%;
+  height : 100%;
+}
+
+.main_content{
+  margin : 0 auto;
+  width : 100%;
+  height : 92%;
+  border : 1px solid gray;
+  position : relative;
+}
+
+/*드래그 할 객체의 CSS*/
+.draggable_content_main{
+  margin : 0 auto;
+  width : 100px;
+  height : 360px;
+  border : 1px solid gray;
+  position : fixed;
+  left : 10px;
+  top : 150px;
+  z-index : 1;
+  background-color: white;
+}
+
+/*드래그할 객체의 내부 CSS*/
+.menu{
+  margin : 0 auto;
+  width : 100%;
+  height : 60px;
+  border : 1px solid gray;
+  font-size : 30px;
+  text-align : center;
+}
+
+.first_content{
+  margin : 0 auto;
+  width : 100%;
+  height : 60px;
+  border : 1px solid gray;
+  font-size : 20px;
+  text-align : center;
+}
+
+.second_content{
+  margin : 0 auto;
+  width : 100%;
+  height : 60px;
+  border : 1px solid gray;
+  font-size : 20px;
+  text-align : center;
+}
+
+.third_content{
+  margin : 0 auto;
+  width : 100%;
+  height : 60px;
+  border : 1px solid gray;
+  font-size : 20px;
+  text-align : center;
+}
+
+.fourth_content{
+  margin : 0 auto;
+  width : 100%;
+  height : 60px;
+  border : 1px solid gray;
+  font-size : 20px;
+  text-align : center;
+}
+
+.cancel_content{
+  margin : 0 auto;
+  width : 100%;
+  height : 60px;
+  border : 1px solid gray;
+  font-size : 20px;
+  text-align : center;
+}
+
+/*드래그 할 객체를 display 하는 CSS*/
+.draggable_content_sub{
+  margin : 0 auto;
+  width : 300px;
+  height : 550px;
+  border : 1px solid gray;
+  position : fixed;
+  left : 110px;
+  top : 150px;
+  z-index : 1;
+  background-color: white;
+}
+
+/*display할 content의 리스트를 보여줄 CSS*/
+.widget_content_list{
+  margin : 0 auto;
+  width : 100%;
+  height : 100%;
+}
+
+.timeline_content_list{
+  margin : 0 auto;
+  width : 100%;
+  height : 50px;
+}
+
+.ui_content_list{
+  margin : 0 auto;
+  width : 100%;
+  height : 50px;
+}
+
+.background_content_list{
+  margin : 0 auto;
+  width : 100%;
+  height : 50px;
+}
+/*display할 content의 이름을 보여주는 클래스*/
+.content_list_name{
+  margin : 0 auto;
+  width : 100%;
+  height : 50px;
+  font-size : 30px;
+  text-align : center;
+}
+
+/*display할 content의 list를 보여주는 클래스*/
+.content_list_things{
+  margin : 0 auto;
+  width : 100%;
+  height : 500px;
+  text-align : center;
+  overflow : auto;
+}
+
+.content_list_things p{
+  margin : 0 auto;
+  font-size : 18px;
+}
+
+.content_list_things img{
+  margin : 0 auto;
+  width : 90%;
+}
+
+
+/*드롭 할 객체의 CSS*/
+.droppable_content_main{
+  margin : 0 auto;
+  width : 100%;
+  height : 100%;
+  border : 1px solid black;
+  position : absolute;
+  left : 0px;
+  top : 0px;
+}
+
+.background_content{
+  margin : 0 auto;
+  width : 100%;
+  height : 40%;
+  border : 1px solid black;
+}
+
+.background_content_title{
+  margin : 0 auto;
+  width : 60%;
+  height : 25%;
+  position : relative;
+  top : 25%;
+}
+
+.background_content_title input{
+  margin : 0 auto;
+  width : 100%;
+  height : 100%;
+  font-size : 30px;
+  text-align : center;
+}
+
+.background_content_title img{
+  margin : 0 auto;
+  width : 100px;
+  height : 100px;
+  position : relative;
+  top : 40%;
+  left : 45%;
+}
+
+.left_content{
+  margin : 0 auto;
+  width : 25%;
+  height : 60%;
+  border : 1px solid black;
+  float : left;
+}
+
+.bx-wrapper, .bx-viewport {
+  margin : 0 auto !important;
+  width : 95% !important;
+  height:  95% !important;
+}
+
+.bx-viewprot ul li img{
+  margin : 0 auto;
+  width : 100%;
+  height : 100%;
+}
+/*하단 왼쪽 콘텐츠의 스타일 리스트*/
+
+.center_content{
+  margin : 0 auto;
+  width : 50%;
+  height : 60%;
+  border : 1px solid black;
+  float : left;
+}
+/*하단 가운데 콘텐츠의 스타일 리스트*/
+
+.right_content{
+  margin : 0 auto;
+  width : 25%;
+  height : 60%;
+  border : 1px solid black;
+  float : left;
+}
+/*하단 오른쪽 콘텐츠의 스타일 리스트*/
+
+.submit_button{
+  margin : 0 auto;
+  width : 80px;
+  height : 80px;
+  border : 1px solid black;
+  border-radius : 100%;
+  background-color : skyblue;
+  position : fixed;
+  left : 92%;
+  top : 88%;
+}
+
+.submit_button p{
+  margin-top : 26%;
+  color : black;
+  font-size : 20px;
+  text-align  : center;
+  font-weight : bold;
+}

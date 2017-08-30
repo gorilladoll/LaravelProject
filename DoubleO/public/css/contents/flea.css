@@ -1,0 +1,234 @@
+div.info_text {
+  width : 100%;
+  border-bottom: 1px solid gray;
+  text-align: center;
+  margin: 0px auto;
+}
+
+div#flea_apply {
+  /*border: 1px solid black;*/
+  padding-top : 50px;
+  width : 1000px;
+  margin : 0px auto;
+}
+
+div.seller_info {
+  width : 100%;
+  text-align: center;
+  margin: 0px auto;
+  vertical-align: middle;
+  /*border: 1px solid black;*/
+}
+
+div.seller_info_img {
+  border: 1px solid black;
+  width : 200px;
+  height : 200px;
+  display: inline-table;
+
+  vertical-align: middle;
+  /*float : left;*/
+}
+
+div.seller_info_img img {
+  width : 100%;
+}
+
+div.seller_info_input {
+  /*border: 1px solid black;*/
+  width : 600px;
+  height : 200px;
+  display: inline-table;
+  vertical-align: middle;
+  /*float: left;*/
+}
+
+div.seller_goods {
+  border : 1px solid black;
+  margin: 0px auto;
+  margin-top: 20px;
+  width : 820px;
+  height : 300px;
+}
+
+div.seller_goods div.info_text{
+  padding-top : 10px;
+  padding-bottom: 10px;
+}
+
+div.goods_input_button a{
+  border: 1px solid black;
+  padding : 5px;
+}
+
+a.seller_img {
+  border: 1px solid black;
+  /*padding : 5px;*/
+}
+
+div.seller_reseach {
+  border : 1px solid black;
+  margin: 0px auto;
+  margin-top: 20px;
+  width : 820px;
+  height : 300px;
+}
+
+div.seller_reseach div.info_text{
+  padding-top : 10px;
+  padding-bottom: 10px;
+}
+
+div.apply_button {
+  text-align: center;
+  margin-top: 30px;
+}
+
+div.apply_button a{
+  border: 1px solid black;
+  padding : 5px;
+}
+
+div.test{
+  width : 800px;
+  height : 500px;
+  border: 1px solid black;
+  margin : 0px auto;
+}
+
+div#flea_ticket div.info_text {
+  width : 100%;
+  border-bottom: 1px solid gray;
+  text-align: left;
+
+  margin-bottom: 20px;
+  /*margin: 0px auto;*/
+}
+
+div#flea_ticket {
+  width : 1000px;
+  height : 500px;
+  border: 1px solid gray;
+  margin : 0px auto;
+  margin-bottom: 50px;
+
+}
+
+div {
+  /*border : 1px solid black;*/
+}
+
+table {
+   border-collapse: collapse;
+}
+
+div#flea_detail {
+  padding-top: 50px;
+  width : 1000px;
+  margin : 0px auto;
+  /*border : 1px solid black;*/
+}
+
+div#flea_detail table {
+  width : 100%;
+  /*text-align: left;*/
+}
+
+.flea_detailmain {
+
+}
+
+.flea_detailmain img{
+  width : 250px;
+  height : 300px;
+
+}
+td.detail_img {
+}
+
+td.detail_text {
+  width : 800px;
+  text-align: left;
+  font-size: 25px;
+}
+
+.flea_content {
+  padding-top: 20px;
+  height : 250px;
+  vertical-align: bottom;
+}
+
+.flea_map {
+  padding-top : 20px;
+}
+
+div.flea_buttons {
+  height : 40px;
+  margin-top : 30px;
+  /*border : 1px solid black;*/
+  height : 100%;
+  text-align: center;
+}
+
+div.flea_buttons a {
+  /*width : 200px;*/
+  border : 1px solid black;
+  padding : 5px;
+}
+
+div.flea_comments{
+  border : 1px solid black;
+  margin-top : 30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+div.flea_comment_num {
+  text-align: left;
+}
+
+div.flea_comment {
+  width : 900px;
+  height : 100px;
+  border : 1px solid black;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+div#create_fleagroup {
+  /*border: 1px solid black;*/
+  width : 1000px;
+  padding-top : 50px;
+  margin : 0px auto;
+}
+
+.flea_map {
+  /*border: 1px solid black;*/
+  width : 100%;
+  margin : 0px auto;
+}
+
+.flea_map p{
+  width : 810px;
+  /*border : 1px solid black;*/
+  margin : 0px auto;
+  font-size: 30px;
+}
+
+.flea_map_input {
+  width : 810px;
+  margin : 0px auto;
+  border : 1px solid black;
+  height : 400px;
+  text-align: center;
+}
+
+/*div.seller_info_img button.btn{
+  width : 100%;
+  height : 100%;
+}*/
+
+/*div.flea_map_input button.btn{
+  width : 100%;
+  height : 100%;
+}*/

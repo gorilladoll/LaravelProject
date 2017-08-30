@@ -1,0 +1,17 @@
+div#flea_ticket div.info_text {
+  width : 100%;
+  border-bottom: 1px solid gray;
+  text-align: left;
+
+  margin-bottom: 20px;
+  /*margin: 0px auto;*/
+}
+
+div#flea_ticket {
+  width : 1000px;
+  height : 500px;
+  border: 1px solid gray;
+  margin : 0px auto;
+  margin-bottom: 50px;
+
+}

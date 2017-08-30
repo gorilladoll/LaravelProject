@@ -1,0 +1,306 @@
+/*메인 css*/
+html{
+  width : 100%;
+  height : 100%;
+}
+
+body{
+  width : 100%;
+  height : 100%;
+}
+.body {
+  width : 100%;
+  height : 100%;
+}
+
+.main_content{
+  margin : 0 auto;
+  width : 100%;
+  height : 92%;
+  position : relative;
+}
+
+/*드래그 할 객체의 CSS*/
+.draggable_content_main{
+  margin : 0 auto;
+  width : 100px;
+  height : 300px;
+  position : fixed;
+  left : 10px;
+  top : 150px;
+  z-index : 1;
+  background-color: none;
+}
+
+.draggable_content_main img{
+  height : 100%;
+}
+
+/*드래그할 객체의 내부 CSS*/
+/*.menu{*/
+/*  margin : 0 auto;*/
+/*  width : 100%;*/
+/*  height : 20%;*/
+/*  font-size : 20px;*/
+/*  text-align : center;*/
+/*}*/
+
+.first_content{
+  margin : 0 auto;
+  width : 100%;
+  height : 20%;
+  border-radius : 30%;
+  font-size : 20px;
+  text-align : center;
+  background-color : #d1d1d1;
+}
+
+.second_content{
+  margin : 0 auto;
+  width : 100%;
+  height : 20%;
+  font-size : 20px;
+  text-align : center;
+  border-radius : 30%;
+  background-color : #d1d1d1;
+}
+
+.third_content{
+  margin : 0 auto;
+  width : 100%;
+  height : 20%;
+  font-size : 20px;
+  text-align : center;
+  border-radius : 30%;
+  background-color : #d1d1d1;
+}
+
+.fourth_content{
+  margin : 0 auto;
+  width : 100%;
+  height : 20%;
+  font-size : 20px;
+  text-align : center;
+  border-radius : 30%;
+  background-color : #d1d1d1;
+}
+
+.cancel_content{
+  margin : 0 auto;
+  width : 100%;
+  height : 20%;
+  font-size : 20px;
+  text-align : center;
+  border-radius : 30%;
+  background-color : #d1d1d1;
+}
+
+.cancel_content img {
+  margin-top : 20%;
+  width : 60%;
+  height : 60%;
+}
+
+/*드래그 할 객체를 display 하는 CSS*/
+.draggable_content_sub{
+  margin : 0 auto;
+  width : 300px;
+  height : 550px;
+  border : 1px solid gray;
+  border-radius : 10%;
+  position : fixed;
+  left : 110px;
+  top : 150px;
+  z-index : 1;
+  background-color: white;
+}
+
+/*display할 content의 리스트를 보여줄 CSS*/
+.widget_content_list{
+  margin : 0 auto;
+  width : 100%;
+  height : 100%;
+}
+
+.timeline_content_list{
+  margin : 0 auto;
+  width : 100%;
+  height : 50px;
+}
+
+.ui_content_list{
+  margin : 0 auto;
+  width : 100%;
+  height : 50px;
+}
+
+.background_content_list{
+  margin : 0 auto;
+  width : 100%;
+  height : 50px;
+}
+/*display할 content의 이름을 보여주는 클래스*/
+.content_list_name{
+  margin : 0 auto;
+  width : 100%;
+  height : 50px;
+  font-size : 30px;
+  text-align : center;
+}
+
+/*display할 content의 list를 보여주는 클래스*/
+.content_list_things{
+  margin : 0 auto;
+  width : 100%;
+  height : 500px;
+  text-align : center;
+  overflow : auto;
+}
+
+.content_list_things p{
+  margin : 0 auto;
+  font-size : 18px;
+}
+
+.content_list_things img{
+  margin : 0 auto;
+  width : 90%;
+}
+
+
+/*드롭 할 객체의 CSS*/
+.droppable_content_main{
+  margin : 0 auto;
+  padding-top : 35px;
+  width : 100%;
+  height : 100%;
+  border : 1px solid black;
+  position : absolute;
+  left : 0px;
+  top : 0px;
+}
+
+.background_content{
+  margin : 0 auto;
+  width : 100%;
+  height : 40%;
+}
+
+.background_content_title{
+  margin : 0 auto;
+  width : 60%;
+  height : 25%;
+  position : relative;
+  top : 25%;
+}
+
+.background_content_title input{
+  margin : 0 auto;
+  width : 100%;
+  height : 100%;
+  font-size : 30px;
+  text-align : center;
+}
+
+.background_content_title img{
+  margin : 0 auto;
+  width : 100px;
+  height : 100px;
+  position : relative;
+  top : 40%;
+  left : 45%;
+}
+
+.left_content{
+  margin : 0 auto;
+  width : 25%;
+  height : 60%;
+  border : 1px solid black;
+  float : left;
+}
+
+.bx-wrapper, .bx-viewport {
+  margin : 0 auto !important;
+  width : 95% !important;
+  height:  95% !important;
+}
+
+.bx-viewprot ul li img{
+  margin : 0 auto;
+  width : 100%;
+  height : 100%;
+}
+/*하단 왼쪽 콘텐츠의 스타일 리스트*/
+
+.center_content{
+  margin : 0 auto;
+  width : 50%;
+  height : 60%;
+  border : 1px solid black;
+  float : left;
+}
+/*하단 가운데 콘텐츠의 스타일 리스트*/
+
+.right_content{
+  margin : 0 auto;
+  width : 25%;
+  height : 60%;
+  border : 1px solid black;
+  float : left;
+}
+/*하단 오른쪽 콘텐츠의 스타일 리스트*/
+
+.submit_button{
+  margin : 0 auto;
+  position : fixed;
+  left : 90%;
+  top : 90%;
+}
+
+.submit_button img{
+  width : 80%;
+}
+
+.center_content {
+  margin : 0 auto;
+  overflow-y : scroll;
+  overflow-x : hidden;
+}
+
+.right_content {
+  margin : 0 auto;
+  overflow-y : scroll;
+  overflow-x : hidden;
+}
+
+.profile_bxslider {
+  margin : 0 auto;
+  width : 100%;
+  height : 70%;
+}
+
+.bxslider_title p{
+  margin : 0 auto;
+  height : 10%;
+  text-align : center;
+  font-size : 20px;
+  font-weight : bold;
+  border-bottom : 2px solid red;
+}
+
+.bxslider_content{
+  margin : 0 auto;
+  width : 100%;
+  height : 90%;
+}
+
+.bxslider {
+  margin : 0 auto;
+  width : 100%;
+  height : 100%;
+}
+
+.bxslider li img{
+  width : 100%;
+  height : 100%;
+}

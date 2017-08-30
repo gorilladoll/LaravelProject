@@ -1,0 +1,86 @@
+<div class="right_content">
+  <div class="follow_list_title">
+    <p><strong>판매자 구독리스트</strong></p>
+  </div>
+  <div class="follow_list">
+      <!-- 반복 할 곳이 여기다 여기 -->
+    <div class="follow_list_form">
+      <div class="follow_seller_img">
+        <img src="{{asset('storage/image/apeach.jpg')}}" alt="">
+      </div>
+      <div class="follow_seller_info">
+        <div class="follow_seller_name">
+          <p>울먹이</p>
+          {{-- <p>{{$subscription->name}}</p> --}}
+        </div>
+        <div class="follow_seller_intro">
+          <p>울먹울먹 울먹마켓</p>
+          {{-- <p>{{$subscription->title}}</p> --}}
+        </div>
+      </div>
+      <div class="follow_btn">
+        <button type="button" class="">
+          <a href="#">보기</a>
+        </button>
+      </div>
+    </div>
+      <!--반복 할 곳이 여기까지야 여기 -->
+
+      <!-- 반복 할 곳이 여기다 여기 -->
+    <div class="follow_list_form">
+      <div class="follow_seller_img">
+        <img src="{{asset('storage/image/apeach.jpg')}}" alt="">
+      </div>
+      <div class="follow_seller_info">
+        <div class="follow_seller_intro">
+          <p>싱글벙글 싱글마켓</p>
+          {{-- <p>{{$subscription->title}}</p> --}}
+        </div>
+      </div>
+      <div class="follow_btn">
+        <button type="button" class="">
+          <a href="#">보기</a>
+        </button>
+      </div>
+    </div>
+      <!--반복 할 곳이 여기까지야 여기 -->
+
+      <!-- 반복 할 곳이 여기다 여기 -->
+    <div class="follow_list_form">
+      <div class="follow_seller_img">
+        <img src="{{asset('storage/image/apeach.jpg')}}" alt="">
+      </div>
+      <div class="follow_seller_info">
+        <div class="follow_seller_intro">
+          <p>흐물즈물 흐즈마켓</p>
+          {{-- <p>{{$subscription->title}}</p> --}}
+        </div>
+      </div>
+      <div class="follow_btn">
+        <button type="button" class="">
+          <a href="#">보기</a>
+        </button>
+      </div>
+    </div>
+      <!--반복 할 곳이 여기까지야 여기 -->
+
+      <!-- 반복 할 곳이 여기다 여기 -->
+    <div class="follow_list_form">
+      <div class="follow_seller_img">
+        <img src="{{asset('storage/image/apeach.jpg')}}" alt="">
+      </div>
+      <div class="follow_seller_info">
+        <div class="follow_seller_intro">
+          <p>고구마답답 고답마켓</p>
+          {{-- <p>{{$subscription->title}}</p> --}}
+        </div>
+      </div>
+      <div class="follow_btn">
+        <button type="button" class="">
+          <a href="#">보기</a>
+        </button>
+      </div>
+    </div>
+      <!--반복 할 곳이 여기까지야 여기 -->
+  </div>
+</div>

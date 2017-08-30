@@ -1,0 +1,80 @@
+div {
+  /*border : 1px solid black;*/
+}
+
+table {
+   border-collapse: collapse;
+}
+
+div#flea_detail {
+  padding-top: 50px;
+  width : 1000px;
+  margin : 0px auto;
+  /*border : 1px solid black;*/
+}
+
+div#flea_detail table {
+  width : 100%;
+  /*text-align: left;*/
+}
+
+.flea_detailmain {
+
+}
+
+.flea_detailmain img{
+  width : 250px;
+  height : 300px;
+
+}
+td.detail_img {
+}
+
+td.detail_text {
+  width : 800px;
+  text-align: left;
+  font-size: 25px;
+}
+
+.flea_content {
+  padding-top: 20px;
+  height : 250px;
+  vertical-align: bottom;
+}
+
+.flea_map {
+  padding-top : 20px;
+}
+
+div.flea_buttons {
+  height : 40px;
+  margin-top : 30px;
+  /*border : 1px solid black;*/
+  height : 100%;
+  text-align: center;
+}
+
+div.flea_buttons a {
+  /*width : 200px;*/
+  border : 1px solid black;
+  padding : 5px;
+}
+
+div.flea_comments{
+  border : 1px solid black;
+  margin-top : 30px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+div.flea_comment_num {
+  text-align: left;
+}
+
+div.flea_comment {
+  width : 900px;
+  height : 100px;
+  border : 1px solid black;
+  display: inline-block;
+  margin-bottom: 20px;
+}

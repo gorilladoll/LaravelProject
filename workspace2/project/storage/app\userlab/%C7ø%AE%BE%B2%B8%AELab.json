@@ -1,0 +1,26 @@
+{
+    "clock": {
+        "left": 156,
+        "top": 208
+    },
+    "text": {
+        "left": 356,
+        "top": 208
+    },
+    "stiker": {
+        "left": 556,
+        "top": 208
+    },
+    "textbox": {
+        "left": 756,
+        "top": 208
+    },
+    "timeline": {
+        "left": 556,
+        "top": 408
+    },
+    "friends": {
+        "left": 356,
+        "top": 408
+    }
+}

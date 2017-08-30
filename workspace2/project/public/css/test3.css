@@ -1,0 +1,64 @@
+.main_content {
+  margin : 0 auto;
+  margin-top : 13%;
+  width : 100%;
+  height : 150%;
+  border : 1px solid black;
+}
+
+.background_content{
+  margin : 0 auto;
+  width : 100%;
+  height : 40%;
+  border : 1px solid black;
+}
+
+.background_content_title{
+  margin : 0 auto;
+  width : 60%;
+  height : 25%;
+  position : relative;
+  top : 25%;
+}
+
+.left_content{
+  margin : 0 auto;
+  width : 25%;
+  height : 110%;
+  border : 1px solid black;
+  float : left;
+  border : 1px solid black;
+}
+
+.bx-wrapper, .bx-viewport {
+  margin : 0 auto !important;
+  width : 95% !important;
+  height:  95% !important;
+}
+
+.bx-viewprot ul li img{
+  margin : 0 auto;
+  width : 100%;
+  height : 100%;
+}
+/*하단 왼쪽 콘텐츠의 스타일 리스트*/
+
+.center_content{
+  margin : 0 auto;
+  width : 50%;
+  height : 110%;
+  border : 1px solid black;
+  float : left;
+  border : 1px solid black;
+}
+/*하단 가운데 콘텐츠의 스타일 리스트*/
+
+.right_content{
+  margin : 0 auto;
+  width : 25%;
+  height : 110%;
+  border : 1px solid black;
+  float : left;
+  border : 1px solid black;
+}
+/*하단 오른쪽 콘텐츠의 스타일 리스트*/
