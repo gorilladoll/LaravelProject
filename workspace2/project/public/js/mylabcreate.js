@@ -380,37 +380,110 @@ $(function(){
       }
       else if($(ui.draggable).is($(".drag_sub_profile_object"))){
         $(".main_content").append("<div class='profile_box'></div>");
-        $(".profile_box").append("<div class='profile'></div>");
-        $(".profile").append("<div class='profile_img'>"+"<img src='/storage/image/apeach.jpg'>"+"</div>");
-        $(".profile").append("<div class='profile_name'><p><b>닉네임</b></p></profile_name>");
-        $(".profile").append("<div class='profile_introduce'></div>");
-        $(".profile_introduce").append("<div class='profile_introduce_introduce'><p>&nbsp; 닉네임의 공방입니다<br/><p></div>")
-        $(".main_content").append("<div class='move_some'></div>");
-        $(".move_some").append("<div class='move_goods_btn'><a href='#'>물품보기</a></div>");
-        $(".move_some").append("<div class='move_friends_btn'><a href='#'>친구공방</a></div>");
+        $(".profile_box").append("<div class='profile_1'></div>");
+        $(".profile_1").append("<div class='profile_img_1'>"+"<img src='/storage/image/apeach.jpg'>"+"</div>");
+        $(".profile_1").append("<div class='profile_name_1'><p><b>닉네임</b></p></profile_name>");
+        $(".profile_1").append("<div class='profile_introduce_1'></div>");
+        $(".profile_introduce_1").append("<div class='profile_introduce_introduce_1'><p>&nbsp; 닉네임의 공방입니다<br/><p></div>")
+        $(".profile_box").append("<div class='move_some_1'></div>");
+        $(".move_some_1").append("<div class='move_goods_btn_1'><a href='#'>물품보기</a></div>");
+        $(".move_some_1").append("<div class='move_friends_btn_1'><a href='#'>친구공방</a></div>");
 
 
-        $(".profile").css({
+        $(".profile_box").css({
           "width" : "254px",
-          "height" : "260px",
+          "height" : "360px",
           "position" : "absolute",
           "left" : ui.offset.left - $(this).offset().left,
           "top" : ui.offset.top - $(this).offset().top,
+          "background-color" : "white",
         });
 
-        $(".profile_introduce_introduce").css({
+        $(".profile_1").css({
+          "width" : "100%",
+          "height" : "310px",
+          "text-align": "center",
+          "background-color" : "lightgray",
+          "border-bottom" : "2px solid red"
+        });
+
+        $(".profile_img_1").css({
+          "margin-left" : "0 auto",
+          "width" : "100%",
+          "height" : "200px",
+        });
+
+        $(".profile_img_1 img").css({
+          "margin-top" : "50px",
+          "margin-bottom" : "15px",
+          "width" : "50%",
+          "height" : "55%",
+          "border" : "1px solid gray",
+        });
+
+        $(".profile_name_1").css({
+          "margin-top" : "5px",
+          "border-top" : "2px solid red",
+          "border-bottom" : "2px solid red",
+          "width" : "100%",
+          "font-size" : "15px"
+        });
+
+        $(".profile_introduce_1").css({
+          "margin" : "0 auto",
+          "width" : "100%",
+          "height" : "80px",
+          "background" : "white"
+        });
+
+
+        $(".profile_introduce_introduce_1").css({
           "width" : "100%",
           "height" : "100%",
           "background-color" : "white"
         });
 
-        $(".move_some").css({
-          "width" : "254px",
-          "height" : "50px",
-          "position" : "absolute",
-          "left" : ui.offset.left - $(this).offset().left,
-          "top" : ui.offset.top - $(this).offset().top + 260,
+        $(".profile_name p").css({
+          "margin-top" : "5px",
         });
+
+        $(".move_some").css({
+          "width" : "100%",
+          "height" : "50px",
+          "padding-top" : "5px",
+          "margin-bottom" : "5px",
+          "width" : "100%",
+          "height" : "50px",
+          "border-top" : "1px solid gray"
+        });
+
+        $(".move_goods_btn_1").css({
+          "margin-top" : "5px",
+          "padding-top" : "7px",
+          "width" : "50%",
+          "height" : "45px",
+          "background-color" : "lightgreen",
+          "text-align" : "center",
+          "font-size" : "20px",
+          "border" : "1px solid black",
+          "border-radius" : "10px",
+          "float" : "left"
+        });
+
+        $(".move_friends_btn_1").css({
+          "margin-top" : "5px",
+          "padding-top" : "7px",
+          "width" : "50%",
+          "height" : "45px",
+          "background-color" : "lightgreen",
+          "text-align" : "center",
+          "font-size" : "20px",
+          "border" : "1px solid black",
+          "border-radius" : "10px",
+          "float" : "left"
+        });
+
+        $(ui.draggable).draggable("disable");
       }
     }
   });
