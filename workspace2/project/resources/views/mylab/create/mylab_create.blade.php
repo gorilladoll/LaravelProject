@@ -530,6 +530,7 @@
 
         </div>
       </div>
+    {{-- </div> --}}
 
       <div class="drag_sub_content">
         <div class="content_list_name">
@@ -555,8 +556,12 @@
           <div class="none-space"></div>
 
           <div class="drag_sub_text">
-            <p>텍스트박스</p>
+            <p>제목</p>
             <div class="drag_sub_textbox"></div>
+            <div class="none-space"></div>
+
+            <p>텍스트상자</p>
+            <div class="drag_sub_textarea">
             <div class="none-space"></div>
 
             <p>폰트</p>
@@ -585,29 +590,10 @@
             <p style="font-size:25px; font-weight:normal;" value="normal" class="drag_sub_font_weight">가나다라마바사</p>
             <div class="none-space"></div>
           </div>
-
-          <div class="drag_content_timeline">
-            <p>페이스북 형식</p>
-            <img src="{{asset('/storage/image/center_1.png')}}" alt="drag_sub_timeline" class="drag_sub_timeline_object">
-            <div class="none-space"></div>
-          </div>
-
-          <div class="drag_content_profile">
-            <p>프로필 1</p>
-            <img src="{{asset('/storage/image/left_3.png')}}" alt="drag_sub_profile" class="drag_sub_profile_object">
-            <div class="none-space"></div>
-          </div>
-
-          <div class="drag_content_follow">
-            <p>친구목록 1</p>
-            <img src="{{asset('/storage/image/right_2.png')}}" alt="drag_sub_follow" class="drag_sub_follow_object">
-            <div class="none-space"></div>
-          </div>
         </div>
-        <div class="none-space"></div>
       </div>
-
     </div>
+  </div>
 
     {{-- <div class="droppable_content_main"> --}}
       <div class="background_content">
@@ -947,7 +933,7 @@
             <!--반복 할 곳이 여기까지야 여기 -->
         </div>
       </div>
-    </div>
+    {{-- </div> --}}
   </div>
 
 @endsection

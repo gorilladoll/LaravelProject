@@ -219,3 +219,7 @@
   height : 30px;
   border : 1px solid black;
 }
+
+.drag_sub_content p {
+  width : 100%;
+}

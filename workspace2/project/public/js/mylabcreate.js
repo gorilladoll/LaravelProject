@@ -1,4 +1,5 @@
 $(function(){
+  var count = 1;
   var background_img = "background_1.jpg";
   var left_img = "left_1.png";
   var center_img = "center_1.png";
@@ -20,8 +21,6 @@ $(function(){
   $(".timeline").hide();
   $(".follow_list_title").hide();
   $(".follow_list_form").hide();
-
-
   //기본 요소 숨기기
 
   $(".first_content").click(function(){
@@ -37,6 +36,7 @@ $(function(){
     $(".center_content").show();
     $(".right_content").show();
     $(".drag_main_content").hide();
+    $(".new_input").hide();
   });
   //왼쪽 fixed 요소 첫번째 클릭시
 
@@ -54,6 +54,7 @@ $(function(){
     $(".center_content").show();
     $(".right_content").show();
     $(".drag_main_content").hide();
+    $(".new_input").hide();
   });
   //왼쪽 fixed 요소 두번째 클릭시
 
@@ -70,6 +71,7 @@ $(function(){
     $(".center_content").show();
     $(".right_content").show();
     $(".drag_main_content").hide();
+    $(".new_input").hide();
   });
   //왼쪽 fixed 요소 세번째 클릭시
 
@@ -88,6 +90,7 @@ $(function(){
     $(".center_content").show();
     $(".right_content").show();
     $(".drag_main_content").hide();
+    $(".new_input").hide();
   });
   //왼쪽 fixed 요소 네번째 클릭시
 
@@ -104,6 +107,7 @@ $(function(){
     $(".center_content").hide();
     $(".right_content").hide();
     $(".drag_main_content").show();
+    $(".new_input").show();
     window.alert("원하시는 컨텐츠를 드래그 하세요");
   });
 
@@ -287,7 +291,7 @@ $(function(){
   });
 
   $(".drag_sub_font_style").draggable({
-    accept : $(".drag_sub_textbox"),
+    accept : $(".new_input"),
     grid:[10,10],
     snap: true,
     revert: "invalid",
@@ -296,7 +300,7 @@ $(function(){
   });
 
   $(".drag_sub_font_size").draggable({
-    accept : $(".drag_sub_textbox"),
+    accept : $(".new_input"),
     grid:[10,10],
     snap: true,
     revert: "invalid",
@@ -305,7 +309,7 @@ $(function(){
   });
 
   $(".drag_sub_font_color").draggable({
-    accept : $(".drag_sub_textbox"),
+    accept : $(".new_input"),
     grid:[10,10],
     snap: true,
     revert: "invalid",
@@ -314,34 +318,7 @@ $(function(){
   });
 
   $(".drag_sub_font_weight").draggable({
-    accept : $(".drag_sub_textbox"),
-    grid:[10,10],
-    snap: true,
-    revert: "invalid",
-    cursor: "move",
-    helper : "clone",
-  });
-
-  $(".drag_sub_timeline_object").draggable({
-    accept : $(".main_content"),
-    grid:[10,10],
-    snap: true,
-    revert: "invalid",
-    cursor: "move",
-    helper : "clone",
-  });
-
-  $(".drag_sub_profile_object").draggable({
-    accept : $(".main_content"),
-    grid:[10,10],
-    snap: true,
-    revert: "invalid",
-    cursor: "move",
-    helper : "clone",
-  });
-
-  $(".drag_sub_follow_object").draggable({
-    accept : $(".main_content"),
+    accept : $(".new_input"),
     grid:[10,10],
     snap: true,
     revert: "invalid",
@@ -361,132 +338,78 @@ $(function(){
       }
 
       else if($(ui.draggable).is($(".drag_sub_textbox"))){
-        // var classObject = $(".new_input_"+text_count);
-        $(".main_content").append("<div class='new_input'><input tyle='text' placeholder='공방이름을 입력하세요'></div>")
-        $(".new_input").css({
+        var newDiv = $("<div class='new_input'>");
+        var input = $(".new_input input");
+
+        $(".main_content").append(newDiv);
+        newDiv.append( "<input tyle='text' style='width:90%; height:90%; margin : 5px 25px;' value='input text'>");
+
+        newDiv.css({
           "width" : "500px",
           "height" : "100px",
           "font-size" : "30px",
           "position" : "absolute",
+          "border" : "1px solid black",
           "left" : ui.offset.left - $(this).offset().left,
           "top" : ui.offset.top - $(this).offset().top,
         });
 
-        $(".new_input input").css({
-          "width" : "100%",
-          "height" : "100%"
+        newDiv.draggable({
+          accept : ".main_content",
+          grid : [10,10],
+          snap: true,
+          revert: "invalid",
+          cursor: "move",
         });
-        $(ui.draggable).draggable("disable");
       }
-      else if($(ui.draggable).is($(".drag_sub_profile_object"))){
-        $(".main_content").append("<div class='profile_box'></div>");
-        $(".profile_box").append("<div class='profile_1'></div>");
-        $(".profile_1").append("<div class='profile_img_1'>"+"<img src='/storage/image/apeach.jpg'>"+"</div>");
-        $(".profile_1").append("<div class='profile_name_1'><p><b>닉네임</b></p></profile_name>");
-        $(".profile_1").append("<div class='profile_introduce_1'></div>");
-        $(".profile_introduce_1").append("<div class='profile_introduce_introduce_1'><p>&nbsp; 닉네임의 공방입니다<br/><p></div>")
-        $(".profile_box").append("<div class='move_some_1'></div>");
-        $(".move_some_1").append("<div class='move_goods_btn_1'><a href='#'>물품보기</a></div>");
-        $(".move_some_1").append("<div class='move_friends_btn_1'><a href='#'>친구공방</a></div>");
 
-
-        $(".profile_box").css({
-          "width" : "254px",
-          "height" : "360px",
-          "position" : "absolute",
-          "left" : ui.offset.left - $(this).offset().left,
-          "top" : ui.offset.top - $(this).offset().top,
-          "background-color" : "white",
+      else if($(ui.draggable).is($(".drag_sub_font_style"))){
+        $(".new_input").droppable({
+          drop:function(event,ui){
+            var font_style = $(ui.draggable).attr("value");
+            $(this).css({
+              "font-style" : font_style,
+            });
+          }
         });
-
-        $(".profile_1").css({
-          "width" : "100%",
-          "height" : "310px",
-          "text-align": "center",
-          "background-color" : "lightgray",
-          "border-bottom" : "2px solid red"
-        });
-
-        $(".profile_img_1").css({
-          "margin-left" : "0 auto",
-          "width" : "100%",
-          "height" : "200px",
-        });
-
-        $(".profile_img_1 img").css({
-          "margin-top" : "50px",
-          "margin-bottom" : "15px",
-          "width" : "50%",
-          "height" : "55%",
-          "border" : "1px solid gray",
-        });
-
-        $(".profile_name_1").css({
-          "margin-top" : "5px",
-          "border-top" : "2px solid red",
-          "border-bottom" : "2px solid red",
-          "width" : "100%",
-          "font-size" : "15px"
-        });
-
-        $(".profile_introduce_1").css({
-          "margin" : "0 auto",
-          "width" : "100%",
-          "height" : "80px",
-          "background" : "white"
-        });
-
-
-        $(".profile_introduce_introduce_1").css({
-          "width" : "100%",
-          "height" : "100%",
-          "background-color" : "white"
-        });
-
-        $(".profile_name p").css({
-          "margin-top" : "5px",
-        });
-
-        $(".move_some").css({
-          "width" : "100%",
-          "height" : "50px",
-          "padding-top" : "5px",
-          "margin-bottom" : "5px",
-          "width" : "100%",
-          "height" : "50px",
-          "border-top" : "1px solid gray"
-        });
-
-        $(".move_goods_btn_1").css({
-          "margin-top" : "5px",
-          "padding-top" : "7px",
-          "width" : "50%",
-          "height" : "45px",
-          "background-color" : "lightgreen",
-          "text-align" : "center",
-          "font-size" : "20px",
-          "border" : "1px solid black",
-          "border-radius" : "10px",
-          "float" : "left"
-        });
-
-        $(".move_friends_btn_1").css({
-          "margin-top" : "5px",
-          "padding-top" : "7px",
-          "width" : "50%",
-          "height" : "45px",
-          "background-color" : "lightgreen",
-          "text-align" : "center",
-          "font-size" : "20px",
-          "border" : "1px solid black",
-          "border-radius" : "10px",
-          "float" : "left"
-        });
-
-        $(ui.draggable).draggable("disable");
       }
+
+      else if($(ui.draggable).is($(".drag_sub_font_weight"))){
+        $(".new_input").droppable({
+          drop:function(event,ui){
+            var font_weight = $(ui.draggable).attr("value");
+            $(this).css({
+              "font-weight" : font_weight,
+            });
+          }
+        });
+      }
+
+      else if($(ui.draggable).is($(".drag_sub_font_size"))){
+        $(".new_input").droppable({
+          drop:function(event,ui){
+            var font_size = $(ui.draggable).attr("value");
+            $(this).css({
+              "font-size" : font_size,
+            });
+          }
+        });
+      }
+
+      else if($(ui.draggable).is($(".drag_sub_font_color"))){
+        $(".new_input").droppable({
+          drop:function(event,ui){
+            var font_color = $(ui.draggable).attr("value");
+            $(this).css({
+              "color" : font_color,
+            });
+          }
+        });
+      }
+
     }
   });
+
 
 
 
