@@ -9,9 +9,6 @@ $(document).ready(function(){
     }
   });
 
-  $("#goods_btn_click").click(function(){
-    $("#goods_modal").modal("show");
-  });
 
 // 2017.06.13 화요일 추가됨------------------------------------
   // 물품등록 시 이미지 미리보기
@@ -33,13 +30,13 @@ $(document).ready(function(){
           reader.readAsDataURL(input.files[0]);
       }
   }
-
+  
   // 2017.06.14 수요일 추가됨------------------------------------
-
+  
   // 물품상세보기
   $('.goods_imgs').click(function(){
     var goods_id = $(this).attr("value");    // 물품아이디
-
+                                   
     $.ajax({
       url : '/mylab/goods/detail',
       data : {
@@ -47,50 +44,50 @@ $(document).ready(function(){
       },
       type : 'get',
       success : function(data){
-
+        
         $('.goods_detail_img').empty();   // 비우기
         $('.goods_id').empty();           // 비우기
         $('.review_comment').empty();     // 비우기
-
+        
         var value = JSON.parse(data);        // json데이터 파싱
-
+        
         // 총 평점계산
         var sumStarpoint = 0;
         for(var i = 0 ; i < value['comments'].length ; i++){
           sumStarpoint = sumStarpoint + value['comments'][i]['starpoint'];
         }
-
+        
         var goods_id      = value['info']['goods_id'];              // 물품고유번호
         var goods_name    = value['info']['goods_name'];            // 물품이름
         var filename      = value['info']['img_filename'];          // 물품이미지파일
         var goods_point   = sumStarpoint / value['comments'].length;  // 물품평점
         var user_name     = value['info']['user_name'];             // 마이샵유저이름
-
+        
         var img_file_link = "/storage/image/" + filename;   // 물품이미지 경로
-
+        
         $('.goods_detail_img').append("<img src='" + img_file_link +"' alt=''>"); // 모달창에 물품이미지 동적으로 추가
-
+        
         if(!goods_point){
-          $('.goodsname').append("<p class='goods_id' value='"+goods_id+"'>" + goods_name + "&nbsp;&nbsp; 등록된 평점이 없습니다.</p>");          // 모달창에 물품이름 동적으로 추가
+          $('.goodsname').append("<p class='goods_id' value='"+goods_id+"'>" + goods_name + "&nbsp;&nbsp; 入力した評点がありません！</p>");          // 모달창에 물품이름 동적으로 추가
         } else{
-         $('.goodsname').append("<p class='goods_id' value='"+goods_id+"'>" + goods_name + "&nbsp;&nbsp;"+goods_point.toFixed(2)+"점</p>");          // 모달창에 물품이름 동적으로 추가
+         $('.goodsname').append("<p class='goods_id' value='"+goods_id+"'>" + goods_name + "&nbsp;&nbsp;"+goods_point.toFixed(2)+"点</p>");          // 모달창에 물품이름 동적으로 추가 
         }
-
+        
         // console.log(goods_point.toFixed(2));
-
+        
         if(value['comments']){
           for(var i = value['comments'].length-1 ; i >= 0 ; i--){
             $('.goodsname').after('<div class="review_comment"><p><strong>' + value['info']['user_name'] + '</strong>&nbsp;&nbsp;' + value['comments'][i]['text'] + '&nbsp;&nbsp;</p></div>');
-          }
+          } 
         }
-
+        
         $('#goods_detail_madal').modal('show');   // 모달창 보이기
       },
       error : function() {
-        alert("서버에 연결할 수 없습니다.");
+        alert("サーバーエラー");
       }
     });
-
+    
   });
 
 
@@ -100,7 +97,7 @@ $(document).ready(function(){
 
     // 카테고리이름을 입력하지않았다면
     if(!input_category){
-      alert("카테고리를 입력해주세요");
+      alert("カテゴリーを入力してください！");
 
     } else{   // 카테고리 이름을 입력했다면
       $('.add_category1').append("<div class='category_name'> - <p>"+input_category+ "</p></div>");
@@ -115,7 +112,7 @@ $(document).ready(function(){
 
     // 카테고리를 입력하지않고 버튼을 눌렀을 때
     if(!category){
-      alert('추가할 카테고리가 없습니다.');
+      alert('追加するカテゴリーがありません！');
 
 
     } else{
@@ -143,7 +140,7 @@ $(document).ready(function(){
     var categoryAdd = $('.add_category2').find('div').text();
 
     if(!categoryAdd){
-      alert("수정할 카테고리가 없습니다.");
+      alert("修正するカテゴリーがありません！");
 
     } else{
       // 카테고리들 배열 저장
@@ -161,29 +158,29 @@ $(document).ready(function(){
                         $('#category_modal').modal('hide');
 
                       } else {
-                        alert('DB오류');
+                        alert('DBエラー');
                       }
                     },
         error     : function(){
-                      alert('서버오류');
+                      alert('サーバーエラー');
                     }
       });
     }
   });
 
 
-  // $('.kv-ltr-theme-svg-star').rating({
-  //     hoverOnClear: false,
-  //     theme           : 'krajee-svg',
-  //     containerClass  : 'is-star',
-  //     filledStar      : '<span class="krajee-icon krajee-icon-star"></span>',
-  //     emptyStar       : '<span class="krajee-icon krajee-icon-star"></span>',
-  //     defaultCaption  : '{rating} star',
-  //     starCaptions    : function (rating) {
-  //                         return rating == 1 ? 'One star' : rating + ' stars';
-  //                       }
-  //
-  // });
+  $('.kv-ltr-theme-svg-star').rating({
+      hoverOnClear: false,
+      theme           : 'krajee-svg',
+      containerClass  : 'is-star',
+      filledStar      : '<span class="krajee-icon krajee-icon-star"></span>',
+      emptyStar       : '<span class="krajee-icon krajee-icon-star"></span>',
+      defaultCaption  : '{rating} star',
+      starCaptions    : function (rating) {
+                          return rating == 1 ? 'One star' : rating + ' stars';
+                        }
+
+  });
 
 
   $('#goods_comment_btn').click(function(){
@@ -191,19 +188,19 @@ $(document).ready(function(){
 
     var starpoint = $('#input-0-ltr-star-xs').val();        // 평점
     var comment   = $('input[name=goods_comment]').val();   // 댓글
-
+    
     if(!starpoint && !comment){
-      alert('댓글을 입력해주세요.');
+      alert('コメントしてください！');
 
     } else if(!comment){
-      alert('댓글을 입력해주세요.');
+      alert('コメントしてください！');
 
     } else if(!starpoint){
-      alert('평점을 선택해주세요.');
+      alert('評点してください！');
 
     } else{ // 리뷰 및 평점을 다 쓰고 입력버튼을 눌렀을 때
       // 게시글아이디, 게시글주인아이디, 유저아이디, 댓글, 평점 을 ajax로 보냄
-
+      
       $.ajax({
 
         url         : '/mylab/goods/comment',
@@ -216,7 +213,7 @@ $(document).ready(function(){
         dataType    : 'json',
         // dataType    : 'jsonp',
         success     : function(data){
-
+                
                         // 댓글쓴유저이름, 댓글내용을 가져와야함
                         $('.review_comments').append('<div class="review_comment"><p><strong>' + data['user_name'] + '</strong>&nbsp;&nbsp;' + data['text'] + '</p></div>');
                         $('#input-0-ltr-star-xs').empty();
@@ -224,7 +221,7 @@ $(document).ready(function(){
                       },
         error       : function(e) {
           console.log(e);
-                        alert('서버에 연결할 수 없습니다.');
+                        alert('サーバーエラー');
                       }
       });
 

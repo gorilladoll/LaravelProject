@@ -108,5 +108,21 @@ class myshopTableSeeder extends Seeder
             'ticket' => NULL,
         ]);
         
+        DB::table('myshops')->insert([
+            'user_id' => 7,
+            'lab_name' => '테스트6의 공방',
+            'background_img' => 'background_1.jpg',
+            'left_img'=>'left_1.png',
+            'center_img'=>'center_1.png',
+            'right_img'=>'rigth_1.png',
+            'font_style'=>'normal',
+            'font_size'=>'30',
+            'font_color'=>'gray',
+            'font_weight'=>'0',
+            'max_sellpoint' => NULL,
+            'min_sellpoint' => NULL,
+            'join_count' => NULL,
+            'ticket' => NULL,
+        ]);
     }
 }

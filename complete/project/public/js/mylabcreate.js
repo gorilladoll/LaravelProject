@@ -108,7 +108,7 @@ $(function(){
     $(".right_content").hide();
     $(".drag_main_content").show();
     $(".new_input").show();
-    window.alert("원하시는 컨텐츠를 드래그 하세요");
+    window.alert("イメージをドラックして自分のアトリエを作りましょう。");
   });
 
   $(".cancel_content").click(function(){
@@ -342,7 +342,7 @@ $(function(){
         var input = $(".new_input input");
 
         $(".main_content").append(newDiv);
-        newDiv.append( "<input tyle='text' style='width:90%; height:90%; margin : 5px 25px;' value='input text'>");
+        newDiv.append( "<input tyle='text' style='width:90%; height:90%; margin : 5px 25px;' value='内容を入れてください。'>");
 
         newDiv.css({
           "width" : "500px",

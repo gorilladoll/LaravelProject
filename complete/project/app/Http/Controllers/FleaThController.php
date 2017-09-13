@@ -21,8 +21,8 @@ class FleaThController extends Controller
         $flea_data = DB::table('fleamarkets')->where('host_id','=',$user_id)->where('flea_name','=',$group_name)->get();
         $idNum = json_decode($flea_data, true);
         $flea_id = DB::table('flea_ths')->where('flea_id','=',$idNum[0]['id'])->count();
-        return $flea_id;
-
+        $flea_id++;
+        //return $flea_id;
         return view('contents.flea.flea_open')->with('flea_data',$flea_data)->with('user_id',$user_id)
                                               ->with('group_name',$group_name)->with('flea_id',$flea_id)
                                               ->with('flea_num',$flea_data[0]->id);
@@ -30,8 +30,8 @@ class FleaThController extends Controller
     }
 
     
-    function newFlea(Request $req){
-        $user_id = $req->get('user_id');
+    function newFleaBackup(Request $req){
+        // return $user_id = $req->get('user_id');
         $start_date = $req->get('date_start');
         $end_date = $req->get('date_end');
         $start_time_hour = $req->get('start_time_hour');
@@ -51,47 +51,179 @@ class FleaThController extends Controller
         $time3 = $req->get('end_time_first');
         $apply_end = "$time3";
 
-        return $flea_th = $req->get('flea_th'); //현재 몇회차인지
+        $flea_th = $req->get('flea_th'); //현재 몇회차인지
 
-        // // 설문조사 등록된거 불러와서 배열화
-        // $surveyLength = $req->get('invoked_body_hidden');
-        // $surveyArr = array();
-        // for($i =0; $i < $surveyLength; $i++){
-        //     $surveyArr[$i] = array();
-        //     $exampleLength = $req->get('exampleLength_'.$i);
-        //     $surveyArr[$i]['quastion'] = $req->get('quastion_'.$i);
-        //     for($j = 1; $j <= $exampleLength; $j++){
-        //         $surveyArr[$i][$j] = $req->get('example_'.$i.'_'.($j - 1));
-        //     }
-        // }
+        // 설문조사 등록된거 불러와서 배열화
+        $surveyLength = $req->get('invoked_body_hidden');
+        $surveyArr = array();
+        for($i =0; $i < $surveyLength; $i++){
+            $surveyArr[$i] = array();
+            $exampleLength = $req->get('exampleLength_'.$i);
+            $surveyArr[$i]['quastion'] = $req->get('quastion_'.$i);
+            for($j = 1; $j <= $exampleLength; $j++){
+                $surveyArr[$i][$j] = $req->get('example_'.$i.'_'.($j - 1));
+            }
+        }
 
 
-        // // return $surveyArr;
+        // return $surveyArr;
         
 
-        // // return $test = DB::table('goods')->limit(1)->orderBy('id','DESC')->get();
+        // return $test = DB::table('goods')->limit(1)->orderBy('id','DESC')->get();
+
+
+        $a = 0;
+        for($i = 0, $length = count($surveyArr); $i < $length; $i++){
+            $surveyQuastion = new SurveyQuastion;
+            $surveyQuastion->th_id = $flea_th;
+            $surveyQuastion->text = $surveyArr[$i]['quastion'];
+            $surveyQuastion->save();
+            $lastSurveyQ = DB::table('survey_quastions')->limit(1)->orderBy('id','DESC')->get();
+            
+            foreach($surveyArr[$i] as $key => $value){
+            //  return $surveyArr[$i];
+                if($key != "quastion"){
+                    // return $key;
+                    DB::insert('insert into survey_quastions(th_id, text, created_at, updated_at) values (?, ?,?,?)',
+                    array($flea_th, $surveyArr[$i][$key], date("Y-m-d H:i:s"), date("Y-m-d H:i:s")));
+                    $lastSurveyE = DB::table('survey_quastions')->limit(1)->orderBy('id','DESC')->get();
+                    DB::insert('insert into survey_examples(table_id, parent_id, created_at, updated_at) values (?, ?,?,?)',
+                    array($lastSurveyE[0]->id, $lastSurveyQ[0]->id, date("Y-m-d H:i:s"), date("Y-m-d H:i:s")));
+                }
+            }
+        }
+
+        $dateTest = date('h:i', strtotime($start_time_hour.":".$start_time_min));
+
+        if(!$start_date || !$end_date || !$category || !$entry_fee || !$booth_fee || !$com || !$text ){
+            echo "<script>alert('공백없이 입력해주세요!');
+                    history.go(-1);</script>";
+        }
+
+        $FleaTh = new flea_th;
+
+        $FleaTh->flea_id = $flea_id;
+        $FleaTh->booth_quantity = 0;
+        $FleaTh->start_year_month = date('Y-m',strtotime($start_date));
+        $FleaTh->start_day = date('d',strtotime($start_date));
+        $FleaTh->end_year_month = date('Y-m',strtotime($end_date));
+        $FleaTh->end_day = date('d',strtotime($end_date));
+        $FleaTh->start_time = date('h:i', strtotime($start_time_hour.":".$start_time_min));
+        $FleaTh->end_time = date('h:i', strtotime($stop_time_hour.":".$stop_time_min));
+        $FleaTh->entry_fee = $entry_fee;
+        $FleaTh->booth_fee = $booth_fee;
+        $FleaTh->commission = $com;
+
+        $FleaTh->text = $text;
+        $FleaTh->topic = $category;
+        $FleaTh->th = $flea_th;
+        $FleaTh->recruit_start_time = $apply_start;
+        $FleaTh->recruit_end_time = $apply_end;
+        $FleaTh->block_plan = 0;
+
+        $FleaTh->save();
+
+
+
+        //return redirect()->action('BoothController@planList', ['flea_id' => $flea_id,'flea_th' => $flea_th]);
+        // echo "<script>alert('개최가 완료되었습니다.');
+        //     location.href='/fleamarket/main';
+        // </script>";
+        // return 0;
+        return redirect('/booth/open')->with('flea_th',$flea_th)->with('flea_id',$flea_id);
+        //return $flea_id;
+    }
+    
+     function newFlea(Request $req){
+        // return $user_id = $req->get('user_id');
+        $start_date = $req->get('date_start');
+        $end_date = $req->get('date_end');
+        $start_time_hour = $req->get('start_time_hour');
+        $start_time_min = $req->get('start_time_min');
+        $stop_time_hour = $req->get('stop_time_hour');
+        $stop_time_min = $req->get('stop_time_min');
+        $category = $req->get('category');
+        $entry_fee = $req->get('entry_fee');
+        $booth_fee = $req->get('booth_fee');
+        $com = $req->get('com');
+        $text = $req->get('flea_text');
+
+        $flea_id = (int)$req->get('flea_id');
+
+        $time = $req->get('time_first');
+        $apply_start = "$time";
+        $time3 = $req->get('end_time_first');
+        $apply_end = "$time3";
+
+        $flea_th = $req->get('flea_th'); //현재 몇회차인지
+
+        // 설문조사 등록된거 불러와서 배열화
+        $surveyLength = $req->get('invoked_body_hidden');
+        $surveyArr = array();
+        for($i =0; $i < $surveyLength; $i++){
+            $surveyArr[$i] = array();
+            $exampleLength = $req->get('exampleLength_'.$i);
+            $surveyArr[$i]['quastion'] = $req->get('quastion_'.$i);
+            for($j = 1; $j <= $exampleLength; $j++){
+                $surveyArr[$i][$j] = $req->get('example_'.$i.'_'.($j - 1));
+            }
+        }
+
+        
+        // return $surveyArr;
+        
+
+        // return $test = DB::table('goods')->limit(1)->orderBy('id','DESC')->get();
 
 
         // $a = 0;
-        // for($i = 0, $length = count($surveyArr); $i < $length; $i++){
-        //     $surveyQuastion = new SurveyQuastion;
-        //     $surveyQuastion->th_id = $flea_th;
-        //     $surveyQuastion->text = $surveyArr[$i]['quastion'];
-        //     $surveyQuastion->save();
-        //     $lastSurveyQ = DB::table('survey_quastions')->limit(1)->orderBy('id','DESC')->get();
+        
+
+        $FleaTh = new flea_th;
+
+        $FleaTh->flea_id = $flea_id;
+        $FleaTh->booth_quantity = 0;
+        $FleaTh->start_year_month = date('Y-m',strtotime($start_date));
+        $FleaTh->start_day = date('d',strtotime($start_date));
+        $FleaTh->end_year_month = date('Y-m',strtotime($end_date));
+        $FleaTh->end_day = date('d',strtotime($end_date));
+        $FleaTh->start_time = date('h:i', strtotime($start_time_hour.":".$start_time_min));
+        $FleaTh->end_time = date('h:i', strtotime($stop_time_hour.":".$stop_time_min));
+        $FleaTh->entry_fee = $entry_fee;
+        $FleaTh->booth_fee = $booth_fee;
+        $FleaTh->commission = $com;
+
+        $FleaTh->text = $text;
+        $FleaTh->topic = $category;
+        $FleaTh->th = $flea_th;
+        $FleaTh->recruit_start_time = $apply_start;
+        $FleaTh->recruit_end_time = $apply_end;
+        $FleaTh->block_plan = 0;
+
+        $FleaTh->save();
+        
+        $flea_th_info = DB::table('flea_ths')->select('id')->limit(1)->orderBy('id','DESC')->get();
+        
+        for($i = 0, $length = count($surveyArr); $i < $length; $i++){
+            $surveyQuastion = new SurveyQuastion;
+            // $surveyQuastion->th_id = $flea_th;
+            $surveyQuastion->th_id = $flea_th_info[0]->id;
+            $surveyQuastion->text = $surveyArr[$i]['quastion'];
+            $surveyQuastion->save();
+            $lastSurveyQ = DB::table('survey_quastions')->limit(1)->orderBy('id','DESC')->get();
             
-        //     foreach($surveyArr[$i] as $key => $value){
-        //     //  return $surveyArr[$i];
-        //         if($key != "quastion"){
-        //             // return $key;
-        //             DB::insert('insert into survey_quastions(th_id, text, created_at, updated_at) values (?, ?,?,?)',
-        //             array($flea_th, $surveyArr[$i][$key], date("Y-m-d H:i:s"), date("Y-m-d H:i:s")));
-        //             $lastSurveyE = DB::table('survey_quastions')->limit(1)->orderBy('id','DESC')->get();
-        //             DB::insert('insert into survey_examples(table_id, parent_id, created_at, updated_at) values (?, ?,?,?)',
-        //             array($lastSurveyE[0]->id, $lastSurveyQ[0]->id, date("Y-m-d H:i:s"), date("Y-m-d H:i:s")));
-        //         }
-        //     }
-        // }
+            foreach($surveyArr[$i] as $key => $value){
+            //  return $surveyArr[$i];
+                if($key != "quastion"){
+                    // return $key;
+                    DB::insert('insert into survey_quastions(th_id, text, created_at, updated_at) values (?,?,?,?)',
+                    array($flea_th_info[0]->id, $surveyArr[$i][$key], date("Y-m-d H:i:s"), date("Y-m-d H:i:s")));
+                    $lastSurveyE = DB::table('survey_quastions')->limit(1)->orderBy('id','DESC')->get();
+                    DB::insert('insert into survey_examples(table_id, parent_id, created_at, updated_at) values (?,?,?,?)',
+                    array($lastSurveyE[0]->id, $lastSurveyQ[0]->id, date("Y-m-d H:i:s"), date("Y-m-d H:i:s")));
+                }
+            }
+        }
 
         // $dateTest = date('h:i', strtotime($start_time_hour.":".$start_time_min));
 
@@ -99,39 +231,39 @@ class FleaThController extends Controller
         //     echo "<script>alert('공백없이 입력해주세요!');
         //             history.go(-1);</script>";
         // }
+        
 
-        // $FleaTh = new flea_th;
+        //return redirect()->action('BoothController@planList', ['flea_id' => $flea_id,'flea_th' => $flea_th]);
+        // echo "<script>alert('개최가 완료되었습니다.');
+        //     location.href='/fleamarket/main';
+        // </script>";
+        // return 0;
+        
+        // $flea_id = Session::get('flea_id');
+        // $flea_th = Session::get('flea_th');
 
-        // $FleaTh->flea_id = $flea_id;
-        // $FleaTh->booth_quantity = 0;
-        // $FleaTh->start_year_month = date('Y-m',strtotime($start_date));
-        // $FleaTh->start_day = date('d',strtotime($start_date));
-        // $FleaTh->end_year_month = date('Y-m',strtotime($end_date));
-        // $FleaTh->end_day = date('d',strtotime($end_date));
-        // $FleaTh->start_time = date('h:i', strtotime($start_time_hour.":".$start_time_min));
-        // $FleaTh->end_time = date('h:i', strtotime($stop_time_hour.":".$stop_time_min));
-        // $FleaTh->entry_fee = $entry_fee;
-        // $FleaTh->booth_fee = $booth_fee;
-        // $FleaTh->commission = $com;
+        // $user_name = $req->session()->get('user');
+        // $user_id = $user_name['id'];
+        // $plan = DB::table('block_plans')->where('user_id','=',$user_id)->get();
 
-        // $FleaTh->text = $text;
-        // $FleaTh->topic = $category;
-        // $FleaTh->th = $flea_th;
-        // $FleaTh->recruit_start_time = $apply_start;
-        // $FleaTh->recruit_end_time = $apply_end;
-        // $FleaTh->block_plan = 0;
-
-        // $FleaTh->save();
-
-
-
-        // //return redirect()->action('BoothController@planList', ['flea_id' => $flea_id,'flea_th' => $flea_th]);
-        // // echo "<script>alert('개최가 완료되었습니다.');
-        // //     location.href='/fleamarket/main';
-        // // </script>";
-        // // return 0;
-        // return redirect('/booth/open')->with('flea_th',$flea_th)->with('flea_id',$flea_id);
-        // //return $flea_id;
+        // return view('contents/flea/flea_plan_list')->with('user_plans',$plan)->with('user_info',$user_name)->with('user',$user_name)
+        //     ->with('flea_id',$flea_id)->with('flea_th',$flea_th);
+        
+        // $result = array(
+        //     'user_plans' => $plan,
+        //     'user_info' => $user_name,
+        //     'user' => $user_name,
+        //     'flea_id' => $flea_id,
+        //     'flea_th' => $flea_th
+        // );
+        
+        // $result = "success";
+        // $callback = $req->input('callback');
+        // echo $callback."(".json_encode($result).")";
+        
+        return redirect('/booth/open')->with('flea_th',$flea_th)->with('flea_id',$flea_id);
+        //return $flea_id;
+        return;
     }
 
     function viewFleaTh(Request $req,$flea_id){
@@ -185,24 +317,21 @@ class FleaThController extends Controller
         // 조인 후 값 가져오기.
         // booths 테이블+유저 이름
         //return $booths_join2;
-        //return $fleamarkets;
         //return view('contents.flea.flea_page')->with('booths',$booths);
+        // return view('contents.test')->with('flea_th',$flea_th)->with('flea',$flea)->with('user_id',$user_id)
+        //                                       ->with('comments',$comments)->with('booths',$booths_join)
+        //                                       ->with('users',$booths_user)->with('flea_info',$fleamarkets)->with('booth_name',$booth_name)->with('applys',$applys)
+        //                                       ->with('booths2',$booths_join2);
         return view('contents.flea.flea_page')->with('flea_th',$flea_th)->with('flea',$flea)->with('user_id',$user_id)
                                               ->with('comments',$comments)->with('booths',$booths_join)
                                               ->with('users',$booths_user)->with('flea_info',$fleamarkets)->with('booth_name',$booth_name)->with('applys',$applys)
                                               ->with('booths2',$booths_join2);
-        //return $booth_name[0]->plan_name;
-        //return $flea_th;
-        //return $booths_join;
-        //return $booth_name;
-        //return $fleamarkets;
-        //return $booths;
     }
 
     function ViewFleamarkets(Request $req){
         $fleamarketInfo = DB::table('fleamarkets')->join('flea_ths','flea_ths.flea_id','=','fleamarkets.id')
         ->select('fleamarkets.flea_name','flea_ths.id','flea_ths.th','flea_ths.start_year_month','flea_ths.start_day','flea_ths.start_time',
-        'flea_ths.end_time','fleamarkets.image_name','fleamarkets.location','flea_ths.text')->paginate(6);
+        'flea_ths.end_time','fleamarkets.image_name','fleamarkets.location','flea_ths.text')->orderBy('flea_ths.id', 'desc')->paginate(8);
         
         $user_id = $req->session()->get('user');
         $host_id = $user_id['id'];

@@ -124,8 +124,6 @@ class BoothController extends Controller
         $t_left = $req->get('t_left');
         Session::put('booth_name',$booth_name);
 
-        // return $booth_name;
-
         DB::table('booths')->where('user_name','=',$user_name)->where('booth_name','=',$booth_name)->delete();
 
         $boothArr = $req->input('boothArr');
@@ -200,43 +198,43 @@ class BoothController extends Controller
         
         // return $applySeller;
         
-        for($i = 0, $count1 = 0, $length = count($recommendInfo); $i < $length; $i++){
+        // for($i = 0, $count1 = 0, $length = count($recommendInfo); $i < $length; $i++){
             
-            for($j = 0; $j < count($applySeller); $j++){
-                if($recommendInfo[$i]->main_use_buy_category == $applySeller[$j]->category){
-                    $pickOutCategory["user_".$recommendInfo[$i]->buyer_id][$count1] = array(
-                        "seller_id" =>$applySeller[$j]->user_id,
-                        "category"  =>$applySeller[$j]->category,
-                        "myshop_id"  =>$applySeller[$j]->myshop_id,
-                        "th_id"  =>$th_id,
-                        "modified_date" => date('Y-m-d H:i:s')
-                    );
-                    $count1++;
-                }    
-            }
-            $count1 = 0;
-        }
+        //     for($j = 0; $j < count($applySeller); $j++){
+        //         if($recommendInfo[$i]->main_use_buy_category == $applySeller[$j]->category){
+        //             $pickOutCategory["user_".$recommendInfo[$i]->buyer_id][$count1] = array(
+        //                 "seller_id" =>$applySeller[$j]->user_id,
+        //                 "category"  =>$applySeller[$j]->category,
+        //                 "myshop_id"  =>$applySeller[$j]->myshop_id,
+        //                 "th_id"  =>$th_id,
+        //                 "modified_date" => date('Y-m-d H:i:s')
+        //             );
+        //             $count1++;
+        //         }    
+        //     }
+        //     $count1 = 0;
+        // }
         
-        // return $settedSeller;
-        // return $pickOutCategory;
-        foreach($pickOutCategory as $key => $value){
-            $count = 0;
-            if(!file_exists("user_recommend/alarm_user_".explode('_',$key)[1].".json")){
-                $json = array(
-                    $key => array($value[0])
-                );
-            }else{
-                $json = json_decode( file_get_contents("user_recommend/alarm_user_".explode('_',$key)[1].".json"),true);
-                // return $json['user_5'];
-                for($i = 0; $i < count($json[$key]); $i++){
-                    $json[$key][$i]['modified_date'] = date('Y-m-d H:i:s');
-                }
-                array_push($json[$key],$value[0]);
-                unlink("user_recommend/alarm_user_".explode('_',$key)[1].".json");
-            }
-            file_put_contents("user_recommend/alarm_user_".explode('_',$key)[1].".json", json_encode($json));
-            // return $value;
-        }
+        // // return $settedSeller;
+        // // return $pickOutCategory;
+        // foreach($pickOutCategory as $key => $value){
+        //     $count = 0;
+        //     if(!file_exists("user_recommend/alarm_user_".explode('_',$key)[1].".json")){
+        //         $json = array(
+        //             $key => array($value[0])
+        //         );
+        //     }else{
+        //         $json = json_decode( file_get_contents("user_recommend/alarm_user_".explode('_',$key)[1].".json"),true);
+        //         // return $json['user_5'];
+        //         for($i = 0; $i < count($json[$key]); $i++){
+        //             $json[$key][$i]['modified_date'] = date('Y-m-d H:i:s');
+        //         }
+        //         array_push($json[$key],$value[0]);
+        //         unlink("user_recommend/alarm_user_".explode('_',$key)[1].".json");
+        //     }
+        //     file_put_contents("user_recommend/alarm_user_".explode('_',$key)[1].".json", json_encode($json));
+        //     // return $value;
+        // }
         
         // return $pickOutCategory;
         // return $recommendInfo;

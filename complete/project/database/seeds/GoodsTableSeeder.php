@@ -13,33 +13,33 @@ class GoodsTableSeeder extends Seeder
     {
         //
          App\Good::create([ 
-            'name' => '다크 초콜릿',
+            'name' => 'ブラックチョコレート',
             'myshop_id' => 1,
-            'category' => '초콜릿'
+            'category' => 'チョコレート'
         ]);
 
         App\Good::create([  
-            'name' => '화이트 초콜릿',
+            'name' => 'ホワイト・チョコレート',
             'myshop_id' => 1,
-            'category' => '초콜릿'
+            'category' => 'チョコレート'
         ]);
 
         App\Good::create([  
-            'name' => '파베 초콜릿',
+            'name' => 'トリュフチョコレート',
             'myshop_id' => 1,
-            'category' => '초콜릿'
+            'category' => 'チョコレート'
         ]);
 
         App\Good::create([  
-            'name' => '쉘 초콜릿',
+            'name' => 'シェルチョコレート',
             'myshop_id' => 1,
-            'category' => '초콜릿'
+            'category' => 'チョコレート'
         ]);
 
         App\Good::create([  
-            'name' => '잔두야 초콜릿',
+            'name' => 'ジャンドゥーヤチョコレート',
             'myshop_id' => 1,
-            'category' => '초콜릿'
+            'category' => 'チョコレート'
         ]);
         
         

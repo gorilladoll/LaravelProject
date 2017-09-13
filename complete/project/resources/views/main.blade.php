@@ -97,7 +97,7 @@
 @section('content')
       <!-- 컨텐츠 부분(플리마켓 정보, 판매자 정보, 벼룩가이드, 마일리지 샵) --->
         <div class="title_img">
-            <img src='/img/title_v4.jpg' style="width:100%; height:auto; ">
+            <img src='/img/title_v5.png' style="width:100%; height:auto; ">
           </div>
         <div id="fleamarket">
           <!-- 플리마켓  -->
@@ -109,7 +109,7 @@
                 <div class="market_list">
                   <ul>
                     <div class="best_market_contents">
-                      <a href="#"><img src="/img/fleamarket/poster_01.jpg" alt=""></a>
+                      <a href="#"><img src="/img/fleamarket/poster_jp_01.png" alt=""></a>
                       <div class="best_market_contents_explains">
                         <li class="text-center">1인 창조기업 플리마켓 1TH</li>
                         <li>서울특별시 서대문구 창천동 창천문화공원</li>
@@ -118,7 +118,7 @@
                       </div>
                     </div>
                     <div class="best_market_contents">
-                     <a href="#"><img src="/img/fleamarket/poster_02.jpg" alt=""></a>
+                     <a href="#"><img src="/img/fleamarket/poster_jp_02.jpg" alt=""></a>
                      <div class="best_market_contents_explains">
                         <li class="text-center">모두와#애플뮤직 플리마켓 1TH</li>
                         <li>충주시 성서동</li>
@@ -127,7 +127,7 @@
                       </div>
                     </div>
                     <div class="best_market_contents">
-                     <a href="#"><img src="/img/fleamarket/poster_03.jpg" alt=""></a>
+                     <a href="#"><img src="/img/fleamarket/poster_jp_03.jpg" alt=""></a>
                      <div class="best_market_contents_explains">
                         <li class="text-center">MINT SHOP 1TH</li>
                         <li>서울특별시 마포구 합정동 355-11 1F</li>
@@ -136,7 +136,7 @@
                       </div>
                     </div>
                     <div class="best_market_contents">
-                     <a href="#"><img src="/img/fleamarket/poster_04.jpg" alt=""></a>
+                     <a href="#"><img src="/img/fleamarket/poster_jp_04.PNG" alt=""></a>
                      <div class="best_market_contents_explains">
                         <li class="text-center">아나마스 플리마켓</li>
                         <li>대구광역시 중구 공평동</li>
@@ -147,16 +147,16 @@
                     <div class="clear"></div>
                     <br><br><br><br>
                     <div class="best_market_contents" style="margin-left:-40px;">
-                      <a href="#"><img src="/img/fleamarket/poster_05.jpg" alt=""></a>
+                      <a href="#"><img src="/img/fleamarket/poster_jp_05.png" alt=""></a>
                     </div>
                     <div class="best_market_contents">
-                     <a href="#"><img src="/img/fleamarket/poster_06.jpg" alt=""></a>
+                     <a href="#"><img src="/img/fleamarket/poster_jp_06.jpg" alt=""></a>
                     </div>
                     <div class="best_market_contents">
-                     <a href="#"><img src="/img/fleamarket/poster_07.jpg" alt=""></a>
+                     <a href="#"><img src="/img/fleamarket/poster_jp_07.jpg" alt=""></a>
                     </div>
                     <div class="best_market_contents">
-                     <a href="#"><img src="/img/fleamarket/poster_08.jpg" alt=""></a>
+                     <a href="#"><img src="/img/fleamarket/poster_jp_08.jpg" alt=""></a>
                     </div>
                   </ul>
                 </div>
@@ -166,7 +166,7 @@
           <div class="flea_list">
               <div class="flea_contents">
                 <div class="flea_content_text">
-                  <h3>인기판매자</h3>
+                  <h3>人気出店者</h3>
                 </div>
                 <div class="market_list">
                   <ul>
@@ -181,7 +181,7 @@
           <div class="flea_list">
               <div class="flea_contents">
                 <div class="flea_content_text">
-                  <h3>인기 물품</h3>
+                  <h3>人気商品</h3>
                 </div>
                 <div class="market_list">
                   <ul>

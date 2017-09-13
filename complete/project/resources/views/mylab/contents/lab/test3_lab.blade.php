@@ -14,6 +14,7 @@
       margin : 0 auto;
       width : 1280px;
       height : 1200px;
+      font-family:'interparkM','interparkMEot';
       border : 1px solid lightgray;
     }
 
@@ -111,12 +112,17 @@
       padding-top : 7px;
       width : 50%;
       height : 45px;
-      background-color : lightgreen;
+      background-color : rgb(217, 83, 79);
       text-align : center;
       font-size : 20px;
+      color : white;
       border : 1px solid black;
       border-radius : 10px;
       float : left;
+    }
+    
+    .move_goods_btn a {
+      color : white;
     }
 
     .move_friends_btn {
@@ -125,12 +131,17 @@
       padding-top : 7px;
       width : 50%;
       height : 45px;
-      background-color : lightgreen;
+      background-color : rgb(217, 83, 79);
       text-align : center;
+      color : white;
       font-size : 20px;
       border : 1px solid black;
       border-radius : 10px;
       float : left;
+    }
+    
+    .move_friends_btn a {
+      color : white;
     }
 
     .bxslider_title {
@@ -216,10 +227,11 @@
     button {
       width : 10%;
       height : 85%;
-      background-color : lightblue;
+      background-color : rgb(217, 83, 79);
       font-size : 25px;
       color : gray;
       float : left;
+      color : white;
       border-left : 1px solid black;
       border-top : 1px solid black;
       border-right : 1px solid lightgray;
@@ -407,10 +419,15 @@
       margin : 0 auto;
       width : 100%;
       height : 100%;
-      background-color : lightpink;
+      background-color : rgb(217, 83, 79);
       text-align : center;
+      text-decoration : white;
       font-size : 15px;
       font-weight : bold;
+    }
+    
+    .follow_btn button a {
+      color : white;
     }
   </style>
 @endsection
@@ -420,7 +437,7 @@
     <div class="background_content">
       <div class="background_content_title">
         <p>
-          Double O 오픈공방
+          Double O フリマー<br/>
         </p>
       </div>
     </div>
@@ -428,7 +445,7 @@
     <div class="left_content">
       <div class="profile">
         <div class="profile_img">
-          <img src="{{asset('storage/image/profile1.png')}}" alt="">
+          <img src="{{asset('storage/image/profile7.jpg')}}" alt="">
         </div>
         <div class="profile_name">
           <p>
@@ -440,8 +457,8 @@
       <div class="profile_introduce">
         <div class="profile_introduce_introduce">
           <p>
-            &nbsp;Double O의 공방입니다<br/>
-            &nbsp;잘 부탁드려요
+            &nbsp;Double Oのアトリエです。<br/>
+            &nbsp;宜しくお願いします。
           </p>
         </div>
       </div>
@@ -449,16 +466,16 @@
 
       <div class="move_some">
         <div class="move_goods_btn">
-          <a href="{{url('/mylab/goods')}}">물품보기</a>
+          <a href="{{url('/mylab/goods')}}">商品閲覧</a>
         </div>
 
         <div class="move_friends_btn">
-          <a href="{{url('/mylab/follow')}}">친구공방</a>
+          <a href="{{url('/mylab/follow')}}">友達閲覧</a>
         </div>
       </div>
 
       <div class="bxslider_title">
-        <p>판매자의 물품</p>
+        <p>商品リスト</p>
       </div>
       <div class="bxslider_content">
         <ul class="bxslider">
@@ -481,7 +498,7 @@
               <option value="cloth">옷</option>
             </select>
             <select class="form-control Parent" name="form_control_parent">
-              <option value="timeline">타임라인</option>
+              <option value="timeline">タイムライン</option>
               <option value="made">물품</option>
             </select>
             <!-- javascript로 추가 -->
@@ -492,15 +509,15 @@
 
         <div class="text_input">
           <div class="text_profile_img">
-            <img src="{{asset('storage/image/apeach.jpg')}}" alt="">
+            <img src="{{asset('storage/image/profile7.jpg')}}" alt="">
           </div>
 
             <div class="text_user_name">
               <p>Double O</p>
             </div>
             <input type="hidden" name="_token" value="{{csrf_token()}}">
-            <textarea name="input_write" rows="5" cols="30" class="input_write" placeholder="글을 입력해 주세요" maxlength="150"></textarea>
-            <button type="submit" name="submit_write" class="submit_button">완료</button>
+            <textarea name="input_write" rows="5" cols="30" class="input_write" placeholder="内容を入力してください。" maxlength="150"></textarea>
+            <button type="submit" name="submit_write" class="submit_button">確認</button>
         </div>
 
         <div class="text_btn">
@@ -516,20 +533,20 @@
           <div class="post">
             <div class="post_name_img_date">
               <div class="post_profile_img">
-                <img src="{{asset('storage/image/apeach.jpg')}}" alt="">
+                <img src="{{asset('storage/image/profile4.png')}}" alt="">
               </div>
               <div class="post_profile_name">
-                <p>Double O</p>
+                <p>今日のお茶</p>
               </div>
               <div class="post_profile_date">
-                <p>2017년 7월 5일 작성</p>
+                <p>2017年７月５日</p>
                 {{-- {{$timeline_content['updated_at']}} --}}
               </div>
             </div>
             <div class="post_content">
               <p>
-                Double O 플리마켓을 개최하게 되었습니다.<br/>
-                처음 개최하는 플리마켓이지만 많은 성원 부탁드리겠습니다<br/>
+                緑色でたっぷり！お茶マーケットを開催することになりました。<br/>
+                初めてのフリーマーケット開催ですが宜しくお願いします。<br/>
               </p>
 
                 {{-- <pre>
@@ -547,21 +564,21 @@
           <div class="post">
             <div class="post_name_img_date">
               <div class="post_profile_img">
-                <img src="{{asset('storage/image/apeach.jpg')}}" alt="">
+                <img src="{{asset('storage/image/profile7.jpg')}}" alt="">
               </div>
               <div class="post_profile_name">
                 <p>Double O</p>
               </div>
               <div class="post_profile_date">
-                <p>2017년 6월 5일 작성</p>
+                <p>2017年６月５日</p>
                 {{-- {{$timeline_content['updated_at']}} --}}
               </div>
             </div>
             <div class="post_content">
               <p>
-                이번에도 롯데 플리마켓에 참여하게 되었습니다.<br/>
-                이번에는 오미자차와 녹차를 준비하였습니다.<br/>
-                많은 성원 부탁드리겠습니다.<br/>
+                今回もロッテーフリマーケットに参加することになりました。<br/>
+                今回はお茶を用意しました。宜しくお願いします。<br/>
+                
               </p>
                 {{-- <pre>
                   {{$timeline_content['content']}}
@@ -578,20 +595,20 @@
           <div class="post">
             <div class="post_name_img_date">
               <div class="post_profile_img">
-                <img src="{{asset('storage/image/apeach.jpg')}}" alt="">
+                <img src="{{asset('storage/image/profile6.jpeg')}}" alt="">
               </div>
               <div class="post_profile_name">
-                <p>Double O</p>
+                <p>チョコの国</p>
               </div>
               <div class="post_profile_date">
-                <p>2017년 7월 5일 작성</p>
+                <p>2017年６月３日</p>
                 {{-- {{$timeline_content['updated_at']}} --}}
               </div>
             </div>
             <div class="post_content">
                 <p>
-                  플리마켓을 기획 중입니다.<br/>
-                  혹시나 관심이 있으신분은 연락 주시기 바랍니다.<br/>
+                  フリーマーケットを企画しています。<br/>
+                  興味がある方はご連絡お願いします。<br/>
                   TEL 010-1234-5678<br/>
                 </p>
                 {{-- <pre>
@@ -609,21 +626,21 @@
           <div class="post">
             <div class="post_name_img_date">
               <div class="post_profile_img">
-                <img src="{{asset('storage/image/apeach.jpg')}}" alt="">
+                <img src="{{asset('storage/image/profile7.jpg')}}" alt="">
               </div>
               <div class="post_profile_name">
                 <p>Double O</p>
               </div>
               <div class="post_profile_date">
-                <p>2017년 6월 25일 작성</p>
+                <p>2017年５月２５日</p>
                 {{-- {{$timeline_content['updated_at']}} --}}
               </div>
             </div>
             <div class="post_content">
               <p>
-                롯데 플리마켓에 참여하게 되었습니다<br/>
-                이번에 제가 준비한 물품은 향초 2종입니다<br/>
-                많은 성원 부탁드리겠습니다.<br/>
+                ロッテーフリマーケットに参加します。<br/>
+                私が用意する商品はキャンドルです。<br/>
+                宜しくお願いします。<br/>
               </p>
                 {{-- <pre>
                   {{$timeline_content['content']}}
@@ -640,21 +657,21 @@
           <div class="post">
             <div class="post_name_img_date">
               <div class="post_profile_img">
-                <img src="{{asset('storage/image/apeach.jpg')}}" alt="">
+                <img src="{{asset('storage/image/profile7.jpg')}}" alt="">
               </div>
               <div class="post_profile_name">
                 <p>Double O</p>
               </div>
               <div class="post_profile_date">
-                <p>2017년 5월 5일 작성</p>
+                <p>2017年5月5日</p>
                 {{-- {{$timeline_content['updated_at']}} --}}
               </div>
             </div>
             <div class="post_content">
               <p>
-                처음 가입 하였습니다.<br/>
-                플리마켓 개최와 판매를 위하여 개설하게 되었습니다.<br/>
-                잘 부탁드리겠습니다.<br/>
+                初めてアトリエを作りました。.<br/>
+                フリーマーケットの参加と開催のためにアカウントを作りました。<br/>
+                宜しくお願いします。<br/>
               </p>
                 {{-- <pre>
                   {{$timeline_content['content']}}
@@ -668,23 +685,23 @@
 
     <div class="right_content">
       <div class="follow_list_title">
-        <p><strong>판매자 구독리스트</strong></p>
+        <p><strong>友達リスト</strong></p>
       </div>
       <div class="follow_list">
           <!-- 반복 할 곳이 여기다 여기 -->
         <div class="follow_list_form">
           <div class="follow_seller_img">
-            <img src="{{asset('storage/image/profile2.png')}}" alt="">
+            <img src="{{asset('storage/image/profile6.jpeg')}}" alt="">
           </div>
           <div class="follow_seller_info">
             <div class="follow_seller_intro">
-              <p>초코초코 초코나라</p>
+              <p>チョコの国</p>
               {{-- <p>{{$subscription->title}}</p> --}}
             </div>
           </div>
           <div class="follow_btn">
             <button type="button" class="">
-              <a href="#">보기</a>
+              <a href="#">閲覧</a>
             </button>
           </div>
         </div>
@@ -693,17 +710,17 @@
           <!-- 반복 할 곳이 여기다 여기 -->
         <div class="follow_list_form">
           <div class="follow_seller_img">
-            <img src="{{asset('storage/image/apeach.jpg')}}" alt="">
+            <img src="{{asset('storage/image/profile8.jpeg')}}" alt="">
           </div>
           <div class="follow_seller_info">
             <div class="follow_seller_intro">
-              <p>피어나요 향초나라</p>
+              <p>キャンドルの職人</p>
               {{-- <p>{{$subscription->title}}</p> --}}
             </div>
           </div>
           <div class="follow_btn">
             <button type="button" class="">
-              <a href="#">보기</a>
+              <a href="#">閲覧</a>
             </button>
           </div>
         </div>
@@ -712,17 +729,17 @@
           <!-- 반복 할 곳이 여기다 여기 -->
         <div class="follow_list_form">
           <div class="follow_seller_img">
-            <img src="{{asset('storage/image/apeach.jpg')}}" alt="">
+            <img src="{{asset('storage/image/profile4.png')}}" alt="">
           </div>
           <div class="follow_seller_info">
             <div class="follow_seller_intro">
-              <p>오늘의 녹차</p>
+              <p>今日のお茶</p>
               {{-- <p>{{$subscription->title}}</p> --}}
             </div>
           </div>
           <div class="follow_btn">
             <button type="button" class="">
-              <a href="#">보기</a>
+              <a href="#">閲覧</a>
             </button>
           </div>
         </div>
@@ -731,17 +748,17 @@
           <!-- 반복 할 곳이 여기다 여기 -->
         <div class="follow_list_form">
           <div class="follow_seller_img">
-            <img src="{{asset('storage/image/apeach.jpg')}}" alt="">
+            <img src="{{asset('storage/image/profile5.jpeg')}}" alt="">
           </div>
           <div class="follow_seller_info">
             <div class="follow_seller_intro">
-              <p>고구마켓</p>
+              <p>芋マーケット</p>
               {{-- <p>{{$subscription->title}}</p> --}}
             </div>
           </div>
           <div class="follow_btn">
             <button type="button" class="">
-              <a href="#">보기</a>
+              <a href="#">閲覧</a>
             </button>
           </div>
         </div>

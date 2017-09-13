@@ -130,7 +130,7 @@
         //쿠폰 리스트 만들어주기
 
         //리스트 정보를 담고있는 배열
-        var button_name = new Array('메인 홍보','푸쉬 홍보','선택 홍보','홍보 우선권');
+        var button_name = new Array('メイン広告','通知広告','選択広告','広告優先権');
         var button_price = new Array(1000,1200,500,2000);
 
         //버튼 색상 변경
@@ -138,10 +138,10 @@
 
         for(var i=0;i<button_name.length;i++){
             var button = "<div class='con_div'><div class='con_img'><img src='{{asset('/img/icon/')}}/m_"+(i+1)+".jpg' style='width:100%;height:100%;'></div>" +
-                "<div class='con_text'>"+button_name[i]+"</div><div id='price'>"+button_price[i]+"</div><div id='btn_"+i+"' class='con_button'>구매하기</div></div>";
+                "<div class='con_text'>"+button_name[i]+"</div><div id='price'>"+button_price[i]+"</div><div id='btn_"+i+"' class='con_button'>購入</div></div>";
             $('#mileage_contents').append(button);
             $('#btn_'+i).click(function(){
-                if(confirm($(this).prev().prev().text()+"를 구매하시겠습니까?")){
+                if(confirm($(this).prev().prev().text()+"を購入しますか？")){
                     $.ajax({
                         type:'POST',
                         url:'/mileage/buy',
@@ -156,11 +156,11 @@
                                 alert(result['error']);
                                 return;
                             }
-                            alert('구매 완료!');
+                            alert('購入完了!');
                             $('#s_point').text(result['calc']);
                         },
                         error : function(){
-                            alert('에러가 발생하였습니다');
+                            alert('エラーが発生しました。');
                         }
                     })
                 }
@@ -178,17 +178,17 @@
 
     </div>
     <div id="my_mileage">
-        <div class="point" style="background-color:lightgoldenrodyellow;"><p>구매자 포인트</p><p id="b_point">{{$user_info[0]->b_mileage}}</p></div>
-        <div class="point" style="background-color:lightcyan;"><p>판매자 포인트</p><p id="s_point">{{$user_info[0]->s_mileage}}</p></div>
+        <div class="point" style="background-color:lightgoldenrodyellow;"><p>購入ポイント</p><p id="b_point">{{$user_info[0]->b_mileage}}</p></div>
+        <div class="point" style="background-color:lightcyan;"><p>出店ポイント</p><p id="s_point">{{$user_info[0]->s_mileage}}</p></div>
     </div>
     <div id="mileage_main">
         <div id="mileage_category">
             <div id="mileage_category_con">
                 <div class="mileage_button" id="seller_btn">
-                    판매자 홍보
+                    出店者広告
                 </div>
                 <div class="mileage_button" id="buyer_btn" style="border-right:2px solid black;">
-                    할인 쿠폰
+                    割引券
                 </div>
             </div>
             <div id="test"></div>

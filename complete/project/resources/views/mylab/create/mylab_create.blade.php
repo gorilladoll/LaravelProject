@@ -4,7 +4,7 @@
 
 @section('style')
   {{-- <link rel="stylesheet" href="{{asset('/css/contents/mylab.css')}}">  --}}
-  <link rel="stylesheet" href="/css/mylabcreate0.css">
+  <link rel="stylesheet" href="/css/mylabcreate.css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -413,7 +413,7 @@
       <br/>
 
       <div class="fifth_content">
-        <img src="{{asset('/storage/icon/icon_background.png')}}" alt="">
+        <img src="{{asset('/storage/icon/icon_mouse.png')}}" alt="">
       </div>
       <br/>
 
@@ -424,108 +424,108 @@
     <div class="draggable_content_sub">
       <div class="widget_content_list">
         <div class="content_list_name">
-          글꼴
+          フォント
         </div>
         <div class="content_list_things">
-          <p>폰트</p>
-          <p style="font-size:25px; font-style:italic;" value="italic" class="drop_font_object">가나다라마바사</p>
-          <p style="font-size:25px; font-style:normal;" value="normal" class="drop_font_object">가나다라마바사</p>
-          <p style="font-size:25px; font-style:oblique;" value="oblique" class="drop_font_object">가나다라마바사</p>
+          <p>フォントスタイル</p>
+          <p style="font-size:25px; font-style:italic;" value="italic" class="drop_font_object">あいうえお</p>
+          <p style="font-size:25px; font-style:normal;" value="normal" class="drop_font_object">あいうえお</p>
+          <p style="font-size:25px; font-style:oblique;" value="oblique" class="drop_font_object">あいうえお</p>
           <div class="none-space"></div>
 
-          <p>굵기</p>
-          <p style="font-size:30px" value="30px" class="drop_font_size_object">가나다라마바사(30px)</p>
-          <p style="font-size:28px" value="28px" class="drop_font_size_object">가나다라마바사(28px)</p>
-          <p style="font-size:25px" value="25px" class="drop_font_size_object">가나다라마바사(25px)</p>
-          <p style="font-size:23px" value="23px" class="drop_font_size_object">가나다라마바사(23px)</p>
-          <p style="font-size:20px" value="20px" class="drop_font_size_object">가나다라마바사(20px)</p>
+          <p>フォントサイズ</p>
+          <p style="font-size:30px" value="30px" class="drop_font_size_object">あいうえお(30px)</p>
+          <p style="font-size:28px" value="28px" class="drop_font_size_object">あいうえお(28px)</p>
+          <p style="font-size:25px" value="25px" class="drop_font_size_object">あいうえお(25px)</p>
+          <p style="font-size:23px" value="23px" class="drop_font_size_object">あいうえお(23px)</p>
+          <p style="font-size:20px" value="20px" class="drop_font_size_object">あいうえお(20px)</p>
           <div class="none-space"></div>
 
-          <p>색상</p>
-          <p style="font-size:25px; color:pink" value="pink" class="drop_font_color_object">가나다라마바사</p>
-          <p style="font-size:25px; color:skyblue" value="skyblue" class="drop_font_color_object">가나다라마바사</p>
-          <p style="font-size:25px; color:black" value="black" class="drop_font_color_object">가나다라마바사</p>
-          <p style="font-size:25px; color:gray" value="gray" class="drop_font_color_object">가나다라마바사</p>
+          <p>フォントカラー</p>
+          <p style="font-size:25px; color:pink" value="pink" class="drop_font_color_object">あいうえお</p>
+          <p style="font-size:25px; color:skyblue" value="skyblue" class="drop_font_color_object">あいうえお</p>
+          <p style="font-size:25px; color:black" value="black" class="drop_font_color_object">あいうえお</p>
+          <p style="font-size:25px; color:gray" value="gray" class="drop_font_color_object">あいうえお</p>
           <div class="none-space"></div>
 
-          <p>강조</p>
-          <p style="font-size:25px; font-weight:bold;" value="bold" class="drop_font_weight_object">가나다라마바사</p>
-          <p style="font-size:25px; font-weight:normal;" value="normal" class="drop_font_weight_object">가나다라마바사</p>
+          <p>フォント強調</p>
+          <p style="font-size:25px; font-weight:bold;" value="bold" class="drop_font_weight_object">あいうえお</p>
+          <p style="font-size:25px; font-weight:normal;" value="normal" class="drop_font_weight_object">あいうえお</p>
         </div>
       </div>
 
       <div class="timeline_content_list">
         <div class="content_list_name">
-          타임라인
+          タイムライン
         </div>
         <div class="content_list_things">
-          <p>페이스북 형식</p>
+          <p>フェースブック形式</p>
           <img src="{{asset('/storage/image/center_1.png')}}" alt="center_1.png" class="drop_center_object">
           <div class="none-space"></div>
 
-          <p>블록 형식</p>
+          <p>ブロック形式</p>
           <img src="{{asset('/storage/image/center_2.png')}}" alt="center_2.png" class="drop_center_object">
           <div class="none-space"></div>
 
-          <p>텀블러 형식</p>
+          <p>タンブラー形式</p>
           <img src="{{asset('/storage/image/center_3.png')}}" alt="center_3.png" class="drop_center_object">
           <div class="none-space"></div>
 
-          <p>신문 형식</p>
+          <p>新聞形式</p>
           <img src="{{asset('/storage/image/center_4.png')}}" alt="center_4.png" class="drop_center_object">
           <div class="none-space"></div>
 
-          <p>카페 형식</p>
+          <p>カフェー形式</p>
           <img src="{{asset('/storage/image/center_5.png')}}" alt="center_5.png" class="drop_center_object">
           <div class="none-space"></div>
-          <p></p>
+          
         </div>
       </div>
 
       <div class="ui_content_list">
         <div class="content_list_name">
-          공방 꾸미기
+          アトリエの飾り
         </div>
         <div class="content_list_things">
-          <p>프로필 1</p>
+          <p>プロフィール 1</p>
           <img src="{{asset('/storage/image/left_3.png')}}" alt="left_3.png" class="drop_left_object">
           <div class="none-space"></div>
 
-          <p>친구목록 1</p>
+          <p>友達リスト 1</p>
           <img src="{{asset('/storage/image/right_2.png')}}" alt="right_2.png" class="drop_right_object">
           <div class="none-space"></div>
 
-          <p>프로필 2</p>
+          <p>プロフィール 2</p>
           <img src="{{asset('/storage/image/left_2.png')}}" alt="left_2.png" class="drop_left_object">
           <div class="none-space"></div>
 
-          <p>친구목록 2</p>
+          <p>友達リスト 2</p>
           <img src="{{asset('/storage/image/right_1.png')}}" alt="right_1.png" class="drop_right_object">
           <div class="none-space"></div>
 
-          <p>프로필 3</p>
+          <p>プロフィール 3</p>
           <img src="{{asset('/storage/image/left_1.png')}}" alt="left_1.png" class="drop_left_object">
         </div>
       </div>
 
       <div class="background_content_list">
         <div class="content_list_name">
-          배경화면
+          背景画面
         </div>
         <div class="content_list_things">
-          <p>배경화면1</p>
+          <p>背景1</p>
           <img src="{{asset('/storage/image/background_4.jpg')}}" alt="background_4.jpg" class="drop_bg_object">
           <div class="none-space"></div>
 
-          <p>배경화면2</p>
+          <p>背景2</p>
           <img src="{{asset('/storage/image/background_1.jpg')}}" alt="background_1.jpg" class="drop_bg_object">
           <div class="none-space"></div>
 
-          <p>배경화면3</p>
+          <p>背景3</p>
           <img src="{{asset('/storage/image/background_2.jpg')}}" alt="background_2.jpg" class="drop_bg_object">
           <div class="none-space"></div>
 
-          <p>배경화면4</p>
+          <p>背景4</p>
           <img src="{{asset('/storage/image/background_3.jpeg')}}" alt="background_3.jpeg" class="drop_bg_object">
 
         </div>
@@ -534,60 +534,60 @@
 
       <div class="drag_sub_content">
         <div class="content_list_name">
-          드래그
+          ドラック
         </div>
         <div class="content_list_things">
           <div class="drag_sub_background">
-            <p>배경화면1</p>
+            <p>背景1</p>
             <img src="{{asset('/storage/image/background_5.jpg')}}" alt="background_5.jpg" class="drag_sub_background_content">
             <div class="none-space"></div>
 
-            <p>배경화면2</p>
+            <p>背景2</p>
             <img src="{{asset('/storage/image/background_6.jpg')}}" alt="background_6.jpg" class="drag_sub_background_content">
             <div class="none-space"></div>
 
-            <p>배경화면3</p>
+            <p>背景3</p>
             <img src="{{asset('/storage/image/background_7.jpg')}}" alt="background_7.jpg" class="drag_sub_background_content">
             <div class="none-space"></div>
 
-            <p>배경화면4</p>
+            <p>背景4</p>
             <img src="{{asset('/storage/image/background_8.jpg')}}" alt="background_8.jpg" class="drag_sub_background_content">
           </div>
           <div class="none-space"></div>
 
           <div class="drag_sub_text">
-            <p>제목</p>
+            <p>タイトル</p>
             <div class="drag_sub_textbox"></div>
             <div class="none-space"></div>
 
-            <p>텍스트상자</p>
+            <p>テキストボックス</p>
             <div class="drag_sub_textarea">
             <div class="none-space"></div>
 
-            <p>폰트</p>
-            <p style="font-size:25px; font-style:italic;" value="italic" class="drag_sub_font_style">가나다라마바사</p>
-            <p style="font-size:25px; font-style:normal;" value="normal" class="drag_sub_font_style">가나다라마바사</p>
-            <p style="font-size:25px; font-style:oblique;" value="oblique" class="drag_sub_font_style">가나다라마바사</p>
+            <p>フォントスタイル</p>
+            <p style="font-size:25px; font-style:italic;" value="italic" class="drag_sub_font_style">あいうえお</p>
+            <p style="font-size:25px; font-style:normal;" value="normal" class="drag_sub_font_style">あいうえお</p>
+            <p style="font-size:25px; font-style:oblique;" value="oblique" class="drag_sub_font_style">あいうえお</p>
             <div class="none-space"></div>
 
-            <p>굵기</p>
-            <p style="font-size:30px" value="30px" class="drag_sub_font_size">가나다라마바사(30px)</p>
-            <p style="font-size:28px" value="28px" class="drag_sub_font_size">가나다라마바사(28px)</p>
-            <p style="font-size:25px" value="25px" class="drag_sub_font_size">가나다라마바사(25px)</p>
-            <p style="font-size:23px" value="23px" class="drag_sub_font_size">가나다라마바사(23px)</p>
-            <p style="font-size:20px" value="20px" class="drag_sub_font_size">가나다라마바사(20px)</p>
+            <p>フォントサイズ</p>
+            <p style="font-size:30px" value="30px" class="drag_sub_font_size">あいうえお(30px)</p>
+            <p style="font-size:28px" value="28px" class="drag_sub_font_size">あいうえお(28px)</p>
+            <p style="font-size:25px" value="25px" class="drag_sub_font_size">あいうえお(25px)</p>
+            <p style="font-size:23px" value="23px" class="drag_sub_font_size">あいうえお(23px)</p>
+            <p style="font-size:20px" value="20px" class="drag_sub_font_size">あいうえお(20px)</p>
             <div class="none-space"></div>
 
-            <p>색상</p>
-            <p style="font-size:25px; color:pink" value="pink" class="drag_sub_font_color">가나다라마바사</p>
-            <p style="font-size:25px; color:skyblue" value="skyblue" class="drag_sub_font_color">가나다라마바사</p>
-            <p style="font-size:25px; color:black" value="black" class="drag_sub_font_color">가나다라마바사</p>
-            <p style="font-size:25px; color:gray" value="gray" class="drag_sub_font_color">가나다라마바사</p>
+            <p>フォントカラー</p>
+            <p style="font-size:25px; color:pink" value="pink" class="drag_sub_font_color">あいうえお</p>
+            <p style="font-size:25px; color:skyblue" value="skyblue" class="drag_sub_font_color">あいうえお</p>
+            <p style="font-size:25px; color:black" value="black" class="drag_sub_font_color">あいうえお</p>
+            <p style="font-size:25px; color:gray" value="gray" class="drag_sub_font_color">あいうえお</p>
             <div class="none-space"></div>
 
-            <p>강조</p>
-            <p style="font-size:25px; font-weight:bold;" value="bold" class="drag_sub_font_weight">가나다라마바사</p>
-            <p style="font-size:25px; font-weight:normal;" value="normal" class="drag_sub_font_weight">가나다라마바사</p>
+            <p>フォント強調</p>
+            <p style="font-size:25px; font-weight:bold;" value="bold" class="drag_sub_font_weight">あいうえお</p>
+            <p style="font-size:25px; font-weight:normal;" value="normal" class="drag_sub_font_weight">あいうえお</p>
             <div class="none-space"></div>
           </div>
         </div>
@@ -598,7 +598,7 @@
     {{-- <div class="droppable_content_main"> --}}
       <div class="background_content">
         <div class="background_content_title">
-          <input type="text" name="" value="공방이름을 입력하세요">
+          <input type="text" name="" value="アトリエの名前を入れてください">
         </div>
       </div>
 
@@ -609,7 +609,7 @@
           </div>
           <div class="profile_name">
             <p>
-              <b>닉네임</b>
+              <b>ニックネーム</b>
             </p>
           </div>
         </div>
@@ -617,8 +617,8 @@
         <div class="profile_introduce">
           <div class="profile_introduce_introduce">
             <p>
-              &nbsp;닉네임의 공방입니다<br/>
-              &nbsp;잘 부탁드려요
+              &nbsp;ニックネームのアトリエです。<br/>
+              &nbsp;宜しくお願いします。
             </p>
           </div>
         </div>
@@ -626,11 +626,11 @@
 
         <div class="move_some">
           <div class="move_goods_btn">
-            <a href="#">물품보기</a>
+            <a href="#">品物閲覧</a>
           </div>
 
           <div class="move_friends_btn">
-            <a href="#">친구공방</a>
+            <a href="#">友達閲覧</a>
           </div>
         </div>
       </div>
@@ -646,7 +646,7 @@
                 <option value="cloth">옷</option>
               </select>
               <select class="form-control Parent" name="form_control_parent">
-                <option value="timeline">타임라인</option>
+                <option value="timeline">タイムライン</option>
                 <option value="made">물품</option>
               </select>
               <!-- javascript로 추가 -->
@@ -661,10 +661,10 @@
             </div>
 
               <div class="text_user_name">
-                <p>닉네임</p>
+                <p>ニックネーム</p>
               </div>
               <input type="hidden" name="_token" value="{{csrf_token()}}">
-              <textarea name="input_write" rows="5" cols="30" class="input_write" placeholder="글을 입력해 주세요" maxlength="150"></textarea>
+              <textarea name="input_write" rows="5" cols="30" class="input_write" placeholder="内容を入れてください。" maxlength="150"></textarea>
               <button type="submit" name="submit_write" class="submit_button">완료</button>
           </div>
 
@@ -683,7 +683,7 @@
                 <img src="{{asset('storage/image/apeach.jpg')}}" alt="">
               </div>
               <div class="post_profile_name">
-                <strong>닉네임</strong>
+                <strong>ニックネーム</strong>
                 {{-- <strong>{{$user_name['name']}}</strong> --}}
                 {{-- <button type="button" name="button">...</button> --}}
               </div>
@@ -692,13 +692,13 @@
             <!-- 글 내용 부분 -->
             <div class="post">
               <div class="post_profile_date">
-                <p>2017년 8월 20일 작성</p>
+                <p>2017年８発２０日</p>
                 {{-- {{$timeline_content['updated_at']}} --}}
               </div>
               <div class="post_content">
                 <p>
-                  Double O 플리마켓을 개최하게 되었습니다.<br/>
-                  처음 개최하는 플리마켓이지만 많은 성원 부탁드리겠습니다<br/>
+                  Double O フリーマを開催することになりました。<br/>
+                  初めての開催ですがどうぞ宜しくお願いします。<br/>
                 </p>
 
                   {{-- <pre>
@@ -727,14 +727,13 @@
             <!-- 글 내용 부분 -->
             <div class="post">
               <div class="post_profile_date">
-                <p>2017년 7월 5일 작성</p>
+                <p>2017年７月２日</p>
                 {{-- {{$timeline_content['updated_at']}} --}}
               </div>
               <div class="post_content">
                 <p>
-                  이번에도 롯데 플리마켓에 참여하게 되었습니다.<br/>
-                  이번에는 오미자차와 녹차를 준비하였습니다.<br/>
-                  많은 성원 부탁드리겠습니다.<br/>
+                  今回もロッテーフリマーケットに参加することになりました。<br/>
+                  今回はお茶を用意しました。宜しくお願いします。<br/>
                 </p>
                   {{-- <pre>
                     {{$timeline_content['content']}}
@@ -762,13 +761,13 @@
             <!-- 글 내용 부분 -->
             <div class="post">
               <div class="post_profile_date">
-                <p>2017년 6월 5일 작성</p>
+                <p>2017年６月５日</p>
                 {{-- {{$timeline_content['updated_at']}} --}}
               </div>
               <div class="post_content">
                   <p>
-                    플리마켓을 기획 중입니다.<br/>
-                    혹시나 관심이 있으신분은 연락 주시기 바랍니다.<br/>
+                    フリーマーケットを企画しています。<br/>
+                    興味がある方はご連絡お願いします。<br/>
                     TEL 010-1234-5678<br/>
                   </p>
                   {{-- <pre>
@@ -802,9 +801,9 @@
               </div>
               <div class="post_content">
                 <p>
-                  롯데 플리마켓에 참여하게 되었습니다<br/>
-                  이번에 제가 준비한 물품은 향초 2종입니다<br/>
-                  많은 성원 부탁드리겠습니다.<br/>
+                 ロッテーフリマーケットに参加します。<br/>
+                  私が用意する商品はキャンドルです。<br/>
+                  宜しくお願いします。<br/>
                 </p>
                   {{-- <pre>
                     {{$timeline_content['content']}}
@@ -832,14 +831,14 @@
             <!-- 글 내용 부분 -->
             <div class="post">
               <div class="post_profile_date">
-                <p>2017년 5월 5일 작성</p>
+                <p>2017年５月５日</p>
                 {{-- {{$timeline_content['updated_at']}} --}}
               </div>
               <div class="post_content">
                 <p>
-                  처음 가입 하였습니다.<br/>
-                  플리마켓 개최와 판매를 위하여 개설하게 되었습니다.<br/>
-                  잘 부탁드리겠습니다.<br/>
+                  初めてアトリエを作りました。.<br/>
+                  フリーマーケットの参加と開催のためにアカウントを作りました。<br/>
+                  宜しくお願いします。<br/>
                 </p>
                   {{-- <pre>
                     {{$timeline_content['content']}}
@@ -853,7 +852,7 @@
 
       <div class="right_content">
         <div class="follow_list_title">
-          <p><strong>판매자 구독리스트</strong></p>
+          <p><strong>友達リスト</strong></p>
         </div>
         <div class="follow_list">
             <!-- 반복 할 곳이 여기다 여기 -->
@@ -863,13 +862,13 @@
             </div>
             <div class="follow_seller_info">
               <div class="follow_seller_intro">
-                <p>친구1</p>
+                <p>友達1</p>
                 {{-- <p>{{$subscription->title}}</p> --}}
               </div>
             </div>
             <div class="follow_btn">
               <button type="button" class="">
-                <a href="#">보기</a>
+                <a href="#">閲覧</a>
               </button>
             </div>
           </div>
@@ -882,13 +881,13 @@
             </div>
             <div class="follow_seller_info">
               <div class="follow_seller_intro">
-                <p>친구2</p>
+                <p>友達2</p>
                 {{-- <p>{{$subscription->title}}</p> --}}
               </div>
             </div>
             <div class="follow_btn">
               <button type="button" class="">
-                <a href="#">보기</a>
+                <a href="#">閲覧</a>
               </button>
             </div>
           </div>
@@ -901,13 +900,13 @@
             </div>
             <div class="follow_seller_info">
               <div class="follow_seller_intro">
-                <p>친구3</p>
+                <p>友達3</p>
                 {{-- <p>{{$subscription->title}}</p> --}}
               </div>
             </div>
             <div class="follow_btn">
               <button type="button" class="">
-                <a href="#">보기</a>
+                <a href="#">閲覧</a>
               </button>
             </div>
           </div>
@@ -920,13 +919,13 @@
             </div>
             <div class="follow_seller_info">
               <div class="follow_seller_intro">
-                <p>친구4</p>
+                <p>友達4</p>
                 {{-- <p>{{$subscription->title}}</p> --}}
               </div>
             </div>
             <div class="follow_btn">
               <button type="button" class="">
-                <a href="#">보기</a>
+                <a href="#">閲覧</a>
               </button>
             </div>
           </div>

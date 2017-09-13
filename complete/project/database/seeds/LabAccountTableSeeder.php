@@ -15,7 +15,7 @@ class LabAccountTableSeeder extends Seeder
 
         /*1번째 판매자*/
         App\LabAccount::create([	
-	       	'th_id'	=> 1,
+	       	'th_id'	=> 2,
             'goods_id' => 1,
             'seller_id' => 1,
             'sell_price' => 5000,
@@ -23,7 +23,7 @@ class LabAccountTableSeeder extends Seeder
 	    ]);
 
         App\LabAccount::create([    
-            'th_id' => 1,
+            'th_id' => 2,
             'goods_id' => 2,
             'seller_id' => 1,
             'sell_price' => 7000,
@@ -31,7 +31,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 1,
+            'th_id' => 2,
             'goods_id' => 3,
             'seller_id' => 1,
             'sell_price' => 3000,
@@ -39,7 +39,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 1,
+            'th_id' => 2,
             'goods_id' => 4,
             'seller_id' => 1,
             'sell_price' => 10000,
@@ -47,7 +47,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 1,
+            'th_id' => 2,
             'goods_id' => 5,
             'seller_id' => 1,
             'sell_price' => 2000,
@@ -57,7 +57,7 @@ class LabAccountTableSeeder extends Seeder
 
         /*2번째 판매자*/
         App\LabAccount::create([    
-            'th_id' => 1,
+            'th_id' => 2,
             'goods_id' => 6,
             'seller_id' => 2,
             'sell_price' => 22000,
@@ -65,7 +65,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 1,
+            'th_id' => 2,
             'goods_id' => 7,
             'seller_id' => 2,
             'sell_price' => 30000,
@@ -73,7 +73,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 1,
+            'th_id' => 2,
             'goods_id' => 8,
             'seller_id' => 2,
             'sell_price' => 10000,
@@ -81,14 +81,14 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 1,
+            'th_id' => 2,
             'goods_id' => 9,
             'seller_id' => 2,
             'sell_price' => 28000,
             'sell_count' => 61
         ]);
         App\LabAccount::create([    
-            'th_id' => 1,
+            'th_id' => 2,
             'goods_id' => 10,
             'seller_id' => 2,
             'sell_price' => 20000,
@@ -98,7 +98,7 @@ class LabAccountTableSeeder extends Seeder
 
         /*3번째 판매자*/
         App\LabAccount::create([    
-            'th_id' => 1,
+            'th_id' => 2,
             'goods_id' => 11,
             'seller_id' => 3,
             'sell_price' => 15000,
@@ -106,7 +106,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 1,
+            'th_id' => 2,
             'goods_id' => 12,
             'seller_id' => 3,
             'sell_price' => 4000,
@@ -114,7 +114,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 1,
+            'th_id' => 2,
             'goods_id' => 13,
             'seller_id' => 3,
             'sell_price' => 30000,
@@ -122,7 +122,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 1,
+            'th_id' => 2,
             'goods_id' => 14,
             'seller_id' => 3,
             'sell_price' => 100000,
@@ -130,7 +130,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 1,
+            'th_id' => 2,
             'goods_id' => 15,
             'seller_id' => 3,
             'sell_price' => 20000,
@@ -140,7 +140,7 @@ class LabAccountTableSeeder extends Seeder
 
         /*4번째 판매자*/
         App\LabAccount::create([    
-            'th_id' => 1,
+            'th_id' => 2,
             'goods_id' => 16,
             'seller_id' => 4,
             'sell_price' => 1000,
@@ -148,7 +148,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 1,
+            'th_id' => 2,
             'goods_id' => 17,
             'seller_id' => 4,
             'sell_price' => 2000,
@@ -156,7 +156,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 1,
+            'th_id' => 2,
             'goods_id' => 18,
             'seller_id' => 4,
             'sell_price' => 8000,
@@ -164,14 +164,14 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 1,
+            'th_id' => 2,
             'goods_id' => 19,
             'seller_id' => 4,
             'sell_price' => 1500,
             'sell_count' => 108
         ]);
         App\LabAccount::create([    
-            'th_id' => 1,
+            'th_id' => 2,
             'goods_id' => 20,
             'seller_id' => 4,
             'sell_price' => 4000,
@@ -189,7 +189,7 @@ class LabAccountTableSeeder extends Seeder
 
         /*1번째 판매자*/
         App\LabAccount::create([    
-            'th_id' => 2,
+            'th_id' => 7,
             'goods_id' => 1,
             'seller_id' => 1,
             'sell_price' => 5000,
@@ -197,7 +197,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 2,
+            'th_id' => 7,
             'goods_id' => 2,
             'seller_id' => 1,
             'sell_price' => 7000,
@@ -205,7 +205,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 2,
+            'th_id' => 7,
             'goods_id' => 3,
             'seller_id' => 1,
             'sell_price' => 3000,
@@ -213,7 +213,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 2,
+            'th_id' => 7,
             'goods_id' => 4,
             'seller_id' => 1,
             'sell_price' => 10000,
@@ -221,7 +221,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 2,
+            'th_id' => 7,
             'goods_id' => 5,
             'seller_id' => 1,
             'sell_price' => 2000,
@@ -231,7 +231,7 @@ class LabAccountTableSeeder extends Seeder
 
         /*2번째 판매자*/
         App\LabAccount::create([    
-            'th_id' => 2,
+            'th_id' => 7,
             'goods_id' => 6,
             'seller_id' => 2,
             'sell_price' => 22000,
@@ -239,7 +239,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 2,
+            'th_id' => 7,
             'goods_id' => 7,
             'seller_id' => 2,
             'sell_price' => 30000,
@@ -247,7 +247,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 2,
+            'th_id' => 7,
             'goods_id' => 8,
             'seller_id' => 2,
             'sell_price' => 10000,
@@ -255,14 +255,14 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 2,
+            'th_id' => 7,
             'goods_id' => 9,
             'seller_id' => 2,
             'sell_price' => 28000,
             'sell_count' => 44
         ]);
         App\LabAccount::create([    
-            'th_id' => 2,
+            'th_id' => 7,
             'goods_id' => 10,
             'seller_id' => 2,
             'sell_price' => 20000,
@@ -272,7 +272,7 @@ class LabAccountTableSeeder extends Seeder
 
         /*3번째 판매자*/
         App\LabAccount::create([    
-            'th_id' => 2,
+            'th_id' => 7,
             'goods_id' => 11,
             'seller_id' => 3,
             'sell_price' => 15000,
@@ -280,7 +280,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 2,
+            'th_id' => 7,
             'goods_id' => 12,
             'seller_id' => 3,
             'sell_price' => 4000,
@@ -288,7 +288,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 2,
+            'th_id' => 7,
             'goods_id' => 13,
             'seller_id' => 3,
             'sell_price' => 30000,
@@ -296,7 +296,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 2,
+            'th_id' => 7,
             'goods_id' => 14,
             'seller_id' => 3,
             'sell_price' => 100000,
@@ -304,7 +304,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 2,
+            'th_id' => 7,
             'goods_id' => 15,
             'seller_id' => 3,
             'sell_price' => 20000,
@@ -314,7 +314,7 @@ class LabAccountTableSeeder extends Seeder
 
         /*4번째 판매자*/
         App\LabAccount::create([    
-            'th_id' => 2,
+            'th_id' => 7,
             'goods_id' => 16,
             'seller_id' => 4,
             'sell_price' => 1000,
@@ -322,7 +322,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 2,
+            'th_id' => 7,
             'goods_id' => 17,
             'seller_id' => 4,
             'sell_price' => 2000,
@@ -330,7 +330,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 2,
+            'th_id' => 7,
             'goods_id' => 18,
             'seller_id' => 4,
             'sell_price' => 8000,
@@ -338,14 +338,14 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 2,
+            'th_id' => 7,
             'goods_id' => 19,
             'seller_id' => 4,
             'sell_price' => 1500,
             'sell_count' => 96
         ]);
         App\LabAccount::create([    
-            'th_id' => 2,
+            'th_id' => 7,
             'goods_id' => 20,
             'seller_id' => 4,
             'sell_price' => 4000,
@@ -360,7 +360,7 @@ class LabAccountTableSeeder extends Seeder
 
         /*1번째 판매자*/
         App\LabAccount::create([    
-            'th_id' => 3,
+            'th_id' => 11,
             'goods_id' => 1,
             'seller_id' => 1,
             'sell_price' => 5000,
@@ -368,7 +368,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 3,
+            'th_id' => 11,
             'goods_id' => 2,
             'seller_id' => 1,
             'sell_price' => 7000,
@@ -376,7 +376,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 3,
+            'th_id' => 11,
             'goods_id' => 3,
             'seller_id' => 1,
             'sell_price' => 3000,
@@ -384,7 +384,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 3,
+            'th_id' => 11,
             'goods_id' => 4,
             'seller_id' => 1,
             'sell_price' => 10000,
@@ -392,7 +392,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 3,
+            'th_id' => 11,
             'goods_id' => 5,
             'seller_id' => 1,
             'sell_price' => 2000,
@@ -403,7 +403,7 @@ class LabAccountTableSeeder extends Seeder
 
         /*2번째 판매자*/
         App\LabAccount::create([    
-            'th_id' => 3,
+            'th_id' => 11,
             'goods_id' => 6,
             'seller_id' => 2,
             'sell_price' => 22000,
@@ -411,7 +411,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 3,
+            'th_id' => 11,
             'goods_id' => 7,
             'seller_id' => 2,
             'sell_price' => 30000,
@@ -419,7 +419,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 3,
+            'th_id' => 11,
             'goods_id' => 8,
             'seller_id' => 2,
             'sell_price' => 10000,
@@ -427,7 +427,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 3,
+            'th_id' => 11,
             'goods_id' => 9,
             'seller_id' => 2,
             'sell_price' => 28000,
@@ -435,7 +435,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 3,
+            'th_id' => 11,
             'goods_id' => 10,
             'seller_id' => 2,
             'sell_price' => 20000,
@@ -445,7 +445,7 @@ class LabAccountTableSeeder extends Seeder
 
         /*3번째 판매자*/
         App\LabAccount::create([    
-            'th_id' => 3,
+            'th_id' => 11,
             'goods_id' => 11,
             'seller_id' => 3,
             'sell_price' => 15000,
@@ -453,7 +453,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 3,
+            'th_id' => 11,
             'goods_id' => 12,
             'seller_id' => 3,
             'sell_price' => 4000,
@@ -461,7 +461,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 3,
+            'th_id' => 11,
             'goods_id' => 13,
             'seller_id' => 3,
             'sell_price' => 30000,
@@ -469,7 +469,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 3,
+            'th_id' => 11,
             'goods_id' => 14,
             'seller_id' => 3,
             'sell_price' => 100000,
@@ -477,7 +477,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 3,
+            'th_id' => 11,
             'goods_id' => 15,
             'seller_id' => 3,
             'sell_price' => 20000,
@@ -487,7 +487,7 @@ class LabAccountTableSeeder extends Seeder
 
         /*4번째 판매자*/
         App\LabAccount::create([    
-            'th_id' => 3,
+            'th_id' => 11,
             'goods_id' => 16,
             'seller_id' => 4,
             'sell_price' => 1000,
@@ -495,7 +495,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 3,
+            'th_id' => 11,
             'goods_id' => 17,
             'seller_id' => 4,
             'sell_price' => 2000,
@@ -503,7 +503,7 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 3,
+            'th_id' => 11,
             'goods_id' => 18,
             'seller_id' => 4,
             'sell_price' => 8000,
@@ -511,14 +511,14 @@ class LabAccountTableSeeder extends Seeder
         ]);
 
         App\LabAccount::create([    
-            'th_id' => 3,
+            'th_id' => 11,
             'goods_id' => 19,
             'seller_id' => 4,
             'sell_price' => 1500,
             'sell_count' => 124
         ]);
         App\LabAccount::create([    
-            'th_id' => 3,
+            'th_id' => 11,
             'goods_id' => 20,
             'seller_id' => 4,
             'sell_price' => 4000,

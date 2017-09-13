@@ -1,9 +1,19 @@
 @extends('layouts.app')
 <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<link rel="stylesheet" type="text/css" href="/slick-1.6.0/slick/slick.css">
+<link rel="stylesheet" type="text/css" href="/slick-1.6.0/slick/slick-theme.css">
+<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+<script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 
 <style>
   #flea_page_main{
     width:1000px;
+    font-family:'interparkM','interparkMEot';
     margin : 0 auto;
   }
   .f_info{
@@ -147,6 +157,16 @@
     border-radius:5px;
     position:absolute;
     text-align:center;
+    font-size:12px;
+  }
+    .boothsz{
+    width:98px;
+    height:98px;
+    background-color:white;
+    border:1px solid #b70505;
+    border-radius:5px;
+    position:absolute;
+    text-align:center;
   }
   .com_css{
     width:880px;
@@ -234,7 +254,7 @@
 
                 @if($booth->user_id == $user->id)
                 var booths = "<div id='" + test_count + "' class='booths' " +
-                    "style='width:{{$booth->width}};height:{{$booth->height}};'>{{$user->name}}<div>";
+                    "style='width:{{$booth->width}};height:{{$booth->height}};'><img src='{{asset('/img/icon/')}}/test.png' style='width:100%;height:76%; border-radius: 5px;'>{{$user->name}}<div>";
                 @endif
 
                 @endforeach
@@ -246,11 +266,11 @@
                     $('#' + test_count).css('top', booth_top +{{$booth->top}});
 
 
-                    @if ($booth->type == '입구')
+                    @if ($booth->type == '入り口')
                     {
                         $('#' + test_count).css('background-color', 'lightyellow');
                     }
-                    @elseif ($booth->type == '지형')
+                    @elseif ($booth->type == '地形')
                     {
                         $('#' + test_count).css('background-color', 'lightblue');
                     }
@@ -258,32 +278,49 @@
 
                     @if ($booth->value != 'null')
                     {
-                        $('#'+test_count).text('{{$booth->name}}');
+                        //$('#'+test_count).text('{{$booth->name}}'); //이걸 지우면 그림이 뜨는데 마우스 오버 작동을 안함
                     }
                     @endif
                     console.log(test_count);
 
                     test_count++;
-            @endforeach
+          @endforeach
             
             @foreach ($booths2 as $booth2)
-            console.log(test_count);
-            var booths = "<div id='" + test_count + "' class='booths' " +
-            "style='width:{{$booth2->width}};height:{{$booth2->height}};'><div>";
+            console.log('{{$booth2->type}}');
+              @if ($booth2->type == '入り口')
+              {
+                  var booths = "<div id='" + test_count + "' class='boothsz' " +
+            "style='width:{{$booth2->width}};height:{{$booth2->height}};'><img src='{{asset('/img/icon/')}}/ipgu.png' style='width:100%;height:76%; border-radius: 5px;'><p>{{$booth2->value}}</p></div>";
+              }
+              @elseif ($booth2->type == '障害物')
+              {
+                  var booths = "<div id='" + test_count + "' class='boothsz' " +
+            "style='width:{{$booth2->width}};height:{{$booth2->height}};'><img src='{{asset('/img/icon/')}}/j1.png' style='width:100%;height:76%; border-radius: 5px;'><p>{{$booth2->value}}</p></div>";
+              }
+              @elseif ($booth2->type == '木')
+              {
+                  var booths = "<div id='" + test_count + "' class='boothsz' " +
+            "style='width:{{$booth2->width}};height:{{$booth2->height}};'><img src='{{asset('/img/icon/')}}/j2.jpg' style='width:100%;height:76%; border-radius: 5px;'><p>{{$booth2->value}}</p></div>";
+              }
+              @elseif ($booth2->type == 'トイレ')
+              {
+                  var booths = "<div id='" + test_count + "' class='boothsz' " +
+            "style='width:{{$booth2->width}};height:{{$booth2->height}};'><img src='{{asset('/img/icon/')}}/j3.jpg' style='width:100%;height:76%; border-radius: 5px;'><p>{{$booth2->value}}</p></div>";
+              }
+              @elseif ($booth2->type == 'null')
+              {
+                  var booths = "<div id='" + test_count + "' class='boothsz' " +
+            "style='width:{{$booth2->width}};height:{{$booth2->height}};'><img src='{{asset('/img/icon/')}}/test.png' style='width:100%;height:76%; border-radius: 5px;'></div>";
+              }
+              @endif
+            
             $('.booth_map_in').append(booths);
 
             $('#' + test_count).css('left', booth_left +{{$booth2->left}});
             $('#' + test_count).css('top', booth_top +{{$booth2->top}});
             
-                    @if ($booth->type == '입구')
-                    {
-                        $('#' + test_count).css('background-color', 'lightyellow');
-                    }
-                    @elseif ($booth->type == '지형')
-                    {
-                        $('#' + test_count).css('background-color', 'lightblue');
-                    }
-                    @endif
+
                     test_count++;
             @endforeach
             
@@ -292,13 +329,15 @@
       var comment = "<div id='c_{{$comment->id}}' class='com_css'><p id='com_name'>{{$comment->name}}</p><p id='com_text'>{{$comment->text}}</p><p id='com_time'>{{$comment->date}}</p>";
       if({{$comment->user_id}} == {{$user_id}}) {
 
-          comment += "<p class='del' id='d{{$comment->id}}'>[삭제]</p>";
+          comment += "<p class='del' id='d{{$comment->id}}'>[削除]</p>";
       }
       comment += "</div>";
 
       $('.flea_comment_num').append(comment);
       com_count++;
       @endforeach
+      
+      
 
       $('#com_button').click(function(){
           text = $('#comment_text').val();
@@ -326,7 +365,7 @@
                   $('.flea_comment_num').append(comment);
               },
               error: function () {
-                  alert('에러가 발생하였습니다');
+                  alert('エラー');
                   return;
               }
           });
@@ -351,7 +390,7 @@
                       $('#' + com_id_num).remove();
                   },
                   error: function () {
-                      alert('에러가 발생하였습니다');
+                      alert('エラー');
                       return;
                   }
               })
@@ -360,7 +399,7 @@
 
       // 판매자 신청 경고문
       $('#seller_applys').click(function(){
-          if(confirm("이미 판매자 신청이 되어 있습니다! \n이전의 신청 정보를 삭제하고 계속 진행하시겠습니까?")){
+          if(confirm("もう出店者申し込みました。! \n以前の申請情報を削除しますか？")){
               window.location.href = '/fleamarket/sellerapply/{{$flea_th[0]->id}}';
           }
       })
@@ -393,25 +432,25 @@
     <div class="f_info">
       <div class="info_image thumbnail"><img style="width:100%;height:100%;" class='img-rounded' src="{{url('user_img/')}}/{{$flea[0]->image_name}}"></div>
       <div class="info_text2 thumbnail">
-        <h3 style="margin-left:20px; font-size:36px;">{{$flea[0]->flea_name}} {{$flea_th[0]->th}}회차</h3>
+        <h3 style="margin-left:20px; font-size:36px;">{{$flea[0]->flea_name}} 第{{$flea_th[0]->th}}回</h3>
         <hr>
-        <p style="margin-left:20px; font-size:26px;">날짜 : {{$flea_th[0]->start_year_month}}-{{$flea_th[0]->start_day}} {{$flea_th[0]->start_time}} ~
+        <p style="margin-left:20px; font-size:26px;">開催期間 : {{$flea_th[0]->start_year_month}}-{{$flea_th[0]->start_day}} {{$flea_th[0]->start_time}} ~
           {{$flea_th[0]->end_year_month}}-{{$flea_th[0]->end_day}} {{$flea_th[0]->end_time}}</p>
-        <p style="margin-left:20px; font-size:26px;">장소 : {{$flea[0]->address}}</p>
-        <p style="margin-left:20px; font-size:26px;">참가비 : {{$flea_th[0]->entry_fee}}원</p>
-        <p style="margin-left:20px; font-size:26px; display:inline-block">대표주제 : </p><div class="tag">{{$flea_th[0]->topic}}</div>
+        <p style="margin-left:20px; font-size:26px;">場所 : {{$flea[0]->address}}</p>
+        <p style="margin-left:20px; font-size:26px;">参加費 : {{$flea_th[0]->entry_fee}}円</p>
+        <p style="margin-left:20px; font-size:26px; display:inline-block">テーマ : </p><div class="tag">{{$flea_th[0]->topic}}</div>
       </div>
     </div>
 
     <!-- 설명 -->
     <div id='var1' class="f_text thumbnail">
-      <p>설명</p>
+      <p>説明</p>
       <textarea readonly style="font-size:20px;padding:15px;width:100%;height:88%;resize:none;"> {{$flea_th[0]->text}}</textarea>
     </div>
 
     <!-- 부스배치도 -->
     <div class="booth_map thumbnail">
-      <p>부스배치도</p>
+      <p>ブース配置図</p>
       <div class="booth_map_in">
 
       </div>
@@ -419,7 +458,7 @@
 
     <!-- 부스배치도 -->
     <div class="maps thumbnail">
-      <p>지도</p>
+      <p>地図</p>
       <div id="map"></div>
       <script>
           //구글 맵 api
@@ -451,26 +490,230 @@
       <!-- if문을 사용하여 로그인 전후와 본인이 작성한 것을 기준으로
     나타내는 버튼을 다르게 나타가게함. -->
         @if ($applys == 0)
-        <button class="btn btn-default"><a href="{{url('/fleamarket/sellerapply/')}}/{{$flea_th[0]->id}}">판매자 신청</a></button>
+        <button class="btn btn-default" style="width:130px;"><a style="font-size:14px;" href="{{url('/fleamarket/sellerapply/')}}/{{$flea_th[0]->id}}">出店者申し込み</a></button>
         @else
-        <button class="btn btn-default" id="seller_applys" style="width:133px; color:#2a88bd;">판매자 신청 수정</button>
+        <button class="btn btn-default" id="seller_applys" style="width:133px; color:#2a88bd;">出店者申し込み</button>
         @endif
-      <button class="btn btn-default"><a href="{{url('/fleamarket/ticketbuy')}}">티켓 구매</a></button>
-      <button class="btn btn-default"><a href="{{url('/fleamarket/flea_open')}}">수 정</a></button>
-      <button class="btn btn-default"><a href="/fleamarket/sellerSet/{{$booth_name}}/th/{{$flea_th[0]->id}}">판매자 배치</a></button>
+      <button class="btn btn-default"><a href="{{url('/fleamarket/ticketbuy')}}">チケット購入</a></button>
+      <button class="btn btn-default"><a href="{{url('/fleamarket/flea_open')}}">修正</a></button>
+      <button class="btn btn-default"><a href="/fleamarket/sellerSet/{{$booth_name}}/th/{{$flea_th[0]->id}}">出店者配置</a></button>
     </div>
 
     <!-- 댓글 -->
     <div class="flea_comments thumbnail">
-      <p style="margin:10px;font-size:20px;">댓글</p>
+      <p style="margin:10px;font-size:20px;">コメント</p>
       <div class="flea_comment_num">
       </div>
       <div class="flea_comment">
         {{--<textarea id='comment_text' style="margin-left:45px;width:805px;height:60px;resize:none;"></textarea>--}}
         <input type='text' id='comment_text' style="margin-left:45px;width:800px;height:60px;resize:none;"></input>
-        <button id='com_button' class="btn btn-default">댓글작성</button>
+        <button style="width:100px; margin-right:35px;" id='com_button' class="btn btn-default">コメント作成</button>
       </div>
     </div>
 
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.seller_info_contents:eq(0)').show();
+        $('.seller_info_contents:eq(1)').hide();
+        $('.seller_info_contents:eq(2)').hide();
+        $('.seller_info_contents:eq(3)').hide();
+        $('.seller_info_contents:eq(4)').hide();
+        
+        // $('button').click(function() {
+        //   alert('aaaa'); 
+        // });
+        
+        
+        $(document).on('click','.slick-next',function(){
+          
+          var getId = $('.slick-active').attr('id').split("_")[1];
+          
+          for(var i = 0; i < $('.seller_info_contents').length; i++){
+            if(getId == Number($('.seller_info_contents:eq('+i+')').attr('id'))){
+              $('.seller_info_contents:eq(0)').hide();
+              $('.seller_info_contents:eq(1)').hide();
+              $('.seller_info_contents:eq(2)').hide();
+              $('.seller_info_contents:eq(3)').hide();
+              $('.seller_info_contents:eq(4)').hide();
+              $('.seller_info_contents:eq('+i+')').show();
+            }
+          }
+        });
+        
+        $(document).on('click','.slick-prev',function(){
+          
+          var getId = $('.slick-active').attr('id').split("_")[1];
+          
+          for(var i = 0; i < $('.seller_info_contents').length; i++){
+            if(getId == Number($('.seller_info_contents:eq('+i+')').attr('id'))){
+              $('.seller_info_contents:eq(0)').hide();
+              $('.seller_info_contents:eq(1)').hide();
+              $('.seller_info_contents:eq(2)').hide();
+              $('.seller_info_contents:eq(3)').hide();
+              $('.seller_info_contents:eq(4)').hide();
+              $('.seller_info_contents:eq('+i+')').show();
+            }
+          }
+        });
+        
+        $('.booths').click(function() {
+          $('#myModal').modal();
+        });
+        
+        $('.booths').mouseover(function() {
+          if(!$(this).children('img').length){
+            $(this).css('background-color','#4f4f4f');
+            $(this).css('opacity','0.8');
+            $(this).css('color','white');
+            var height = $(this).height();
+            $(this).css('padding-top',height / 4);
+            var userNick = $(this).text();
+            $(this).html("'"+userNick+"'<br/>詳細情報見る");
+          }
+          
+        });
+        
+        $('.booths').mouseout(function() {
+          if(!$(this).children('img').length){
+            var userNick = $(this).html();
+            userNick = userNick.split("<br>")[0];
+            userNick = userNick.split("'")[1];
+            // alert(userNick);
+            $(this).css('background-color','white');
+            $(this).css('opacity','1');
+            $(this).css('color','black');
+            $(this).css('padding-top','1px');
+            $(this).html("<img src='{{asset('/img/icon/')}}/test.png' style='width:100%;height:76%; border-radius: 5px;'>"+userNick);
+          }
+        });
+        
+        $(".slick_wrapper").slick({
+          dots: true,
+          infinite: true,
+          variableWidth: true
+        });
+      });
+    </script>
+    
+    <style type="text/css">
+      .seller_info_header{
+        font-size:20px;
+      }
+      .slider {
+        width: 50%;
+        margin: 100px auto;
+      }
+  
+      .slick-slide {
+        margin: 0px 20px;
+      }
+  
+      .slick-slide img {
+        width: 100%;
+      }
+  
+      .slick-prev:before,
+      .slick-next:before {
+          color: black;
+      }
+      .slick_img_wrapper{
+        width:200px;
+        height:200px;
+      }
+      .slick_wrapper{
+        width:200px;
+        height:200px;
+        /*border:1px solid black;*/
+        margin-top:0px;
+      }
+      .seller_info_division_line{
+        margin:auto;
+        margin-top:60px;
+        margin-bottom:20px;
+        border-bottom:1px dotted #a3a3a3;
+        width:90%;
+      }
+      .seller_info_contents{
+        margin:auto;
+        width:90%;
+        height:200px;
+        /*border:1px solid black;*/
+        font-size:20px;
+      }
+
+      .seller_info_note{
+        width:100%;
+        height:50px;
+        border:1px solid #a3a3a3;
+        border-radius:6px;
+      }
+    </style>
+    
+      <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header seller_info_header">
+              出店者"山田"様のブース情報
+            </div>
+            <div class="modal-body">
+              <section class="slick_wrapper slider">
+                <div class="slick_img_wrapper" id="goods_1">
+                  <img src="{{asset('storage/image/')}}/goods1.jpg">
+                </div>
+                <div class="slick_img_wrapper" id="goods_2">
+                  <img src="{{asset('storage/image/')}}/goods2.jpg">
+                </div>
+                <div class="slick_img_wrapper" id="goods_3">
+                  <img src="{{asset('storage/image/')}}/goods3.jpg">
+                </div>
+                <div class="slick_img_wrapper" id="goods_4">
+                  <img src="{{asset('storage/image/')}}/goods4.jpg">
+                </div>
+                <div class="slick_img_wrapper" id="goods_5">
+                  <img src="{{asset('storage/image/')}}/goods5.jpg">
+                </div>
+              </section>
+              <div class="seller_info_division_line"></div>
+              <div class="seller_info_contents" id="1">
+                <div>商品名 : ブラックチョコレート</div>
+                <div>価格 &nbsp;&nbsp;&nbsp;: 700円</div>
+                <div>在庫 &nbsp;&nbsp;&nbsp;: 20 EA</div><br>
+                備考<div class="seller_info_note"></div>
+              </div>
+              <div class="seller_info_contents" id="2">
+                <div>商品名 : ホワイト・チョコレート</div>
+                <div>価格 &nbsp;&nbsp;&nbsp;: 700円</div>
+                <div>在庫 &nbsp;&nbsp;&nbsp;: 20 EA</div><br>
+                備考<div class="seller_info_note"></div>
+              </div>
+              <div class="seller_info_contents" id="3">
+                <div>商品名 : トリュフチョコレート</div>
+                <div>価格 &nbsp;&nbsp;&nbsp;: 1000円</div>
+                <div>在庫 &nbsp;&nbsp;&nbsp;: 25 EA</div><br>
+                備考<div class="seller_info_note"></div>
+              </div>
+              <div class="seller_info_contents" id="4">
+                <div>商品名 : シェルチョコレート</div>
+                <div>価格 &nbsp;&nbsp;&nbsp;: 500円</div>
+                <div>在庫 &nbsp;&nbsp;&nbsp;: 30 EA</div><br>
+                備考<div class="seller_info_note"></div>
+              </div>
+              <div class="seller_info_contents" id="5">
+                <div>商品名 : ジャンドゥーヤチョコレート</div>
+                <div>価格 &nbsp;&nbsp;&nbsp;: 400円</div>
+                <div>在庫 &nbsp;&nbsp;&nbsp;: 15 EA</div><br>
+                備考<div class="seller_info_note"></div>
+              </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="exit" class="btn btn-default">キャンセル</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
   </div>
 @endsection

@@ -5,14 +5,17 @@
     <title>@yield('title')</title>
   </head>
 
-  {{-- <link rel="stylesheet" href="/css/clock.css"> --}}
+  <link rel="stylesheet" href="/css/clock.css">
   <link rel="stylesheet" href="{{asset('/css/contents/mylab.css')}}">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
+  <script src="/js/clock.js" charset="utf-8"></script>
+  <script src="/js/calendar.js" charset="utf-8"></script>
+  
 
   <!-- bxSlider Javascript file -->
   <script src="/js/bxslider/jquery.bxslider.min.js"></script>

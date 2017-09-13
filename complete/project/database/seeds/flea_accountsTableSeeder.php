@@ -12,17 +12,17 @@ class flea_accountsTableSeeder extends Seeder
     public function run()
     {
        App\FleaAccount::create([    
-            'th_id' => 1,
+            'th_id' => 2,
             'seller_id' => 1,
             'account' => 2800000
         ]);
         App\FleaAccount::create([   
-            'th_id' => 2,
+            'th_id' => 7,
             'seller_id' => 1,
             'account' => 2650000
         ]);
         App\FleaAccount::create([   
-            'th_id' => 3,
+            'th_id' => 11,
             'seller_id' => 1,
             'account' => 3370000
         ]);

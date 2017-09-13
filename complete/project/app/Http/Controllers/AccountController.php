@@ -14,11 +14,11 @@ class AccountController extends Controller
 
     	$resultTest = '';
     	$userId = Session::get('user')['id'];
-    	$fleaThList = DB::table('flea_ths')->select('id','th')->where('flea_id','=',$flea_id)->get();
+    	$fleaThList = DB::table('flea_ths')->select('flea_id','id','th')->where('flea_id','=',$flea_id)->get();
 
     	$pagingThInfo = DB::table('fleamarkets')->join('flea_ths', 'fleamarkets.id', '=', 'flea_ths.flea_id')
     	->select('fleamarkets.id','fleamarkets.flea_name','flea_ths.th','flea_ths.commission','flea_ths.booth_fee','flea_ths.booth_quantity','flea_ths.start_year_month')
-    	->where('fleamarkets.host_id','=',$userId)->where('fleamarkets.id','=',$flea_id)->paginate(2);
+    	->where('fleamarkets.host_id','=',$userId)->where('fleamarkets.id','=',$flea_id)->paginate(3);
 
     	$thInfo = DB::table('fleamarkets')->join('flea_ths', 'fleamarkets.id', '=', 'flea_ths.flea_id')
     	->select('fleamarkets.id','fleamarkets.flea_name','flea_ths.th','flea_ths.commission','flea_ths.booth_fee','flea_ths.booth_quantity','flea_ths.start_year_month')
@@ -176,7 +176,7 @@ class AccountController extends Controller
     	$accountInfo['monthInfo']		= $monthInfo;
     	$accountInfo['yearInfo']		= $yearInfo;
 
-
+        // return $accountInfo['pagingThInfo'];
     	// return response($year1);
     	// return response($monthAcc);
     	//return response($yearAcc);
@@ -197,6 +197,7 @@ class AccountController extends Controller
 
     function hostAccountThView(Request $req, $flea_id, $th_id){
     	$userId = Session::get('user')['id'];
+    	$flea_id;
     	$fleaThList = DB::table('flea_ths')->select('id','th','commission','booth_fee','block_plan')->where('flea_id','=',$flea_id)->get();
     	$commission = 0;
     	$booth_fee = 0;
@@ -255,18 +256,48 @@ class AccountController extends Controller
         }
 
     	/*페이지네이션용 부스정보값 설정*/
+    // 	for($i = 0, $length1 = count($pagingBoothInfo); $i < $length1; $i++){
+
+    // 		for($j = 0, $length2 = count($userSellInfo); $j < $length2; $j++){
+
+    // 			if($pagingBoothInfo[$i]->userId == $userSellInfo[$j]->seller_id){
+    // 				if(!array_key_exists('account',$pagingBoothInfo[$i])){
+    // 					$pagingBoothInfo[$i]->account = 0;
+    // 				}
+    // 				$pagingBoothInfo[$i]->account += ($userSellInfo[$j]->sell_price * $userSellInfo[$j]->sell_count);
+    // 			}
+	   // 	}
+    // 	}
     	for($i = 0, $length1 = count($pagingBoothInfo); $i < $length1; $i++){
 
     		for($j = 0, $length2 = count($userSellInfo); $j < $length2; $j++){
 
-    			if($pagingBoothInfo[$i]->userId == $userSellInfo[$j]->seller_id){
+    			if($pagingBoothInfo[$i]->user_id == $userSellInfo[$j]->seller_id){
     				if(!array_key_exists('account',$pagingBoothInfo[$i])){
     					$pagingBoothInfo[$i]->account = 0;
+    					$pagingBoothInfo[$i]->commAccount = 0;
     				}
+
     				$pagingBoothInfo[$i]->account += ($userSellInfo[$j]->sell_price * $userSellInfo[$j]->sell_count);
+
+    				$pagingBoothInfo[$i]->commAccount += ( ( ($userSellInfo[$j]->sell_price * $userSellInfo[$j]->sell_count) / 100 ) * $commission );
     			}
 	    	}
+	    	if($i == 0){
+	    		$minAcc = $maxAcc = $pagingBoothInfo[$i]->account;
+			}
+	    	if($maxAcc < $pagingBoothInfo[$i]->account){
+	    		$maxAcc = $pagingBoothInfo[$i]->account;
+	    	}
+	    	if($minAcc > $pagingBoothInfo[$i]->account){
+	    		$minAcc = $pagingBoothInfo[$i]->account;
+	    	}
+
+	    	$pagingBoothInfo[$i]->finalAccount = $pagingBoothInfo[$i]->account - $pagingBoothInfo[$i]->commAccount - $booth_fee;
+	    	$finalCommAccount += $pagingBoothInfo[$i]->commAccount;
+	    	$finalBoothFee += $booth_fee;
     	}
+    	
 
     	/*부스정보값 설정*/
     	for($i = 0, $length1 = count($boothInfo); $i < $length1; $i++){
@@ -309,7 +340,7 @@ class AccountController extends Controller
     	//return response($userId);
     	//return response($boothInfo);
     	$accountInfo 					= array();
-    	$accountInfo['fleaThList'] 		= $fleaThList;
+    // 	$accountInfo['fleaThList'] 		= $fleaThList;
     	$accountInfo['fleaThList'] 		= $fleaThList;
     	$accountInfo['boothInfo'] 		= $boothInfo;
     	$accountInfo['fleamarket'] 		= $fleamarket;

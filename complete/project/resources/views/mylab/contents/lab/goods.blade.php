@@ -1,12 +1,35 @@
 @extends('layouts.app')
 
-@section('title', '물품보기')
+@section('title', "seller's goods")
 
 @section('style')
-  <!-- 합쳐지고 최소화된 최신 CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  
+  <!-- rating -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../css/star-rating.css" media="all" type="text/css"/>
+  <link rel="stylesheet" href="../themes/krajee-fa/theme.css" media="all" type="text/css"/>
+  <link rel="stylesheet" href="../themes/krajee-svg/theme.css" media="all" type="text/css"/>
+  <link rel="stylesheet" href="../themes/krajee-uni/theme.css" media="all" type="text/css"/>
+
+
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href="../css/star-rating.css" media="all" rel="stylesheet" type="text/css"/>
+  <!--suppress JSUnresolvedLibraryURL -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="../js/star-rating.js" type="text/javascript"></script>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="../js/star-rating.js" type="text/javascript"></script>
+  <script src="../themes/krajee-fa/theme.js" type="text/javascript"></script>
+  <script src="../themes/krajee-svg/theme.js" type="text/javascript"></script>
+  <script src="../themes/krajee-uni/theme.js" type="text/javascript"></script>
+
+  <script src="../js/bootstrap.min.js"></script>
+  
   <script src="/js/lab/mylab.js" charset="utf-8"></script>
   <script type="text/javascript">
     $(function(){
@@ -16,10 +39,6 @@
 
   <link rel="stylesheet" href="/css/contents/mylab.css">
   <style media="screen">
-    html {
-      width : 100%;
-      height : 100%;
-    }
     #goods_main {
       padding-top : 10px !important;
     }
@@ -31,11 +50,12 @@
   <div class="goods_menu">
     <div class="profile">
       <div class="profile_img">
-        <img src="{{asset('storage/image/profile1.png')}}" alt="">
+        <img src="{{asset('storage/image/profile7.jpg')}}" alt="">
       </div>
       <div class="profile_name">
         <p>
-          <b>{{$user_name['name']}}</b>
+          <!--<b>{{$user_name['name']}}</b>-->
+          <b>Double O</b>
         </p>
       </div>
     </div>
@@ -50,10 +70,10 @@
       </button> -->
 
       <button id = "goods_btn_click" class="btn btn-danger" data-toggle="modal" data-target="#goods_modal">
-        물품등록
+        商品登録
       </button>
       <button id = "category_btn_click" class="btn btn-danger" data-toggle="modal" data-target="#category_modal">
-        카테고리수정
+        カテゴリー
       </button>
 
     </div>
@@ -91,6 +111,48 @@
             @endforeach
           </li>
         @endforeach
+        
+        <!--물품 기본 4개-->
+        <li>
+          <div class="goods_imgs">
+            <div class="goods_img">
+              <img src="https://s-media-cache-ak0.pinimg.com/736x/b7/e6/9a/b7e69af39631e1734fec3301af1846bd--centerpiece-wedding-centerpiece-ideas.jpg"/>
+            </div>
+            <div class="goods_img_name">
+              <p>明明と火をともそう！ キャンドル</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="goods_imgs">
+            <div class="goods_img">
+              <img src="http://www.grandrental-stl.com/wp-content/uploads/2016/04/Cylinder_Vase.jpg"/>
+            </div>
+            <div class="goods_img_name">
+              <p>みんなのキャンドル</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="goods_imgs">
+            <div class="goods_img">
+              <img src="http://mblogthumb2.phinf.naver.net/20140612_297/eunki3131_1402537172587o4naB_JPEG/10_%BF%C0%B9%CC%C0%DA%BD%BD%B7%AF%BD%C3-1.jpg?type=w2"/>
+            </div>
+            <div class="goods_img_name">
+              <p>へえースムージー</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="goods_imgs">
+            <div class="goods_img">
+              <img src="http://post.phinf.naver.net/MjAxNzA2MTVfMTI2/MDAxNDk3NTE1MzU4MzY3.aBcLQykpHxCL13wtqXjP-FzhN7ajNb4iPjL8upyrb84g.BhzecxHCcPZC5MnA-qyVJiz8KuNFaE4ZtbeF5kgrAXog.JPEG/%EC%8A%A4%EB%B2%85%EB%85%B9%EC%B0%A82-04.jpg?type=w1200"/>
+            </div>
+            <div class="goods_img_name">
+              <p>甘み爆発!! グリーンティードーナツ</p>
+            </div>
+          </div>
+        </li>
       </ul>
 
     </div>
@@ -102,16 +164,16 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="categoryModalLabel">카테고리 수정</h4>
+          <h4 class="modal-title" id="categoryModalLabel">カテゴリー修正</h4>
         </div>
         <div class="modal-body">
           <div class="category_window">
             <div class="category1">
-              <p class="category_title">카테고리 추가</p>
+              <p class="category_title">カテゴリー追加</p>
               <div class="category_input">
                 <input id="category_name_input" type="text" name="category" value="">
                 <button id="category_input" type="button" class="btn btn-default">
-                  입력
+                  入力
                 </button>
               </div>
               <div class="add_category1">
@@ -123,12 +185,12 @@
               </div>
               <div class="add_category_btn">
                 <button id="add_category_btn" type="button" class="btn btn-default">
-                  추가
+                  追加
                 </button>
               </div>
             </div>
             <div class="category2">
-              <p class="category_title">카테고리</p>
+              <p class="category_title">カテゴリー</p>
               <div class="add_category2">
                 {{--카테고리가 없을 경우--}}
                 @if(!$category)
@@ -148,8 +210,8 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" id="category_add" class="btn btn-danger">수정</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+          <button type="button" id="category_add" class="btn btn-danger">修正</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">キャンセル</button>
         </div>
       </div>
     </div>
@@ -164,7 +226,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="goodsModalLabel">물품등록</h4>
+          <h4 class="modal-title" id="goodsModalLabel">商品入力</h4>
         </div>
         <div class="modal-body">
           <div class="goods_form">
@@ -179,7 +241,7 @@
                 </select>
               </div>
               <div class="goods_title_input">
-                <input id="goods_name_insert" type="text" name="goods_name" value="" placeholder="물품이름을 입력해주세요.">
+                <input id="goods_name_insert" type="text" name="goods_name" value="" placeholder="商品名を書いてください。">
                 {{--<button type="button" name="button">
                   <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
                 </button>--}}
@@ -193,8 +255,8 @@
           </div>
         </div>
         <div class="modal-footer">
-          <button type="submit" id="goods_save" class="btn btn-danger">등록</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
+          <button type="submit" id="goods_save" class="btn btn-danger">登録</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">キャンセル</button>
         </div>
       </div>
     </div>
@@ -209,7 +271,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="">물품 상세보기</h4>
+        <h4 class="modal-title" id="">商品詳細</h4>
       </div>
       <div class="modal-body">
         <!-- 물품상세페이지 -->
@@ -247,11 +309,11 @@
             <!-- 댓글입력부분 -->
             <div class="goods_comment">
               <div class="goods_comment_input">
-                <input type="text" name="goods_comment" value="" placeholder="댓글입력">
+                <input type="text" name="goods_comment" value="" placeholder="commnet">
               </div>
               <div class="goods_comment_input_btn">
                 <button id="goods_comment_btn" type="button" class="btn btn-danger">
-                  입력
+                  登録
                 </button>
               </div>
             </div>

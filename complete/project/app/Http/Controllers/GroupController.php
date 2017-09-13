@@ -72,8 +72,11 @@ class GroupController extends Controller
 
         $user_id = $req->session()->get('user');
         $host_id = $user_id['id'];
+        
+        echo "<script>alert('그룹 생성이 완료되었습니다.');
+                    location.href='/fleamarket/main';</script>";
 
-        return view('contents/flea/flea_group_list')->with('lists',$list)->with('user_id',$host_id);
+        // return view('contents/flea/flea_group_list')->with('lists',$list)->with('user_id',$host_id);
     }
 
     function GroupList(Request $req){
@@ -88,8 +91,7 @@ class GroupController extends Controller
         $group_name = $req->get('group_name');
         $user_id = $req->get('user_id');
 
-        DB::table('fleamarkets')->where('flea_name', '=', $group_name)->
-        where('host_id', '=', $user_id)->delete();
+        DB::table('fleamarkets')->where('flea_name', '=', $group_name)->where('host_id', '=', $user_id)->delete();
 
         $result = $req->input('group_name');
         $callback = $req->input('callback');

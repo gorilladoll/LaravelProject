@@ -1,7 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
+
+@extends('layouts.app')
+
+@section('content')
+
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -10,6 +12,10 @@
 
 </head>
 <style type="text/css">
+	body{
+		font-family:'interparkM','interparkMEot';
+	}
+
 	li{
 		list-style: none;
 	}
@@ -17,6 +23,17 @@
 	.account_header{
 		margin:0 auto; 
 		width: 1200px;
+		margin-top:140px;
+		/*border:1px solid black;*/
+	}
+	
+	#account_header_title{
+		width:280px;
+		height:35px; 
+		border-bottom:2px solid #383838; 
+		color:#383838; 
+		text-shadow:1px 1px 2px #828282; 
+		box-shadow:3px 3px 3px #828282;
 	}
 
 	.account_wrapper{
@@ -45,12 +62,16 @@
 		line-height: 40px; 
 		width: 250px; 
 		height: 40px;
+		background-color: white;
+		box-shadow:3px 3px 6px #848484;
 	}
 
 	.account_thList{
 		margin-top: 10px; 
 		width: 250px; 
 		height: 650px; 
+		background-color:white;
+		box-shadow:3px 3px 6px #848484;
 	}
 
 	.account_th{
@@ -65,6 +86,8 @@
 		margin-left: 10px; 
 		width: 700px;
 		height: 700px;
+		background-color:white;
+		box-shadow:3px 3px 6px #848484;
 	}
 
 	.account_detailArea{
@@ -72,6 +95,8 @@
 		margin-left: 10px;
 		width: 225px;
 		height: 700px;
+		background-color: white;
+		box-shadow:3px 3px 6px #848484;
 	}
 
 	.detailArea_header{
@@ -429,8 +454,8 @@
 
 
 	<div class="account_header">
-		<h1>벼룩 정산</h1>
-		<hr style="border: 1px solid #a0a0a0; width: 1190px;">	
+		<h1 id="account_header_title" >FLEA ACCOUNT</h1>
+		<!--<hr style="border: 1px solid #a0a0a0; width: 1190px;">	-->
 	</div>
 	
 	<br>
@@ -445,11 +470,12 @@
 			<!--플레마켓 회차별 리스트-->
 				@for($i = 0, $len = count($accountInfo['fleaThList']); $i < $len; $i++)
 					<div class="text-center account_BottomBox account_th">
-						<a href="/account/host/{{$accountInfo['fleaThList'][0]->id}}/th/{{$accountInfo['fleaThList'][$i]->id}}">{{$accountInfo['pagingThInfo'][0]->flea_name}} {{$accountInfo['fleaThList'][$i]->th}}차</a>
+						<a href="/account/host/{{$accountInfo['fleaThList'][0]->flea_id}}/th/{{$accountInfo['fleaThList'][$i]->id}}">{{$accountInfo['pagingThInfo'][0]->flea_name}} {{$accountInfo['fleaThList'][$i]->th}}차</a>
 					</div>	
 				@endfor
 			</div>
 		</div>
+		
 		
 		<div class="account_accountArea account_divBox">
 			<div style="margin-left: 10px; margin-top: 30px; height: 60px;">
@@ -513,4 +539,5 @@
 	<br/>
 	<br/>
 </body>
-</html>
+
+@endsection

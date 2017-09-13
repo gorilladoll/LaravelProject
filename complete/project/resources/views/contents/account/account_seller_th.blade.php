@@ -1,7 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
+
+@extends('layouts.app')
+
+@section('content')
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
 	
@@ -11,7 +12,6 @@
     <script type="text/javascript" src="http://static.fusioncharts.com/code/latest/fusioncharts.js"></script>
 	<script type="text/javascript" src="http://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.fint.js?cacheBust=56"></script>
 
-</head>
 <style type="text/css">
 	li{
 		list-style: none;
@@ -354,4 +354,5 @@
 	<br/>
 	<br/>
 </body>
-</html>
+
+@endsection

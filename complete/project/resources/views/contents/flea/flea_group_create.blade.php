@@ -5,7 +5,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <style>
-
+  
     
     #image_info{
     width:500px;
@@ -14,23 +14,46 @@
   }
   .seller_info{
     margin-top:30px;
-    height:430px;
+    height:480px;
     width:1000px;
-
+    /*border:1px solid black;*/
+    padding-top:20px;
+    padding-left:20px;
+    background-color:white;
+    border-radius:6px;
+    box-shadow:5px 5px 8px #6d6d6d;
   }
   .seller_info_input{
-    margin-left:30px;
+    
     width : 600px;
     height : 430px;
-    float:right;
-    display:inline-block;
+    float:left;
+    margin-left:20px;
+    /*float:right;*/
+    /*display:inline-block;*/
+    /*border:1px solid black;*/
   }
   .seller_info_img{
     width:340px;
     height:430px;
     float:left;
     display:inline-block;
+    box-shadow:5px 5px 7px #7c7c7c;
+    position: relative;
+    float:left;
+    font-family:'interparkM';
   }
+  .seller_info_img div{
+    position:absolute;
+    top:180px;
+    left:90px;
+    width:180px;
+    height:50px;
+    color:white;
+    text-shadow: 4px 4px 4px #4f4f4f;
+    /*border:1px solid black;*/
+  }
+  
   #image_file{
     margin-left:20%;
   }
@@ -41,6 +64,7 @@
   #image_view{
     width:100%;
     height:100%;
+    opacity:0.4;
   }
   .info_td{
     margin-right:40px;
@@ -52,7 +76,7 @@
   }
   
   .flea_map {
-    padding-top : 60px;
+    margin-top:30px;
     width:1000px;
     float:left;
     position:relative;
@@ -61,10 +85,12 @@
       font-size:24px;
   }
   #flea_map_input {
-    width : 900px;
+    width : 100%;
     margin : 0 auto;
     height : 600px;
     text-align: center;
+    /*border:1px solid black;*/
+    box-shadow:5px 5px 8px #6d6d6d;
   }
   #map{
     height:98%;
@@ -87,6 +113,10 @@
     width:150px;
     height:70px;
     font-size:20px;
+    background-color: #f94a4a;
+    color:white;
+    box-shadow:5px 5px 8px #6d6d6d;
+    
   }
   .apply_button{
       width:1000px;
@@ -97,10 +127,30 @@
         width:1000px;
         height:1000px;
         margin : 0 auto;
+        /*border:1px solid black;*/
+        margin-bottom:50px;
+        font-family:'interparkM';
     }
     .footer{
         margin-left:150px;
         float:left;
+    }
+    .info_text_header{
+      margin:auto;
+      margin-top: 140px;
+      font-size: 30px;
+      font-family: 'interparkM','interparkMEot';
+      margin-bottom: 50px;
+      /*padding:20px;*/
+      padding-top:8px;
+      border:2px solid #cc0a2d;
+      border-radius:5px;
+      width:600px;
+      height:50px;
+      background-color: /*#cc0a2d*/white;
+      color: #cc0a2d;
+      text-align:center;
+      box-shadow:5px 5px 10px #848484;
     }
 
 </style>
@@ -108,10 +158,10 @@
 <script>
     //구글 맵 api
     function initMap() {
-        var myLatLng = {lat: 37.566535, lng: 126.97796919999996};
+        var myLatLng = {lat: 35.612906, lng: 140.113615};
 
         var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
+            zoom: 18,
             center: myLatLng
         });
         var geocoder = new google.maps.Geocoder();
@@ -173,6 +223,9 @@
         function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
+                
+                $('.seller_info_img').children('div').remove();
+                $('.seller_info_img').children('img').css('opacity','1');
 
                 reader.onload = function (e) {
                     $('#miribogi').attr('src', e.target.result);
@@ -188,7 +241,7 @@
 @section('title', '플리마켓 그룹 생성')
 @section('content')
 <div class="info_text" style="margin-top:130px;">
-  <h2><b>플리마켓 그룹 생성</b></h2>
+  <h2 class="info_text_header">FLEA MARKET GROP CREATE</h2>
 </div>
 
 <form enctype="multipart/form-data" action="/group/create/new" method="post">
@@ -196,21 +249,25 @@
   <div class="seller_info">
     <!-- 사진등록 -> 팝업 -->
     <div class="seller_info_img">
-      <img src="http://www.recetass.com/imgreceta/no.png" id="image_view">
+      <img src="/user_img/poster_sample.jpg" id="image_view">
+      <div><h3>ポスター登録</h3></div>
     </div>
     <!-- 정보등록 -->
     <div class="seller_info_input">
           <div class="form-group">
-            <label>플리마켓이름</label>
-            <input class="info_td form-control" type="text" name="flea_name" value="테스트 플리마켓">
+            <label>フリーマーケットの名前</label>
+            <input class="info_td form-control" type="text" name="flea_name" value="アートフリーマーケット">
           </div>
           <div class="form-group">
-            <label>개최지역</label>
-            <input class="info_td form-control" type="text" name="location" value="대구">
+            <label>開催地域</label>
+            <input class="info_td form-control" type="text" name="location" value="千葉県">
           </div>
           <div class="form-group">
-            <label>상세설명</label>
-            <textarea class="info_td form-control" name="text" rows="10" style="resize:none;">테스트입니다</textarea>
+            <label>フリーマーケットの説明</label>
+            <textarea class="info_td form-control" name="text" rows="10" style="resize:none;">
+道の駅ちくら潮風王国にて、毎年恒例のアートフリーマーケットが開催されます。
+今年で19回目を迎えるこのフリーマーケット。県内外から約80のブースが2日間にわたり出店します。
+            </textarea>
           </div>
         <!-- 지역값을 저장 -->
         <input id="location_get" name="location_get" type="hidden" value="">
@@ -220,14 +277,13 @@
     </div>
   </div>
   <div class="flea_map">
-    <p><b>지도</b></p>
     <div id="flea_map_input" class="thumbnail">
 
       <!-- 플롯창 -->
       <div id="floating-panel" class="thumbnail" style="z-index:2;">
-        개최 장소를 검색해 주세요<br>
+        開催する場所を検索してください<br>
         <input id="address" type="textbox" class="form-control" value="">
-        <input id="submit" class="btn btn-default" style="margin-top:10px;" type="button" value="위치찾기">
+        <input id="submit" class="btn btn-default" style="margin-top:10px;" type="button" value="検索">
       </div>
 
       <!-- 지도 -->
@@ -244,21 +300,21 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">이미지 등록</h4>
+          <h4 class="modal-title">ポスター登録</h4>
         </div>
         <div class="modal-body">
           <div id="image_info" class="thumbnail"><img id="miribogi" src="/img/img.png"></div> <!-- 이미지가 표시될 영역 -->
           <div id="image_file"><input name="img_file" type="file" id="img_file"></div>
         </div>
         <div class="modal-footer">
-          <button id="image_save" type="button" class="btn btn-default">등록</button>
+          <button id="image_save" type="button" class="btn btn-default">登録</button>
         </div>
       </div>
 
     </div>
   </div>
   <div class="apply_button">
-    <input class="group_button btn btn-primary btn-lg btn-block" type="submit"value="그룹생성">
+    <input class="group_button btn btn-lg btn-block" type="submit" value="グループを作る">
   </div>
 </div>
 </form>

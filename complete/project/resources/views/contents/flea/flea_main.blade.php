@@ -16,30 +16,37 @@
         }
         .wrapper{
             margin: 0 auto;
-            width: 1200px;
-            height: 1500px;
+            width: 1480px;
+            height: 1400px;
+            font-family: 'interparkM','interparkMEot';
             /*border: 1px solid black;*/
         }
         .flea_list_header{
-            margin-top: 100px;
+            margin:auto;
+            margin-top: 140px;
             font-size: 30px;
-            font-family: 'interparkM';
-            margin-bottom: 30px;
-            padding:20px;
-            /*border-bottom:2px solid #cc0a2d;*/
+            font-family: 'interparkM','interparkMEot';
+            margin-bottom: 50px;
+            /*padding:20px;*/
+            padding-top:8px;
+            border:2px solid #cc0a2d;
+            border-radius:5px;
+            width:400px;
+            height:60px;
             background-color: /*#cc0a2d*/white;
             color: #cc0a2d;
             text-align:center;
+            box-shadow:5px 5px 10px #848484;
         }
         .flea_list_body{
             /*border: 1px solid black;*/
-            padding-left: 20px;
+            /*padding-left: 20px;*/
             margin-left: 0;
             width: 100%;
-            height: 600px;
+            height: 1200px;
         }
         .flea_list_content{
-            margin-left: 30px;
+            margin-left: 20px;
             margin-bottom : 20px;
             width: 340px;
             height: 580px;
@@ -51,6 +58,9 @@
             /*font-weight : bold;*/
             font-size : 15px;
             color : black;
+            background-color:white;
+            font-family:'interparkM','interparkMEot';
+            box-shadow: 3px 3px 10px #848484;
         }
         
         .flea_list_content:hover {
@@ -114,7 +124,7 @@
                     alert("선택된 그룹이 없습니다!");
                     return;
                 } else {
-                    if(confirm("현재 선택된 그룹으로 진행하시겠습니까?")){
+                    if(confirm("選んだグループでしますか?")){
                         var user = '{{$user_id}}';
                         var name = $('#'+select_color).text();
 
@@ -126,20 +136,21 @@
             })
 
             $('.delete').click(function(){
-                if(confirm("해당 그룹을 삭제하시겠습니까?")){
+                if(confirm("選んだグループを削除しますか?")){
                     $.ajax({
                         /*서버에 값 전달*/
-                        url: 'http://localhost:8000/group/del',
+                        url: '/group/del',
                         data: {
                             group_name: $('#'+select_color).text(),
                             user_id : 1
                         },
                         dataType: 'jsonp',
                         success: function (data) {
-
+                            alert('削除完了!');
+                            $('#'+select_color).remove();
                         },
                         error: function () {
-                            alert('에러가 발생하였습니다');
+                            alert('エラー');
                             return;
                         }
                     });
@@ -164,15 +175,16 @@
             @endforeach
 
             function list_color(idArg){
-                $('#'+select_color).css('background-color','lightgray');
+                $('#'+select_color).css('background-color','white');
+                $('#'+select_color).css('color','black');
                 select_color = idArg;
-                $('#'+select_color).css('background-color','lightgreen');
+                $('#'+select_color).css('background-color','#db2d20');
+                $('#'+select_color).css('color','white');
             }
         });
         
         
     </script>
-    
     <div class="flea_list_header">FLEA MARKET LIST</div>
     
     <div class="wrapper">
@@ -181,17 +193,17 @@
                 <div class="flea_list_content">
                     <div class="flea_img"><a href='{{url("/fleamarket/flea_page/")}}/{{$fleamarketInfo[$i]->id}}'><img src="{{asset('user_img/')}}/{{$fleamarketInfo[$i]->image_name}}"></a></div>
                     <div class="flea_info text-center">
-                        <div class="flea_info_title text-center">{{$fleamarketInfo[$i]->flea_name}} {{$fleamarketInfo[$i]->th}}회차</div>
-                        <div class="flea_info_date text-left">일시 : {{$fleamarketInfo[$i]->start_year_month}}-{{$fleamarketInfo[$i]->start_day}} &nbsp&nbsp&nbsp&nbsp&nbsp 시간: {{$fleamarketInfo[$i]->start_time}} ~ {{$fleamarketInfo[$i]->end_time}}</div>
-                        <div class="flea_info_location text-left">지역 : {{$fleamarketInfo[$i]->location}}</div>
+                        <div style='font-size:14px;' class="flea_info_title text-center">{{$fleamarketInfo[$i]->flea_name}} 第{{$fleamarketInfo[$i]->th}}回</div>
+                        <div style='font-size:14px;' class="flea_info_date text-left">開催日 : {{$fleamarketInfo[$i]->start_year_month}}-{{$fleamarketInfo[$i]->start_day}} &nbsp&nbsp&nbsp&nbsp&nbsp 時間: {{$fleamarketInfo[$i]->start_time}} ~ {{$fleamarketInfo[$i]->end_time}}</div>
+                        <div style='font-size:14px;' class="flea_info_location text-left">地域 : {{$fleamarketInfo[$i]->location}}</div>
                     </div>
-                    <div class="flea_explain text-center">
+                    <div style='font-size:14px;' class="flea_explain text-center">
                         {{$fleamarketInfo[$i]->text}}
                     </div>
                 </div>
             @endfor
-            <div style="margin:0 auto; width:500px; height:50px;" class="text-center">{{$fleamarketInfo->links()}}</div>
         </div>
+        <div style="margin:0 auto; width:200px; height:80px;" class="text-center">{{$fleamarketInfo->links()}}</div>
     </div>
     
     <div class="modal fade" id="group_modal">
@@ -200,12 +212,14 @@
                 .modal-body{
                     width:100%;
                     height:400px;
-                    
+                    overflow:scroll;
                 }
                 .my_list{
                     border:1px solid black;
-                    font-family:'interparkM';
+                    font-family:'interparkM','interparkMEot';
                     text-align:center;
+                    border-radius:5px;
+                    margin-bottom:5px;
                 }
                 .new_booth{
                     border:0px;
@@ -223,7 +237,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button> <!--header의 x버튼-->
-                    <h4 class="modal-title text-center">그룹 관리</h4>
+                    <h4 class="modal-title text-center">グループ管理</h4>
                 </div>
                 
                 <div class="modal-body">
@@ -235,26 +249,71 @@
                 </div>
                 
                 <div class="modal-footer">
-                    <button class="delete btn btn-default">삭제</button>
-                    <button class="ok btn btn-default">개최</button>
+                    <button class="delete btn btn-default">削除</button>
+                    <button class="ok btn btn-default">開催</button>
                 </div>
             </div>
         </div>
     </div>
+    <style type="text/css">
+        .flea_open_remocon{
+            box-shadow: 0px -3px 3px #afafaf;
+            width:100%;
+            height:100px;
+            top:91%;
+            left:0px;
+            position:fixed;
+            border-top:1px solid #777777;
+            background-color:white;
+            
+        }
+
+        #flea_list{
+             margin-top:20px;
+             margin-left:30px;
+             float:left;
+             width:88%;
+             font-size:20px;
+             font-family:'interparkM','interparkMEot';
+        }
+        #flea_list select{
+            border-radius:5px;
+        }
+        #group_create{
+            margin-top:15px;
+            width:160px;
+            height:40px;
+            background-color:#dd0404;
+            border:0px;
+            border-radius:5px;
+            color:white;
+            font-size:20px;
+            font-family:'interparkM','interparkMEot';
+            box-shadow:3px 3px 2px #8e8e8e;
+        }
+        #flea_find{
+            background-color: #dd0404;
+            border-radius:5px;
+            border:0px;
+            color:white;
+            font-size:20px;
+            box-shadow:3px 3px 2px #8e8e8e;
+            /*border:2px solid #dd0404;*/
+        }
+    </style>
     
-    <button id="group_create"> ggg </button>
-    
-    <div class="flea_open_button" style="margin:0 auto; width:100%; margin-top:20px;">
-        <div id="flea_list">지역
+    <div class="flea_open_remocon">
+        <div id="flea_list">地域 : 
             <select>
-                <option>서울특별시</option>
+                <option>東京</option>
             </select>
             <select>
-                <option>동대구</option>
+                <option>新宿</option>
             </select>
+            &nbsp&nbsp
+            <button id="flea_find"> 検索 </button>
         </div>
-        {{--<button onclick="location.href='/booth/open';">그룹선택</button>--}}
-        <button class="btn btn-primary" id="group_list">개최하기</button>
+        <button style='font-size:16px;' id="group_create"> グループ作成・開催 </button>
     </div>
 
 @endsection

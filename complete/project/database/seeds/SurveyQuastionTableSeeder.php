@@ -12,43 +12,43 @@ class SurveyQuastionTableSeeder extends Seeder
     public function run()
     {
         App\SurveyQuastion::create([	
-	       	'th_id'	=> 1,
-            'text' => '당신의 성별은 무엇입니까?'
+	       	'th_id'	=> 2,
+            'text' => 'あなたの性別は何ですか?'
 	    ]);
 	    
 	    App\SurveyQuastion::create([	
-	       	'th_id'	=> 1,
-            'text' => '남자'
+	       	'th_id'	=> 2,
+            'text' => '男'
 	    ]);
 	    
 	    App\SurveyQuastion::create([	
-	       	'th_id'	=> 1,
-            'text' => '여자'
+	       	'th_id'	=> 2,
+            'text' => '女'
 	    ]);
 	    
 	    App\SurveyQuastion::create([	
-	       	'th_id'	=> 1,
-            'text' => '당신의 플리마켓 참가 횟수는 몇회인가요?'
+	       	'th_id'	=> 2,
+            'text' => 'あなたはフリーマーケットに何回参加しましたか?'
 	    ]);
 	    
 	    App\SurveyQuastion::create([	
-	       	'th_id'	=> 1,
-            'text' => '1~5회'
+	       	'th_id'	=> 2,
+            'text' => '1~5回'
 	    ]);
 	    
 	    App\SurveyQuastion::create([	
-	       	'th_id'	=> 1,
-            'text' => '6~10회'
+	       	'th_id'	=> 2,
+            'text' => '6~10回'
 	    ]);
 	    
 	    App\SurveyQuastion::create([	
-	       	'th_id'	=> 1,
-            'text' => '11~15회'
+	       	'th_id'	=> 2,
+            'text' => '11~15回'
 	    ]);
 	    
 	    App\SurveyQuastion::create([	
-	       	'th_id'	=> 1,
-            'text' => '16회이상'
+	       	'th_id'	=> 2,
+            'text' => '16回以上'
 	    ]);
 	    
 	    

@@ -15,55 +15,64 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>-->
     <style>
-        body {
-            margin:8px;
-        }
+
         li{
             list-style:none;
         }
         .wrap{
+            margin:auto;
             width:1300px;
             height:1000px;
+            margin-top:150px;
+            /*border:1px solid black;*/
+            font-family:'interparkM','interparkMEot';
         }
         .s_List{
-            border : 2px solid #cc0a2d;
+            border : 2px solid #969696;
             border-radius:5px;
             width:250px;
             height:600px;
             float:left;
             background-color:white;
+            box-shadow:5px 5px 10px #848484;
         }
         .s_set{
-            margin-left: 50px;
-            border : 2px solid #cc0a2d;
+            margin-left:20px;
+            border : 2px solid #969696;
             border-radius:5px;
             width:800px;
             height:600px;
             float:left;
             background-color:white;
+            box-shadow:5px 5px 10px #848484;
         }
         .goods{
-            border : 2px solid #cc0a2d;
+            border : 2px solid #969696;
             border-radius:5px;
             width:670px;
             height:250px;
             float:left;
             margin-top: 30px;
             background-color:white;
+            box-shadow:5px 5px 10px #848484;
         }
         .s_info{
-            border : 2px solid #cc0a2d;
+            border : 2px solid #969696;
             border-radius:5px;
-            width:400px;
+            width:370px;
             height:250px;
             float:left;
             margin-left: 30px;
             margin-top: 30px;
             background-color:white;
+            box-shadow:5px 5px 10px #848484;
         }
         .terms_wrap{
             margin-top:5px;
             margin-bottom: 5px;
+            padding-bottom: 10px;
+            border-bottom:2px solid #969696;
+            border-radius:4px;
         }
         .terms1_wrap{
             width:100%;
@@ -78,7 +87,7 @@
             width:100%;
             height:445px;
             margin-top:20px;
-            border-top : 2px dotted #757575;
+            /*border-top : 2px solid #757575;*/
             border-radius:0 0 5px 5px;
             padding-top:5px;
         }
@@ -88,7 +97,7 @@
             border : 1px solid #757575;
             border-radius:5px;
             position:absolute;
-            font-size:20px;
+            font-size:14px;
         }
         .set_booth_not{
             width:98px;
@@ -97,11 +106,12 @@
             border-radius:5px;
             position:absolute;
             text-align: center;
-            font-size:20px;
+            font-size:14px;
         }
         .set_booth > p {
             margin:0;
             text-align: center;
+            font-size:12px;
         }
         .sellers{
             margin:1px 1px;
@@ -122,7 +132,7 @@
         .goods_view_center{
             width: 520px;
             height:130px;
-            border: 1px solid #cc0a2d;
+            /*border: 1px solid #cc0a2d;*/
             border-radius:5px;
             margin-top : 0;
             float:left;
@@ -132,7 +142,7 @@
             margin: 0 6px;
             width: 50px;
             height:130px;
-            border: 1px solid #cc0a2d;
+            /*border: 1px solid #cc0a2d;*/
             border-radius:5px;
             float:left;
         }
@@ -140,40 +150,44 @@
             margin: 0 6px;
             width: 50px;
             height:130px;
-            border: 1px solid #cc0a2d;
+            /*border: 1px solid #cc0a2d;*/
             border-radius:5px;
             float:left;
         }
         .goods_view_goods{
             width:121px;
-            height:121px;
+            height:115px;
             margin:4px;
-            border: 1px solid #cc0a2d;
+            /*border: 1px solid #cc0a2d;*/
             border-radius:5px;
             float:left;
+            font-size:15px;
         }
-        .goods > h3 {
-            padding-left:10px;
+        .goods_view_goods img{
+            box-shadow:3px 3px 7px #848484;
+            margin-bottom:100px;
+            border-radius:3px;
         }
+        
         .s_info_info{
             width:100px;
             height:30px;
-            border-top:1px solid #cc0a2d;
-            border-left:1px solid #cc0a2d;
-            border-right:1px solid #cc0a2d;
+            border-top:1px solid #969696;
+            border-left:1px solid #969696;
+            border-right:1px solid #969696;
             border-radius:5px 0 0 0;
             float:left;
             margin : 0;
             margin-top:10px;
             margin-left:12px;
             text-align: center;
-            font-size:20px;
+            font-size:18px;
         }
         .s_info_survey{
             width:100px;
             height:30px;
-            border-top:1px solid #cc0a2d;
-            border-right:1px solid #cc0a2d;
+            border-top:1px solid #969696;
+            border-right:1px solid #969696;
             border-radius:0 5px 0 0;
             float:left;
             margin : 0;
@@ -182,16 +196,13 @@
             font-size:20px;
         }
         .s_info_content{
-            width:370px;
-            height:200px;
-            border: 1px solid #cc0a2d;
-            border-radius:0 5px 5px 5px;
+            width:100%;
+            height:207px;
+            border-top: 2px solid #969696;
+            /*border-radius:0 5px 5px 5px;*/
             float:left;
             margin : 0;
-            margin-left:12px;
-        }
-        .terms_wrap{
-            margin:5px;
+            /*margin-left:12px;*/
         }
         .terms1_wrap{
             margin:4px;
@@ -312,19 +323,16 @@
             border-radius:5px; 
             float:left;   
         }
-        #finish{
-            border : 2px solid #cc0a2d;
+        #finish, #areaCreate, #auto_allocate{
+            border : 2px solid #969696;
             border-radius:5px;
+            margin-left: 20px; 
+            width:120px; 
+            height:70px; 
+            font-weight: bold;
+            box-shadow:5px 5px 10px #848484;
         } 
-        #areaCreate{
-            border : 2px solid #cc0a2d;
-            border-radius:5px;         
-        } 
-        #auto_allocate{
-            border : 2px solid #cc0a2d;
-            border-radius:5px;            
-        }
-        
+
     </style>
 
     <script>
@@ -466,7 +474,7 @@
                         $('.goods_view_center').scrollTop(0); // 상품정보 스크롤 최상단으로 이동
                         @foreach($goods as $good)
                         if({{$good->user_id}} == id_num){
-                            var goods = "<div class='goods_view_goods'><img style='width:90%;height:80%;margin:5px 5px 0 5px' src='{{asset('storage/image/'.$good->filename)}}'><p style='text-align:center;'>{{$good->name}}</p></div>";
+                            var goods = "<div class='goods_view_goods'><img style='width:90%;height:80%;margin:5px 5px 0 5px' src='{{asset('storage/image/'.$good->filename)}}'><p style='margin-top:10px; text-align:center;'>{{$good->name}}</p></div>";
                             $('.goods_view_center').append(goods);
                         }
                         @endforeach
@@ -547,12 +555,18 @@
 
                 // 부스에 판매자가 배치되어 있는지, 타입에 따라 이름 생성
                 if(boothSeller != 'NULL'){ // 일반 부스이며 판매자가 배치된 경우
-                    var booth = "<div class='set_booth' id='content_{{$booth->id}}' value="+count+"><p id='text_{{$booth->id}}' class='seller_name'>"+username+"</p></div>";
+                    var booth = "<div class='set_booth' id='content_{{$booth->id}}' value="+count+"><img src='{{asset('/img/icon/')}}/test.png' style='width:100%;height:80%; border-radius: 5px;'><p id='text_{{$booth->id}}' class='seller_name'>"+username+"</p></div>";
                     count++;
                 } else if(boothType == 'null') { // 일반 부스지만 판매자가 없는 경우
-                    var booth = "<div class='set_booth' id='content_{{$booth->id}}' value="+count+"><p id='text_{{$booth->id}}' class='seller_name'>"+(count++)+"</p></div>";
-                } else if(boothType != 'null'){  // 지형,입구 부스
-                    var booth = "<div class='set_booth_not' id='content_{{$booth->id}}' value="+count+"><p id='text_{{$booth->id}}' class='seller_name'>"+'{{$booth->value}}'+"</p></div>";
+                    var booth = "<div class='set_booth' id='content_{{$booth->id}}' value="+count+"><img src='{{asset('/img/icon/')}}/test.png' style='width:100%;height:80%; border-radius: 5px;'><p id='text_{{$booth->id}}' class='seller_name'>"+(count++)+"</p></div>";
+                } else if(boothType == '木'){  // 지형
+                    var booth = "<div class='set_booth_not' id='content_{{$booth->id}}' value="+count+"><img src='{{asset('/img/icon/')}}/j2.jpg' style='width:100%;height:76%; border-radius: 5px;'><p id='text_{{$booth->id}}' class='seller_name'>"+'{{$booth->value}}'+"</p></div>";
+                } else if(boothType == 'トイレ'){  // 화장실
+                    var booth = "<div class='set_booth_not' id='content_{{$booth->id}}' value="+count+"><img src='{{asset('/img/icon/')}}/j3.jpg' style='width:100%;height:76%; border-radius: 5px;'><p id='text_{{$booth->id}}' class='seller_name'>"+'{{$booth->value}}'+"</p></div>";
+                } else if(boothType == '障害物'){  // 장애물
+                    var booth = "<div class='set_booth_not' id='content_{{$booth->id}}' value="+count+"><img src='{{asset('/img/icon/')}}/j1.png' style='width:100%;height:76%; border-radius: 5px;'><p id='text_{{$booth->id}}' class='seller_name'>"+'{{$booth->value}}'+"</p></div>";
+                } else if(boothType == '入り口'){  // 입구
+                    var booth = "<div class='set_booth_not' id='content_{{$booth->id}}' value="+count+"><img src='{{asset('/img/icon/')}}/ipgu.png' style='width:100%;height:76%; border-radius: 5px;'><p id='text_{{$booth->id}}' class='seller_name'>"+'{{$booth->value}}'+"</p></div>";
                 }
                 $(".s_set").append(booth);
 
@@ -565,9 +579,9 @@
                 $("#content_{{$booth->id}}").attr('style',style);
 
                 // 불러온 부스가 입구나 지형일 경우 각 색상 변경
-                if (boothType == '입구'){
+                if (boothType == '入り口'){
                     $("#content_{{$booth->id}}").css('background-color','lightyellow');
-                } else if(boothType == '지형'){
+                } else if(boothType == '障害物'){
                     $("#content_{{$booth->id}}").css('background-color','lightblue');
                 }
 
@@ -721,11 +735,11 @@
 
                 for(var i=0;i<sListArray.length;i++){
                     if(id_num == sListArray[i].getId()){
-                        var infoText = "<ul class='info_css_parent'><li class='info_css'>부스명 : "+sListArray[i].booth_nameInfo+"</li>";
-                        infoText += "<li class='info_css'>연락처 : "+sListArray[i].phoneInfo+"</li>";
-                        infoText += "<li class='info_css'>주제 : "+sListArray[i].categoryInfo+"</li>";
-                        infoText += "<li class='info_css'>나이 : "+sListArray[i].ageInfo+"</li>";
-                        infoText += "<li class='info_css'>지역 : "+sListArray[i].locationInfo+"</li>";
+                        var infoText = "<ul class='info_css_parent'><li class='info_css'>ブース名 : "+sListArray[i].booth_nameInfo+"</li>";
+                        infoText += "<li class='info_css'>連絡先 : "+sListArray[i].phoneInfo+"</li>";
+                        infoText += "<li class='info_css'>テーマ : "+sListArray[i].categoryInfo+"</li>";
+                        infoText += "<li class='info_css'>年齢 : "+sListArray[i].ageInfo+"</li>";
+                        infoText += "<li class='info_css'>地域 : "+sListArray[i].locationInfo+"</li>";
                     }
                 }
                 $('.s_info_content').append(infoText);
@@ -735,7 +749,7 @@
             function s_info_survey(){
                 $('.s_info_survey').css('background-color','lightyellow');
                 $('.s_info_info').css('background-color','white');
-                $('.s_info_content').text('설문조사들');
+                $('.s_info_content').text('アンケート');
             }
 
             //조건 처리
@@ -812,7 +826,7 @@
             //1차조건 추가
             $('#terms1_3').click(function(){
                 if(terms1Arr.length > 4){
-                    alert("조건은 5개까지 추가 가능합니다!");
+                    alert("条件は五つまでできます!");
                     return;
                 }
                 modal1_add();
@@ -829,7 +843,7 @@
                         @foreach($termes as $terms)
 
                             switch (terms1Arr[i].terms) {
-                            case "주제":
+                            case "テーマ":
                                 for (var j = 0; j < sListArray.length; j++) {
                                     if ({{$terms->id}} == sListArray[j].getId()
                                 )
@@ -842,7 +856,7 @@
                                     }
                                 }
                                 break;
-                            case "참가횟수":
+                            case "参加回数":
                                 for (var j = 0; j < sListArray.length; j++) {
                                     if ({{$terms->id}} == sListArray[j].getId()
                                 )
@@ -855,7 +869,7 @@
                                     }
                                 }
                                 break;
-                            case "나이":
+                            case "年齢":
                                 for (var j = 0; j < sListArray.length; j++) {
                                     if ({{$terms->id}} == sListArray[j].getId()
                                 )
@@ -868,7 +882,7 @@
                                     }
                                 }
                                 break;
-                            case "최고판매금액":
+                            case "最高販売金額":
                                 for (var j = 0; j < sListArray.length; j++) {
                                     if ({{$terms->id}} == sListArray[j].getId()
                                 )
@@ -881,7 +895,7 @@
                                     }
                                 }
                                 break;
-                            case "최저판매금액":
+                            case "最低販売金額":
                                 for (var j = 0; j < sListArray.length; j++) {
                                     if ({{$terms->id}} == sListArray[j].getId()
                                 )
@@ -916,12 +930,12 @@
                     success : function(data){
                         // console.log(data);
                         // alert(data);
-                        alert("판매자 배치가 완료되었습니다.");
-                        window.location.href = "/";
+                        alert("出店者配置完了");
+                        window.location.href = "/fleamarket/flea_page/2";
                     },
                     error : function(){
                         console.log(boothArr);
-                        alert('에러가 발생하였습니다');
+                        alert('エラー.');
                     }
                 });
             });
@@ -1069,12 +1083,12 @@
 </head>
 <body>
     <!-- s는 seller를 의미 -->
-    <div class="wrap" style="margin-top:130px; margin-left:30px;">
+    <div class="wrap">
         <div class="s_List">
             <!-- 조건 버튼 공간 -->
             <div class="terms_wrap">
                 <div class="terms1_wrap">
-                    <div id="terms1">1차조건</div>
+                    <div id="terms1">1次条件</div>
 
                     <!-- Modal -->
                     <div id="terms1_modal" class="modal fade" role="dialog">
@@ -1084,39 +1098,39 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">1차 조건</h4>
+                                    <h4 class="modal-title">1次条件</h4>
                                 </div>
                                 <div class="modal-body" id="terms1_body">
-                                    <p id="terms1_1">기준</p>
+                                    <p id="terms1_1">基準</p>
                                     <select id="terms1_2">
-                                        <option value="주제">주제</option>
-                                        <option value="참가횟수">참가횟수</option>
-                                        <option value="나이">나이</option>
-                                        <option value="최저판매금액">최저판매금액</option>
-                                        <option value="최고판매금액">최고판매금액</option>
+                                        <option value="テーマ">テーマ</option>
+                                        <option value="参加回数">参加回数</option>
+                                        <option value="年齢">年齢</option>
+                                        <option value="最高販売金額">最高販売金額</option>
+                                        <option value="最低販売金額">最低販売金額</option>
                                     </select>
-                                    <button type="button" class="btn btn-default" id="terms1_3">추가</button>
+                                    <button type="button" class="btn btn-default" id="terms1_3">追加</button>
                                     <hr>
                                 </div>
                                 <div class="modal-body" id="terms1_body2">
 
                                 </div>
-                                <p style="margin-left:20px;">참가횟수, 나이는 입력 값 보다 ↑를 검색</p>
+                                <p style="margin-left:20px;">参加回数, 年齢は記入した数より高いことを検索</p>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
-                                    <button type="button" class="btn btn-primary" id="terms1_modal_save">확인</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">キャンセル</button>
+                                    <button type="button" class="btn btn-primary" id="terms1_modal_save">確認</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- Modal End-->
-
-                    <button id="terms1_btn" class="btn btn-default">적용</button>
+                    &nbsp;&nbsp;&nbsp;
+                    <button id="terms1_btn" class="btn btn-default">適用</button>
                 </div>
 
 
                 <div class="terms2_wrap">
-                    <div id="terms2" data-toggle="modal" data-target="#terms2_modal">2차조건</div>
+                    <div id="terms2" data-toggle="modal" data-target="#terms2_modal">2次条件</div>
 
                     <!-- Modal -->
                     <div id="terms2_modal" class="modal fade" role="dialog">
@@ -1125,14 +1139,14 @@
                             <!-- Modal content-->
                             <div class="modal-content">
                                 <div class="modal-header" style="margin:0 auto; width:97%; height:50px; margin-top:10px;">
-                                    <h4 class="modal-title" style="float:left; width:45%;">2차 조건</h4>
+                                    <h4 class="modal-title" style="float:left; width:45%;">2次条件</h4>
                                     <select id="terms2_2" style="width:110px;">
                                         @for($i = 0, $length = count($terms2Q); $i < $length; $i++)
-                                            <option class="terms_option" value="{{$terms2Q[$i]->id}}">{{$i + 1}}번 문항</option>
+                                            <option class="terms_option" value="{{$terms2Q[$i]->id}}">{{$i + 1}}番質問</option>
                                         @endfor
                                     </select>&nbsp&nbsp&nbsp
-                                    <button type="button" class="btn btn-default" id="survey_preview_btn"  style="margin-top:-7px;">보기</button>
-                                    <button type="button" class="btn btn-default" id="survey_add_btn"  style="margin-top:-7px;">추가</button>
+                                    <button type="button" class="btn btn-default" id="survey_preview_btn"  style="margin-top:-7px;">質問</button>
+                                    <button type="button" class="btn btn-default" id="survey_add_btn"  style="margin-top:-7px;">追加</button>
                                     <!--<hr>-->
                                 </div>
                                 <div id="terms2_body">
@@ -1156,17 +1170,17 @@
                                     
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">취소</button>
-                                    <button type="button" class="btn btn-primary" id="terms2_modal_save">확인</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">キャンセル</button>
+                                    <button type="button" class="btn btn-primary" id="terms2_modal_save">確認</button>
                                 </div>
                             </div> 
                         </div>
                     </div>
                     <!-- Modal End-->
-
-                    <button type="button" id="terms2_btn" class="btn btn-default">적용</button>
+                    &nbsp;&nbsp;&nbsp;
+                    <button type="button" id="terms2_btn" class="btn btn-default">適用</button>
                 </div>
-                <button id="terms_reset" class="btn btn-default btn-lg btn-block">조건 초기화</button>
+                <button id="terms_reset" style="width:93%; margin:auto; margin-top:15px;" class="btn btn-default btn-lg btn-block">条件初期化</button>
             </div>
 
             <!-- 판매자 리스트 -->
@@ -1176,11 +1190,11 @@
         <div class="s_set">
 
         </div>
-        <button id="finish" class="btn btn-default btn-lg" style="margin-left: 10px; width:120px; height:70px; font-weight: bold;">제작완료</button><br><br>
-        <button id="areaCreate" class="btn btn-default btn-lg" style="margin-left: 10px; width:120px; height:70px; font-weight: bold;">영역배치<br>모드</button><br><br>
-        <button id="auto_allocate" class="btn btn-default btn-lg" style="margin-left: 10px; width:120px; height:70px; font-weight: bold;">판매자<br>자동배치</button>
+        <button id="finish" class="btn btn-default btn-lg">政策完了</button><br><br>
+        <button id="areaCreate" class="btn btn-default btn-lg">領域配置<br>モード</button><br><br>
+        <button id="auto_allocate" class="btn btn-default btn-lg">出店者<br>自動配置</button>
         <div class="goods">
-            <h3>판매자 상품</h3>
+            <h3 style="height:40px; margin-top:0px; text-align:center; line-height:40px; background-color:#969696; color:white;">出店者の商品</h3>
             <div class="goods_view">
                 <div class="goods_view_left">
                     <img src="http://artfeel.co.kr/web/product/big/o_Icon_103.jpg" style="margin-top:2px; height:97%; width:97%;">
@@ -1196,10 +1210,10 @@
 
         <div class="s_info">
             <div class="s_info_info">
-                정보보기
+                出店者情報
             </div>
             <div class="s_info_survey">
-                설문조사
+                アンケート
             </div>
             <div class="s_info_content">
 

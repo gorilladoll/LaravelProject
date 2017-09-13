@@ -15,14 +15,14 @@ class SurveyAnswerTableSeeder extends Seeder
     	// user1
         App\SurveyAnswer::create([	
 	       	'q_id'	=> 1,
-	       	'th_id' => 1,
+	       	'th_id' => 2,
 	       	'user_id' => 1,
             'answer_id' => 2
 	    ]);
 	    
 	    App\SurveyAnswer::create([	
 	       	'q_id'	=> 4,
-	       	'th_id' => 1,
+	       	'th_id' => 2,
 	       	'user_id' => 1,
             'answer_id' => 6
 	    ]);
@@ -33,14 +33,14 @@ class SurveyAnswerTableSeeder extends Seeder
 	    // user2
 	    App\SurveyAnswer::create([	
 	       	'q_id'	=> 1,
-	       	'th_id' => 1,
+	       	'th_id' => 2,
 	       	'user_id' => 2,
             'answer_id' => 3
 	    ]);
 	    
 	    App\SurveyAnswer::create([	
 	       	'q_id'	=> 4,
-	       	'th_id' => 1,
+	       	'th_id' => 2,
 	       	'user_id' => 2,
             'answer_id' => 7
 	    ]);
@@ -51,14 +51,14 @@ class SurveyAnswerTableSeeder extends Seeder
 	    // user3
 	    App\SurveyAnswer::create([	
 	       	'q_id'	=> 1,
-	       	'th_id' => 1,
+	       	'th_id' => 2,
 	       	'user_id' => 3,
             'answer_id' => 3
 	    ]);
 	    
 	    App\SurveyAnswer::create([	
 	       	'q_id'	=> 4,
-	       	'th_id' => 1,
+	       	'th_id' => 2,
 	       	'user_id' => 3,
             'answer_id' => 8
 	    ]);
@@ -69,14 +69,14 @@ class SurveyAnswerTableSeeder extends Seeder
 	    // user4
 	    App\SurveyAnswer::create([	
 	       	'q_id'	=> 1,
-	       	'th_id' => 1,
+	       	'th_id' => 2,
 	       	'user_id' => 4,
             'answer_id' => 2
 	    ]);
 	    
 	    App\SurveyAnswer::create([	
 	       	'q_id'	=> 4,
-	       	'th_id' => 1,
+	       	'th_id' => 2,
 	       	'user_id' => 4,
             'answer_id' => 6
 	    ]);

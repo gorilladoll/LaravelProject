@@ -6,16 +6,61 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 <style>
+  #flea_apply{
+    /*border:1px solid black;*/
+    width:800px;
+    height:1200px;
+    margin:auto;
+    font-family:'interparkM','interparkMEot';
+  }
+  .info_text{
+    margin:auto;
+    margin-top: 170px;
+    font-size: 30px;
+    font-family: 'interparkM','interparkMEot';
+    margin-bottom: 50px;
+    /*padding:20px;*/
+    padding-top:8px;
+    border:2px solid #f94a4a;
+    border-radius:5px;
+    width:400px;
+    height:60px;
+    background-color: /*#cc0a2d*/white;
+    color: #f94a4a;
+    text-align:center;
+    box-shadow:5px 5px 10px #848484;
+  }
+  .info_text_goods{
+    margin:auto;
+    font-size: 30px;
+    font-family: 'interparkM','interparkMEot';
+    margin-bottom: 50px;
+    padding-top:8px;
+    width:100%;
+    height:60px;
+    background-color: #f94a4a;
+    color: white;
+    text-align:center;
+  }
   .seller_info_input{
     margin: 0 auto;
-    width:800px;
+    border:2px solid #f94a4a;
+    width:100%;
+    background-color:white;
+    border-radius:6px;
+    padding:20px;
     font-size:24px;
+    box-shadow:5px 5px 10px #848484;
   }
   div.seller_goods {
     font-size:20p;
     margin: 0 auto;
     margin-top: 20px;
-    width : 820px;
+    width : 100%;
+    border:2px solid #f94a4a;
+    border-radius:6px;
+    background-color:white;
+    box-shadow:5px 5px 10px #848484;
   }
 
   div.seller_goods div.info_text{
@@ -31,8 +76,10 @@
     padding: 5px 3px;
     margin:20px 100px 10px 100px;
     font-size: 20px;
-    border:1px dotted black;
+    border:2px solid #57b3f9;
     border-radius: 5px;
+    color:#57b3f9;
+    box-shadow:3px 3px 6px #848484;
   }
 
   .goods_my_list{
@@ -124,8 +171,41 @@
       min-height: 400px; 
       overflow: auto; 
     }
+    
+    .seller_reseach{
+      font-size:20px;
+      margin: 0 auto;
+      margin-top: 30px;
+      width : 100%;
+      border:2px solid #f94a4a;
+      border-radius:6px;
+      background-color:white;
+      box-shadow:5px 5px 10px #848484;
+    }
+    
+    .info_text_research{
+      margin:auto;
+      font-size: 30px;
+      font-family: 'interparkM','interparkMEot';
+      margin-bottom: 50px;
+      padding-top:8px;
+      width:100%;
+      height:60px;
+      background-color: #f94a4a;
+      color: white;
+      text-align:center;
+    }
 
-
+    #save_btn{
+      margin-top:20px;
+      margin-bottom:60px;
+      width:180px; 
+      height:60px;
+      background-color: #f94a4a;
+      color:white;
+      font-size:25px;
+      box-shadow:5px 5px 10px #848484;
+    }
 </style>
 
 <script>
@@ -326,32 +406,32 @@
 
 @section('title', '판매자신청')
 @section('content')
-<div class="info_text" style="width:1200px; margin-top:150px; font-family: Futura;">
-  <h2>SELLER APPLY</h2>
+<div class="info_text">
+  SELLER APPLY
 </div>
 <div id="flea_apply">
   <!-- 판매자 정보등록 -->
     <div class="seller_info_input">
       <div class='form-inline'>
-      <label>부&nbsp;스&nbsp;명 : </label>
+      <label>부&nbsp;스&nbsp;명 &nbsp;&nbsp;&nbsp;: </label>
       <input style="width:160px;" class='form-control' type="text" id="b_name" value="테스트"><br>
       </div>
       <div class='form-inline'>
-      <label>주&nbsp;분&nbsp;류 : </label>
+      <label>주&nbsp;분&nbsp;류 &nbsp;&nbsp;&nbsp;: </label>
       <input style="width:160px;" class='form-control' type="text" id="b_category" value="초콜릿"><br>
       </div>
       <div class='form-inline'>
       <label>희망&nbsp;날짜 : </label>
-      <input style="width:160px;" class='form-control' type="text" id="b_date_start">~<input style="width:160px;" class='form-control' type="text" id="b_date_end">
+      <input style="width:163px;" class='form-control' type="text" id="b_date_start"> &nbsp;~&nbsp; <input style="width:160px;" class='form-control' type="text" id="b_date_end">
       </div>
     </div>
 
   <!-- 물품등록 -> 팝업 -->
-  <div class="seller_goods panel panel-primary">
-    <div class="info_text panel-heading">
+  <div class="seller_goods">
+    <div class="info_text_goods">
       플리마켓 참가 물품 리스트
     </div>
-    <div class="goods_add">상품 추가</div>
+    <div class="goods_add">GOODS ADD</div>
     <div class="goods_list">
 
     </div>
@@ -388,8 +468,8 @@
   </div>
 
   <!-- 설문조사 -->
-  <div class="seller_reseach panel panel-primary" style="overflow:auto;">
-    <div class="info_text panel-heading"> 설문조사 리스트</div>
+  <div class="seller_reseach" style="overflow:auto;">
+    <div class="info_text_research"> 설문조사 리스트</div>
     <div id="survey_body" >
       @for($i = 0, $length = count($surveyQ); $i < $length; $i++)
         <div class="survey_preview">
@@ -413,7 +493,7 @@
 
   <!-- 신청버튼 -->
   <div class="apply_button" style="margin-bottom:40px;">
-    <button id='save_btn' class="btn btn-primary">신청</button>
+    <button id='save_btn' class="btn">APPLY</button>
   </div>
 </div>
 @endsection

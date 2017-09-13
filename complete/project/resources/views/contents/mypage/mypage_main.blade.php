@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<!--<link rel="stylesheet" href="{{asset('css/contents/mypage.css')}}">-->
 <link rel='stylesheet' href='../fullcalendar/fullcalendar.min.css'/>
 <script src='../fullcalendar/lib/moment.min.js'></script>
 <script src='../fullcalendar/fullcalendar.min.js'></script>
@@ -11,31 +11,98 @@
 
 @section('title', 'Mypage')
 @section('content')
-<div id="mypage_main" style="margin-top:130px; margin-bottom:40px;">
+
+<style type="text/css">
+  
+  #mypage_main{
+    margin:auto;
+    width:1000px;
+    margin-top:150px;
+    /*border:1px solid black;*/
+    font-family:'interparkM','interparkMEot';
+  }
+
+  .row{
+    /*border:1px solid black;*/
+    background-color:white;
+    width:100%;
+    height:300px;
+    /*padding-bottom:20px;*/
+    border-bottom:2px solid #383838;
+		box-shadow:3px 3px 3px #828282;
+		border-radius:6px;
+  }
+  .mypage_main_title{
+    width:150px;
+    border-bottom:2px solid #383838; 
+		color:#383838; 
+		text-shadow:1px 1px 2px #828282; 
+		box-shadow:3px 3px 3px #828282;
+		margin-bottom:20px;
+  }
+  
+  .row .col-lg-3{
+    width:23.6%;
+    height:210px;
+    /*border:1px solid black;*/
+    margin-left:1%;
+    margin-top:20px;
+    text-align:center;
+  }
+  
+  .row .col-lg-3 img{
+    width:100%;
+    height:100%;
+    margin-bottom:10px;
+    /*border:1px solid black;*/
+    border-bottom:2px solid #383838;
+		/*box-shadow:3px 3px 3px #828282;*/
+  }
+  .mypage_user_result h2{
+    /*border:1px solid black;*/
+    margin-top:50px;
+    width:150px;
+    border-bottom:2px solid #383838; 
+		color:#383838; 
+		text-shadow:1px 1px 2px #828282; 
+		box-shadow:3px 3px 3px #828282;
+		margin-bottom:20px;
+  }
+  
+  #calendar{
+    /*border:1px solid black;*/
+    background-color:white;
+    border-radius:6px;
+    box-shadow:3px 3px 3px #828282;
+    margin-bottom:50px;
+  }
+  
+</style>
+<div id="mypage_main" >
   <div class="mypage_user">
-    <h2>My page</h2>
+    <h2 class="mypage_main_title">MY PAGE</h2>
     <div class="row">
       <div class="col-lg-3">
         <a href="{{url('/fleamarket/hostpage')}}"><img src="{{asset('img/icon/host.png')}}" alt=""></a>
-        <a class="btn btn-default" href="{{url('/mypage/host')}}" role="button">개최자 페이지</a>
+        <a class="btn btn-default" href="{{url('/mypage/host')}}" role="button">開催者ページ</a>
       </div>
       <div class="col-lg-3">
         <a href="{{url('/fleamarket/sellerpage')}}"><img src="{{asset('img/icon/seller.png')}}" alt=""></a>
-        <a class="btn btn-default" href="{{url('/mypage/seller')}}" role="button">판매자 페이지</a>
+        <a class="btn btn-default" href="{{url('/mypage/seller')}}" role="button">出店者ページ</a>
       </div>
       <div class="col-lg-3">
         <a href="{{url('/fleamarket/buyerpage')}}"><img src="{{asset('img/icon/buyer.png')}}" alt=""></a>
-        <a class="btn btn-default" href="{{url('/mypage/buyer')}}" role="button">구매자 페이지</a>
+        <a class="btn btn-default" href="{{url('/mypage/buyer')}}" role="button">購入者ページ</a>
       </div>
       <div class="col-lg-3">
         <a href="#"><img src="{{asset('img/icon/membership.png')}}" alt=""></a>
-        <a class="btn btn-default" href="{{url('')}}" role="button">회원정보</a>
+        <a class="btn btn-default" href="{{url('')}}" role="button">メンバー情報</a>
       </div>
     </div>
   </div>
 
   <div class="mypage_user_result">
-    <h2>Calender</h2>
+    <h2 >Calender</h2>
   </div>
   <div id="calendar"></div>
 </div>
@@ -74,7 +141,7 @@
             callback(event);
           },
           error : function(){
-            window.alert("일정을 불러오는데 실패하였습니다.");
+            window.alert("サバーニエラーが発生しました。");
           }
         });
      },
@@ -86,7 +153,7 @@
      select: function(start, end, jsEvent, view) {
 
        // Ask for a title. If empty it will default to "New event"
-       var title = prompt("일정을 입력하세요", "New event");
+       var title = prompt("日程を入力してください", "New event");
 
        // If did not pressed Cancel button
        if (title != null) {
@@ -109,11 +176,11 @@
           },
           type : 'get',
           success : function(data){
-            window.alert("일정에 추가하였습니다.");
+            window.alert("日程を追加しました。.");
             location.replace("/mypage/main");
           },
           error : function(){
-            window.alert("일정에 추가하지 못하였습니다.");
+            window.alert("エラーが発生しました。");
             location.replace("/mypage/main");
           }
         });
@@ -133,7 +200,7 @@
 
       eventClick: function(event, jsEvent, view){
        // Ask for a title. If empty it will default to "New event"
-       var newTitle = prompt("수정할 일정을 입력하세요", event.title);
+       var newTitle = prompt("修正する日程の内容を入れてください。", event.title);
 
        // If did not pressed Cancel button
        if (newTitle != null) {
@@ -154,11 +221,11 @@
               },
               type : 'get',
               success : function(data){
-                window.alert("일정 수정을 완료 했습니다.");
+                window.alert("日程修正を完了しました。");
                 location.replace("/mypage/main");
               },
               error : function(){
-                window.alert("일정 수정에 실패하였습니다.");
+                window.alert("日程修正に失敗しました。");
                 location.replace("/mypage/main");
               }
             });

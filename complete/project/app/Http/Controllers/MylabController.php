@@ -26,7 +26,7 @@ class MylabController extends Controller
     private $image;
     private $subscription;
     //use for databases;
-
+    
 
     public function __construct(){
       $this->user = new User();
@@ -37,7 +37,7 @@ class MylabController extends Controller
       $this->subscription = new Subscription();
       //use for privates;
     }
-
+    
     public function setAttribute(Request $request){
       $user = $request->session()->get('user');
       $myshop = $this->myshop->where('user_id',$user['id'])->get();
@@ -142,12 +142,12 @@ class MylabController extends Controller
         'goods_image' => $goods_images,
       ]);
     }
-
+    
     public function showAjaxData(Request $request){
       $user = $request->session()->get('user');
       $user_name = $this->user->where('id',$user->id)->get();
       $myshop = $this->myshop->where('user_id',$user_name[0]['id'])->get();
-
+      
       return $myshop;
     }
 
@@ -193,10 +193,10 @@ class MylabController extends Controller
       //get data in mylab name = user name
       $myshop = $this->myshop->where('user_id',$user_id)->get();
       $myshop_id = $myshop[0]['id'];
-
+      
       $subscriptions_reserch = $this->subscription->where([['user_id',$user[0]['id']],['myshop_id',$myshop_id]]);
       //for distinct check
-
+      
 
       if($subscriptions_reserch != []){
         $this->subscription->create([

@@ -1,13 +1,4 @@
 /*메인 css*/
-html{
-  width : 100%;
-  height : 100%;
-}
-
-body{
-  width : 100%;
-  height : 100%;
-}
 .body {
   width : 100%;
   height : 100%;
@@ -49,10 +40,12 @@ body{
   margin : 0 auto;
   width : 100%;
   height : 20%;
-  border-radius : 30%;
+  border-radius : 7px;
   font-size : 20px;
   text-align : center;
-  background-color : #d1d1d1;
+  background-color : white;
+  border : 3px solid #2c68c9;
+  box-shadow : 4px 4px 5px #7c7c7c;
 }
 
 .second_content{
@@ -61,8 +54,10 @@ body{
   height : 20%;
   font-size : 20px;
   text-align : center;
-  border-radius : 30%;
-  background-color : #d1d1d1;
+  border-radius :7px;
+  background-color : white;
+  border : 3px solid #f21f1f;
+  box-shadow : 4px 4px 5px #7c7c7c;
 }
 
 .third_content{
@@ -71,8 +66,10 @@ body{
   height : 20%;
   font-size : 20px;
   text-align : center;
-  border-radius : 30%;
-  background-color : #d1d1d1;
+  border-radius :7px;
+  background-color : white;
+  border : 3px solid #1ab25f;
+  box-shadow : 4px 4px 5px #7c7c7c;
 }
 
 .fourth_content{
@@ -81,8 +78,22 @@ body{
   height : 20%;
   font-size : 20px;
   text-align : center;
-  border-radius : 30%;
-  background-color : #d1d1d1;
+  border-radius :7px;
+  background-color : white;
+  border : 3px solid #b558dd;
+  box-shadow : 4px 4px 5px #7c7c7c;
+}
+
+.fifth_content{
+  margin : 0 auto;
+  width : 100%;
+  height : 20%;
+  font-size : 20px;
+  text-align : center;
+  border-radius :7px;
+  background-color : white;
+  border : 3px solid #30cce8;
+  box-shadow : 4px 4px 5px #7c7c7c;
 }
 
 .cancel_content{
@@ -91,28 +102,31 @@ body{
   height : 20%;
   font-size : 20px;
   text-align : center;
-  border-radius : 30%;
-  background-color : #d1d1d1;
+  border-radius :7px;
+  background-color : white;
+  border : 3px solid #fc8b28;
+  box-shadow : 4px 4px 5px #7c7c7c;
 }
 
 .cancel_content img {
-  margin-top : 20%;
+  margin-top : 10%;
   width : 60%;
   height : 60%;
 }
 
 /*드래그 할 객체를 display 하는 CSS*/
 .draggable_content_sub{
-  margin : 0 auto;
+  margin-left : 20px;
   width : 300px;
   height : 550px;
   border : 1px solid gray;
-  border-radius : 10%;
+  border-radius : 5px;
   position : fixed;
   left : 110px;
-  top : 150px;
+  top : 130px;
   z-index : 1;
   background-color: white;
+  box-shadow : 4px 4px 5px #7c7c7c;
 }
 
 /*display할 content의 리스트를 보여줄 CSS*/
@@ -128,10 +142,18 @@ body{
   height : 50px;
 }
 
+.timeline_content_list img{
+  border : 1px solid black;
+}
+
 .ui_content_list{
   margin : 0 auto;
   width : 100%;
   height : 50px;
+}
+
+.ui_content_list img {
+  border : 1px solid black;
 }
 
 .background_content_list{
@@ -139,6 +161,11 @@ body{
   width : 100%;
   height : 50px;
 }
+
+.background_content_list img {
+  border : 1px solid gray;
+}
+
 /*display할 content의 이름을 보여주는 클래스*/
 .content_list_name{
   margin : 0 auto;
@@ -146,6 +173,8 @@ body{
   height : 50px;
   font-size : 30px;
   text-align : center;
+  border-bottom : 2px solid red;
+  background-color : white;
 }
 
 /*display할 content의 list를 보여주는 클래스*/
@@ -155,6 +184,7 @@ body{
   height : 500px;
   text-align : center;
   overflow : auto;
+  background-color : white;
 }
 
 .content_list_things p{
@@ -167,140 +197,29 @@ body{
   width : 90%;
 }
 
+.none-space {
+  margin-top : 10px;
+  width : 100%;
+  height : 20px;
+  border-top :1px solid lightgray;
+}
+
 
 /*드롭 할 객체의 CSS*/
 .droppable_content_main{
   margin : 0 auto;
-  padding-top : 35px;
-  width : 100%;
-  height : 100%;
+  width : 1280px;
+  height : 1200px;
   border : 1px solid black;
-  position : absolute;
-  left : 0px;
-  top : 0px;
 }
 
-.background_content{
+.drag_sub_textbox {
   margin : 0 auto;
-  width : 100%;
-  height : 40%;
-}
-
-.background_content_title{
-  margin : 0 auto;
-  width : 60%;
-  height : 25%;
-  position : relative;
-  top : 25%;
-}
-
-.background_content_title input{
-  margin : 0 auto;
-  width : 100%;
-  height : 100%;
-  font-size : 30px;
-  text-align : center;
-}
-
-.background_content_title img{
-  margin : 0 auto;
-  width : 100px;
-  height : 100px;
-  position : relative;
-  top : 40%;
-  left : 45%;
-}
-
-.left_content{
-  margin : 0 auto;
-  width : 25%;
-  height : 60%;
+  width : 150px;
+  height : 30px;
   border : 1px solid black;
-  float : left;
 }
 
-.bx-wrapper, .bx-viewport {
-  margin : 0 auto !important;
-  width : 95% !important;
-  height:  95% !important;
-}
-
-.bx-viewprot ul li img{
-  margin : 0 auto;
+.drag_sub_content p {
   width : 100%;
-  height : 100%;
-}
-/*하단 왼쪽 콘텐츠의 스타일 리스트*/
-
-.center_content{
-  margin : 0 auto;
-  width : 50%;
-  height : 60%;
-  border : 1px solid black;
-  float : left;
-}
-/*하단 가운데 콘텐츠의 스타일 리스트*/
-
-.right_content{
-  margin : 0 auto;
-  width : 25%;
-  height : 60%;
-  border : 1px solid black;
-  float : left;
-}
-/*하단 오른쪽 콘텐츠의 스타일 리스트*/
-
-.submit_button{
-  margin : 0 auto;
-  position : fixed;
-  left : 90%;
-  top : 90%;
-}
-
-.submit_button img{
-  width : 80%;
-}
-
-.center_content {
-  margin : 0 auto;
-  overflow-y : scroll;
-  overflow-x : hidden;
-}
-
-.right_content {
-  margin : 0 auto;
-  overflow-y : scroll;
-  overflow-x : hidden;
-}
-
-.profile_bxslider {
-  margin : 0 auto;
-  width : 100%;
-  height : 70%;
-}
-
-.bxslider_title p{
-  margin : 0 auto;
-  height : 10%;
-  text-align : center;
-  font-size : 20px;
-  font-weight : bold;
-  border-bottom : 2px solid red;
-}
-
-.bxslider_content{
-  margin : 0 auto;
-  width : 100%;
-  height : 90%;
-}
-
-.bxslider {
-  margin : 0 auto;
-  width : 100%;
-  height : 100%;
-}
-
-.bxslider li img{
-  width : 100%;
-  height : 100%;
 }

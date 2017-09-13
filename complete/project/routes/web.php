@@ -48,7 +48,7 @@ Route::get('/booth/view/{name}/{flea_id}/{flea_th}', 'BoothController@BoothView'
 
 //Route::get('/booth/list/setplan', 'BoothController@setPlan');
 
-Route::get('/booth/save', 'BoothController@BoothSave');
+Route::post('/booth/save', 'BoothController@BoothSave');
 
 Route::get('/booth/sellersave', 'BoothController@sellerSave');
 
@@ -275,7 +275,3 @@ Route::get('/mypage/date/view','DateController@main');
 
 //==================== 구매목록 ================
 Route::get('/buylist/insert','BuylistController@insertBuylist');
-
-Route::get('/mylab/test3',function(){
-  return view("mylab.contents.lab.test3_lab");
-});
