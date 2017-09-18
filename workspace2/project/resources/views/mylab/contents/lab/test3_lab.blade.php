@@ -531,6 +531,18 @@
                 Double O 플리마켓을 개최하게 되었습니다.<br/>
                 처음 개최하는 플리마켓이지만 많은 성원 부탁드리겠습니다<br/>
               </p>
+              <a href="#" onclick="javascript:window.open('https://twitter.com/intent/tweet?text=[%EA%B3%B5%EC%9C%A0]%20'
+                                   +encodeURIComponent(document.URL)+'%20-%20'+encodeURIComponent(document.title), 'twittersharedialog',
+                                   'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+                 target="_blank" alt="Share on Twitter" ><img src="/storage/icon/twitter_icon.png" width="30px" height="30px"></a>
+              <a href="#" onclick="javascript:window.open('https://www.facebook.com/sharer/sharer.php?u=' +encodeURIComponent(document.URL)+
+                                  '&t='+encodeURIComponent(document.title), 'facebooksharedialog',
+                                  'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+                 target="_blank" alt="Share on Facebook" ><img src="/storage/icon/facebook_icon.png" width="30px" height="30px"></a>
+              <a href="#" onclick="javascript:window.open('https://plus.google.com/share?url=' +encodeURIComponent(document.URL),
+                                  'googleplussharedialog','menubar=no,toolbar=no,resizable=yes, scrollbars=yes,height=350,width=600');return false;"
+                 target="_blank" alt="Share on Google+"> <img src="/storage/icon/google_plus_icon.png" width="30px" height="30px"></a>
+
 
                 {{-- <pre>
                   {{$timeline_content['content']}}

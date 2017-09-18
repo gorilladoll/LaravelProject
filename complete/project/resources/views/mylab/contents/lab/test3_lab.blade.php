@@ -120,7 +120,7 @@
       border-radius : 10px;
       float : left;
     }
-    
+
     .move_goods_btn a {
       color : white;
     }
@@ -139,7 +139,7 @@
       border-radius : 10px;
       float : left;
     }
-    
+
     .move_friends_btn a {
       color : white;
     }
@@ -425,7 +425,7 @@
       font-size : 15px;
       font-weight : bold;
     }
-    
+
     .follow_btn button a {
       color : white;
     }
@@ -548,7 +548,13 @@
                 緑色でたっぷり！お茶マーケットを開催することになりました。<br/>
                 初めてのフリーマーケット開催ですが宜しくお願いします。<br/>
               </p>
-
+              <a href="#" data-toggle="sns_share"  data-service="naver" data-title="네이버 SNS공유" class="btn btn-default">네이버 SNS 공유하기</a>
+              <a href="#" data-toggle="sns_share"  data-service="twitter" data-title="트위터 SNS공유" class="btn btn-default">트위터 SNS 공유하기</a>
+              <a href="#" data-toggle="sns_share"  data-service="facebook" data-title="페이스북 SNS공유" class="btn btn-default">페이스북 SNS 공유하기</a>
+              <a href="#" data-toggle="sns_share"  data-service="google" data-title="구글 SNS공유" class="btn btn-default">구글 공유하기</a>
+              <a href="#" data-toggle="sns_share"  data-service="band" data-title="네이버밴드 SNS공유" class="btn btn-default">네이버 밴드 공유하기</a>
+              <a href="#" data-toggle="sns_share"  data-service="pinterest" data-title="핀터레스트 SNS공유" class="btn btn-default">핀터레스트 공유하기</a>
+              <a href="#" data-toggle="sns_share"  data-service="kakaostory" data-title="카카오스토리 SNS공유" class="btn btn-default">카카오스토리 공유하기</a>
                 {{-- <pre>
                   {{$timeline_content['content']}}
                 </pre> --}}
@@ -578,7 +584,7 @@
               <p>
                 今回もロッテーフリマーケットに参加することになりました。<br/>
                 今回はお茶を用意しました。宜しくお願いします。<br/>
-                
+
               </p>
                 {{-- <pre>
                   {{$timeline_content['content']}}
